@@ -1,0 +1,25 @@
+{
+  "name": "@aristov/uimodule",
+  "version": "0.0.0",
+  "description": "User interface components DOM assembler library",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aristov/uimodule.git"
+  },
+  "keywords": [
+    "DOM",
+    "UI",
+    "component",
+    "library"
+  ],
+  "author": "Vyacheslav Aristov <vv.aristov@gmail.ru>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aristov/uimodule/issues"
+  },
+  "homepage": "https://github.com/aristov/uimodule#readme"
+}
