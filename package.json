@@ -24,6 +24,6 @@
   "homepage": "https://github.com/aristov/uimodule#readme",
   "dependencies": {
     "ariamodule": "github:aristov/ariamodule",
-    "htmlmodule": "^0.5.19"
+    "htmlmodule": "github:aristov/htmlmodule"
   }
 }
