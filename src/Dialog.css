@@ -1,0 +1,12 @@
+.Dialog
+{
+  display: grid;
+  grid-template-rows: auto 1fr;
+  position: relative;
+  box-sizing: border-box;
+  overflow: auto;
+  outline: none;
+  border-radius: var(--control-border-radius);
+  background: var(--popup-bg-color);
+  box-shadow: var(--popup-box-shadow);
+}

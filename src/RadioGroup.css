@@ -1,0 +1,31 @@
+.RadioGroup
+{
+  display: inline-block;
+  margin: var(--widget-margin);
+}
+.RadioGroup[aria-disabled=true],
+.RadioGroup[aria-disabled=true] .Radio
+{
+  cursor: var(--disabled-cursor);
+  color: var(--disabled-color);
+}
+.RadioGroup[aria-disabled=true] .Radio::before
+{
+  background: var(--disabled-bg-color);
+  border-color: var(--disabled-border-color);
+}
+.RadioGroup[aria-disabled=true] .Radio[aria-checked=true]::before
+{
+  background: var(--checked-disabled-bg-color);
+}
+/*@media (max-width: 499px)
+{
+  .RadioGroup,
+  .RadioGroup > .Radio
+  {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-right: 0;
+  }
+}*/

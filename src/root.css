@@ -1,0 +1,81 @@
+@font-face
+{
+  font-family: 'fusionstudio';
+  src: url('./fontello/font/fusionstudio.eot?64655622');
+
+  src: url('./fontello/font/fusionstudio.woff2?64655622') format('woff2'),
+  url('./fontello/font/fusionstudio.woff?64655622') format('woff');
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root
+{
+  --color: rgba(0, 0, 0, .8);
+  --dim-color: rgba(0, 0, 0, .5);
+  --link-color: rgb(31, 109, 188);
+
+  --invalid-color: #f00;
+
+  --hover-border-color: rgba(0, 0, 0, .3);
+
+  --focus-color: rgba(0, 127, 127, 1);
+  --focus-border-color: rgb(102, 255, 197);
+  --focus-box-shadow: 0 0 0 1px var(--focus-border-color);
+
+  --active-bg-color: #f3f1ed;
+
+  --disabled-color: rgba(0, 0, 0, .3);
+  --disabled-bg-color: #e8e8e8;
+  --disabled-border-color: transparent;
+  --disabled-cursor: default;
+
+  --checked-color: #fff;
+  --checked-bg-color: rgba(103, 192, 255, 1);
+  --checked-active-bg-color: rgba(103, 192, 255, .7);
+  --checked-disabled-bg-color: rgba(0, 0, 0, .15);
+
+  --readonly-opacity: .7;
+  --icon-color: rgba(0, 0, 0, .5);
+  --icon-opacity: .3;
+  --icon-hover-opacity: .5;
+
+  --control-bg-color: transparent;
+
+  --control-padding-v: 5px;
+  --control-padding-h: 8px;
+  --control-padding: var(--control-padding-v) var(--control-padding-h);
+
+  --control-border-color: rgba(0, 0, 0, .2);
+  --control-border-width: 1px;
+  --control-border: var(--control-border-width) solid var(--control-border-color);
+
+  --control-border-radius: 5px;
+
+  --widget-margin: 6px;
+
+  --button-width: 100px;
+  --textbox-width: 220px;
+
+  --checkbox-label-margin: 0 0 0 8px;
+  --checkbox-control-border: 2px solid var(--control-border-color);
+
+  --popup-bg-color: #fff;
+  --popup-box-shadow: 0 8px 16px -4px rgba(0, 0, 0, .5);
+
+  --block-padding: 14px;
+  --doc-padding: 10px;
+}
+
+body
+{
+  color: var(--color);
+  font-family: Arial, sans-serif;
+  min-width: 320px;
+  margin: 10px;
+}
+[aria-hidden=true]
+{
+  display: none;
+}

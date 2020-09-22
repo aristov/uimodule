@@ -1,0 +1,19 @@
+.Composite:focus-within.keyboard > .Control
+{
+  border-color: var(--focus-border-color);
+  box-shadow: var(--focus-box-shadow);
+}
+/*
+.Composite
+{
+  vertical-align: top;
+}
+.Composite > .Control
+{
+  padding: 6px 0;
+}
+.Composite.active > .Control
+{
+  background: var(--color-widget-bg);
+}
+*/

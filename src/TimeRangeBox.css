@@ -1,0 +1,14 @@
+.TimeRangeBox
+{
+  min-width: 150px;
+  width: auto;
+}
+.TimeRangeBox .Dash
+{
+  color: var(--dim-color);
+}
+.TimeRangeBox .Dash::before,
+.TimeRangeBox .Dash::after
+{
+  content: '\00A0';
+}

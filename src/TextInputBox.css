@@ -1,0 +1,18 @@
+.TextInputBox
+{
+  width: var(--textbox-width);
+}
+.TextInputBox > .Control
+{
+  cursor: text;
+  width: 100%;
+}
+.TextInputBox .TextInput
+{
+  width: 100%;
+}
+.TextInputBox:focus-within > .Control
+{
+  border-color: var(--focus-border-color);
+  box-shadow: var(--focus-box-shadow);
+}

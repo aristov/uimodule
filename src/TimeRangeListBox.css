@@ -1,0 +1,55 @@
+.TimeRangeListBox
+{
+  width: 150px;
+}
+.TimeRangeListBox > .Control
+{
+  padding: 20px 10px 20px 40px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  max-height: calc(100vh - 10px);
+}
+.TimeRangeListBox .Option
+{
+  display: block;
+  width: 100%;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #000;
+  text-align: right;
+  position: relative;
+  box-sizing: content-box;
+  overflow: visible;
+}
+.TimeRangeListBox .Option .Label
+{
+  position: absolute;
+  left: -40px;
+  top: -6px;
+  font-size: .6em;
+  display: block;
+  width: 40px;
+  box-sizing: border-box;
+  padding-right: 8px;
+  margin: 0;
+}
+.TimeRangeListBox .Option:nth-child(2n)
+{
+  margin-top: 0;
+  border-color: rgba(0, 0, 0, .1);
+}
+.TimeRangeListBox .Option:nth-child(2n) .Label
+{
+  opacity: 0;
+}
+.TimeRangeListBox .Option:last-child
+{
+  height: 0;
+  padding: 0;
+}
+.TimeRangeListBox .Option[aria-selected=true]
+{
+  color: #000;
+}

@@ -1,0 +1,37 @@
+.MonthYearBox .Button
+{
+  color: rgba(0, 0, 0, .5);
+  opacity: var(--icon-opacity);
+}
+.MonthYearBox .Button:hover
+{
+  opacity: var(--icon-hover-opacity);
+}
+.MonthYearBox .Button > .Control::before
+{
+  font-family: fusionstudio;
+}
+.MonthYearBox .DecrButton > .Control::before
+{
+  content: '\e80b';
+}
+.MonthYearBox .IncrButton > .Control::before
+{
+  content: '\e80c';
+}
+.MonthYearBox .MonthBox > .Control::after
+{
+  display: none;
+}
+.MonthYearBox .TextInputBox
+{
+  width: 64px;
+}
+.MonthYearBox .TextInputBox > .Control
+{
+  box-shadow: none !important;
+}
+.MonthYearBox .TextInput
+{
+  text-align: right;
+}

@@ -1,0 +1,7 @@
+.Menu
+{
+  font-size: .9rem;
+  white-space: nowrap;
+  user-select: none;
+  border-radius: var(--control-border-radius);
+}

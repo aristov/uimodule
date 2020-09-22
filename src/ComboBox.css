@@ -1,0 +1,5 @@
+.ComboBox[aria-expanded=true].keyboard > .Control
+{
+  border-color: var(--focus-border-color);
+  box-shadow: var(--focus-box-shadow);
+}

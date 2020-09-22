@@ -1,0 +1,32 @@
+.DurationBox > .Control
+{
+  padding: 0;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+}
+.DurationBox .TextInputBox
+{
+  width: auto;
+}
+.DurationBox .TextInput
+{
+  width: 50px;
+}
+.DurationBox .TextInputBox > .Control
+{
+  padding-right: 0;
+  border: none;
+  box-shadow: none !important;
+}
+.DurationBox .SelectBox
+{
+  min-width: 70px;
+  width: auto;
+  text-align: right;
+}
+.DurationBox:focus-within > .Control
+{
+  border-color: var(--focus-border-color);
+  box-shadow: var(--focus-box-shadow);
+}

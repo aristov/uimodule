@@ -1,0 +1,171 @@
+@import 'root.css';
+
+.TextBox
+{
+  width: var(--textbox-width);
+}
+.TextBox > .Control
+{
+  width: 100%;
+  cursor: text;
+}
+.TextBox .Edit
+{
+  /*color: initial;*/
+  overflow: hidden;
+  white-space: nowrap;
+  outline: none;
+  max-height: 16px; /* fixme ₽ */
+}
+.TextBox .Placeholder
+{
+  position: absolute;
+  color: var(--dim-color);
+  display: none;
+}
+.TextBox .ClearButton
+{
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  width: 27px;
+}
+.TextBox[aria-multiline] .Edit
+{
+  min-height: 32px;
+  max-height: none;
+  white-space: normal;
+}
+.TextBox.blank .Edit::before
+{
+  content: '\00A0';
+}
+.TextBox.blank .Placeholder
+{
+  display: inline-block;
+}
+.TextBox.blank .ClearButton
+{
+  display: none;
+}
+.TextBox:focus-within > .Control
+{
+  border-color: var(--focus-border-color);
+  box-shadow: var(--focus-box-shadow);
+}
+.TextBox[aria-disabled=true] .ClearButton
+{
+  cursor: default;
+  opacity: .2;
+}
+.TextBox[aria-disabled=true] .Placeholder
+{
+  color: var(--disabled-color);
+  opacity: .5;
+}
+.TextBox[aria-readonly=true] > .Control
+{
+  opacity: var(--readonly-opacity);
+  cursor: default;
+  padding-right: var(--control-padding-h);
+}
+.TextBox[aria-readonly=true] .ClearButton
+{
+  display: none;
+}
+/*.TextBox
+{
+  display: inline-block;
+  position: relative;
+  margin: var(--margin-widget);
+  width: var(--width-textbox);
+}
+.TextBox > .Box
+{
+  display: inline-block;
+  box-sizing: border-box;
+  background: var(--color-widget-bg);
+  width: 100%;
+  padding: 5px 8px;
+  border: var(--border-widget);
+  border-radius: var(--radius-widget-border);
+  vertical-align: middle;
+}
+.TextBox .Edit
+{
+  overflow: hidden;
+  white-space: nowrap;
+  outline: none;
+}
+.TextBox .Placeholder
+{
+  position: absolute;
+  color: #aaa;
+}
+.TextBox .ClearButton
+{
+  position: absolute;
+  right: 0;
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  margin: 0;
+}
+.TextBox .ClearButton:not(:hover)
+{
+  opacity: var(--opacity-widget-icon);
+}
+.TextBox:hover > .Box
+{
+  border-color: var(--color-widget-border-hover);
+}
+.TextBox.focus > .Box
+{
+  border-color: var(--color-widget-border-focus);
+  box-shadow: var(--shadow-widget-box-focus);
+}
+.TextBox[aria-invalid=true] > .Box
+{
+  border-color: var(--color-widget-invalid);
+}
+.TextBox[aria-readonly=true]
+{
+  opacity: var(--opacity-widget-readonly);
+}
+.TextBox[aria-disabled=true]
+{
+  color: var(--color-widget-text-disabled);
+  cursor: var(--cursor-widget-disabled);
+}
+.TextBox[aria-disabled=true] > .Box
+{
+  background: var(--color-widget-bg-disabled);
+  border-color: var(--color-widget-border-disabled);
+}
+.TextBox[aria-disabled=true]:not([data-value]) .Edit::after
+{
+  content: '\00A0';
+}
+.TextBox[aria-multiline] .Edit
+{
+  white-space: normal;
+  overflow: auto;
+  height: 60px;
+}
+.TextBox[data-value] .Placeholder,
+.TextBox:not([data-value]) .ClearButton
+{
+  display: none;
+}*/
+/*@media (max-width: 499px)
+{
+  .TextBox,
+  .TextBox > .Box
+  {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-right: 0;
+  }
+}*/

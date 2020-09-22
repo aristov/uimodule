@@ -1,0 +1,27 @@
+.MenuButton > .Control
+{
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.MenuButton > .Control::after /* fixme duplicates in SelectBox, RefBox */
+{
+  font: 80% fusionstudio;
+  color: var(--icon-color);
+  content: '\e805';
+  white-space: nowrap;
+  vertical-align: middle;
+  opacity: var(--icon-opacity);
+  display: inline-block;
+  transition: transform .2s;
+  margin-left: 10px;
+  align-self: center;
+}
+.MenuButton[aria-expanded=true] > .Control::after
+{
+  transform: rotateX(-180deg);
+}
+.MenuButton:hover > .Control::after,
+.MenuButton:focus-visible > .Control::after
+{
+  opacity: .7;
+}

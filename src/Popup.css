@@ -1,0 +1,62 @@
+@import 'root.css';
+
+.Popup
+{
+  position: fixed;
+  display: block;
+  margin: 0;
+  padding: 5px;
+  max-width: 100%;
+  box-sizing: border-box;
+  transition: opacity .2s, transform .2s, top .2s, left .2s;
+  z-index: 110;
+  outline: none;
+}
+.Popup > [role]
+{
+  margin: 0;
+  max-height: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.Popup > [role] > .Control
+{
+  border: none !important;
+  background: var(--popup-bg-color);
+  box-shadow: var(--popup-box-shadow);
+}
+
+.Popup.modal
+{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*align-items: start;*/
+  /*padding: 10vh 10vw;*/
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+.Popup.modal::before
+{
+  content: '';
+  position: fixed;
+  top: -100%;
+  right: -100%;
+  bottom: -100%;
+  left: -100%;
+  background: rgba(0, 0, 0, .3);
+}
+
+.Popup[hidden=false]
+{
+  opacity: 0;
+  transform: translateY(1em);
+}
+.Popup[hidden=true]
+{
+  opacity: 0;
+}

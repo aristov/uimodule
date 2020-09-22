@@ -1,0 +1,24 @@
+.DateTimeBox > .Control
+{
+  padding: 0;
+}
+.DateTimeBox > .Control > .Widget
+{
+  min-width: auto;
+}
+.DateTimeBox > .Control > .Widget > .Control
+{
+  padding: var(--control-padding);
+}
+.DateTimeBox > .Control > .Widget > .Control::after
+{
+  display: none;
+}
+.DateTimeBox > .Control > .DateBox .ClearButton
+{
+  display: none;
+}
+.DateTimeBox[aria-required=true] > .Control > .ClearButton
+{
+  display: none;
+}

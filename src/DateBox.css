@@ -1,0 +1,50 @@
+.DateBox
+{
+  min-width: var(--textbox-width);
+}
+.DateBox > .Control
+{
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: 1fr auto;
+}
+.DateBox > .Control::after
+{
+  font: .9em fusionstudio;
+  content: '\e818';
+  align-self: center;
+  opacity: var(--icon-opacity);
+  margin-left: 8px;
+}
+.DateBox:hover > .Control::after
+{
+  opacity: var(--icon-hover-opacity);
+}
+.DateBox.active > .Control
+{
+  background-color: var(--active-bg-color);
+}
+.DateBox .ClearButton
+{
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  width: 27px;
+}
+.DateBox:not([aria-required=true]) > .Control
+{
+  padding-right: 30px;
+}
+.DateBox[aria-required=true] .ClearButton
+{
+  display: none;
+}
+.DateBox + .Popup .DatePicker
+{
+  margin: 0;
+}
+.DateBox + .Popup .DatePicker > .Control
+{
+  border: none;
+}

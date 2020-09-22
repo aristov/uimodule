@@ -1,0 +1,20 @@
+.Tab
+{
+  display: inline-block;
+  border-bottom: 3px solid transparent;
+  margin: 0 var(--widget-margin);
+  padding: 8px 0;
+  color: var(--dim-color);
+  background-color: #fff;
+}
+.Tab[aria-selected=true]
+{
+  border-color: var(--checked-bg-color);
+  cursor: default;
+  color: var(--color);
+  z-index: 1;
+}
+.Tab:focus-visible
+{
+  color: var(--focus-color);
+}

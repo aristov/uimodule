@@ -1,0 +1,35 @@
+@import 'root.css';
+
+.Widget
+{
+  font-size: .9rem;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  margin: var(--widget-margin);
+  outline: none;
+  user-select: none;
+}
+.Widget:focus-visible > .Control
+{
+  border-color: var(--focus-border-color);
+  box-shadow: var(--focus-box-shadow);
+}
+.Widget[aria-disabled=true]
+{
+  color: var(--disabled-color);
+}
+.Widget[aria-disabled=true] > .Control
+{
+  cursor: var(--disabled-cursor);
+  background-color: var(--disabled-bg-color);
+  border-color: var(--disabled-border-color);
+}
+.Widget[aria-invalid=true]
+{
+  color: var(--invalid-color);
+}
+.Widget[aria-invalid=true] > .Control
+{
+  border-color: var(--invalid-color);
+}

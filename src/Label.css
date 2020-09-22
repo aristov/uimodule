@@ -1,0 +1,19 @@
+.Label
+{
+  display: block;
+  color: var(--dim-color);
+  font-size: .8rem;
+  margin: 0 0 2px 0;
+  cursor: default;
+  user-select: none;
+}
+[aria-disabled=true] > .Label,
+.disabled > .Label
+{
+  opacity: .5;
+}
+/*[aria-required=true] > .Label::after,
+.required > .Label::after
+{
+  content: '*'
+}*/

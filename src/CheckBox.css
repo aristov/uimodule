@@ -1,0 +1,101 @@
+@import 'root.css';
+
+.CheckBox
+{
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  padding: var(--control-padding);
+  padding-left: 0;
+  margin: var(--widget-margin);
+}
+.CheckBox::before
+{
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  padding: 9px;
+  margin: 1px;
+  border: var(--checkbox-control-border);
+  border-radius: var(--control-border-radius);
+  background: var(--control-bg-color) center center / contain no-repeat;
+}
+.CheckBox[aria-checked=true]::before,
+.CheckBox[aria-checked=mixed]::before
+{
+  border-color: transparent;
+}
+.CheckBox[aria-checked=true]::before
+{
+  background-image: url(images/CheckBox_checked.svg);
+}
+.CheckBox[aria-checked=mixed]::before
+{
+  background-image: url(images/CheckBox_mixed.svg);
+}
+.CheckBox .Label
+{
+  display: inline-block;
+  vertical-align: middle;
+  margin: var(--checkbox-label-margin);
+  cursor: pointer;
+}
+.CheckBox:hover::before
+{
+  border-color: var(--hover-border-color);
+}
+.CheckBox:active::before,
+.CheckBox.active::before
+{
+  background: var(--active-bg-color);
+}
+.CheckBox[aria-checked=true]::before,
+.CheckBox[aria-checked=mixed]::before
+{
+  background-color: var(--checked-bg-color);
+}
+.CheckBox[aria-checked=true]:active::before,
+.CheckBox[aria-checked=true].active::before,
+.CheckBox[aria-checked=mixed]:active::before,
+.CheckBox[aria-checked=mixed].active::before
+{
+  background-color: var(--checked-active-bg-color);
+}
+.CheckBox[aria-readonly=true]
+{
+  opacity: var(--readonly-opacity);
+}
+.CheckBox[aria-disabled=true],
+.CheckBox[aria-disabled=true] .Label
+{
+  cursor: var(--disabled-cursor);
+  color: var(--disabled-color);
+}
+.CheckBox[aria-disabled=true]::before
+{
+  background: var(--disabled-bg-color);
+  border-color: var(--disabled-border-color);
+}
+.CheckBox[aria-checked=true][aria-disabled=true]::before
+{
+  background-color: var(--checked-disabled-bg-color);
+}
+.CheckBox:focus-visible::before
+{
+  border-color: var(--focus-border-color);
+  box-shadow: var(--focus-box-shadow);
+}
+
+/*@media (max-width: 499px)
+{
+  .CheckBox
+  {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-right: 0;
+  }
+}*/

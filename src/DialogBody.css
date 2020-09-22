@@ -1,0 +1,12 @@
+.DialogBody
+{
+  overflow: auto;
+  padding: var(--block-padding);
+  padding-top: 0;
+  box-sizing: border-box;
+  border-top: var(--control-border-width) solid transparent;
+}
+.DialogBody.scrolled
+{
+  border-color: var(--control-border-color);
+}

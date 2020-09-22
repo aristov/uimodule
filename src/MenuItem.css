@@ -1,0 +1,22 @@
+.MenuItem
+{
+  position: relative;
+  padding: var(--control-padding);
+  cursor: pointer;
+  outline: none;
+  padding-left: 10px;
+  color: rgba(0, 0, 0, .8);
+}
+.MenuItem:focus-visible
+{
+  color: var(--focus-color);
+}
+.MenuItem[aria-current=page]
+{
+  color: var(--checked-bg-color);
+  cursor: default;
+}
+.MenuItem[aria-disabled=true]
+{
+  color: var(--disabled-color);
+}

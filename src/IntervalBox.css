@@ -1,0 +1,14 @@
+.IntervalBox .DateTimeBox .ClearButton
+{
+  display: none;
+}
+.IntervalBox .TextInput
+{
+  width: 50px;
+  text-align: right;
+}
+.IntervalBox:focus-within > .Control
+{
+  border-color: var(--focus-border-color);
+  box-shadow: var(--focus-box-shadow);
+}

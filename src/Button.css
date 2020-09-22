@@ -1,0 +1,39 @@
+.Button
+{
+  white-space: nowrap;
+}
+.Button > .Control
+{
+  text-align: center;
+}
+/*.Button > .Label
+{
+  margin-bottom: 0;
+  font-size: initial;
+  cursor: pointer;
+}*/
+.Button.active > .Control
+{
+  background: var(--active-bg-color);
+}
+.Button[aria-pressed=true]
+{
+  color: var(--checked-color);
+}
+.Button[aria-pressed=true] > .Control
+{
+  background-color: var(--checked-bg-color);
+}
+.Button[aria-pressed=true].active > .Control
+{
+  background-color: var(--checked-active-bg-color);
+}
+.Button[aria-pressed=true][aria-disabled=true] > .Control
+{
+  background-color: var(--checked-disabled-bg-color);
+}
+.Button[aria-expanded=true].keyboard > .Control
+{
+  border-color: var(--focus-border-color);
+  box-shadow: var(--focus-box-shadow);
+}

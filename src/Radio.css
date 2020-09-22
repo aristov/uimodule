@@ -1,0 +1,75 @@
+@import 'CheckBox.css';
+
+.Radio
+{
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  padding: var(--control-padding-v) calc(var(--control-padding-h) * 2) var(--control-padding-v) 0;
+}
+.Radio::before
+{
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px;
+  border: var(--checkbox-control-border);
+  background: var(--control-bg-color) center center / contain no-repeat;
+  border-radius: 50%;
+}
+.Radio[aria-checked=true]::before
+{
+  border-color: transparent;
+}
+.Radio[aria-checked=true]::before
+{
+  background-image: url(images/Radio_checked.svg);
+}
+.Radio .Label
+{
+  display: inline-block;
+  vertical-align: middle;
+  margin: var(--checkbox-label-margin);
+  cursor: pointer;
+}
+.Radio:hover::before
+{
+  border-color: var(--hover-border-color);
+}
+.Radio:active::before,
+.Radio.active::before
+{
+  background-color: var(--active-bg-color);
+}
+.Radio[aria-checked=true]::before
+{
+  background-color: var(--checked-bg-color);
+}
+.Radio[aria-checked=true]:active::before,
+.Radio[aria-checked=true].active::before
+{
+  background-color: var(--checked-active-bg-color);
+}
+.Radio[aria-disabled=true],
+.Radio[aria-disabled=true] .Label
+{
+  cursor: var(--disabled-cursor);
+  color: var(--disabled-color);
+}
+.Radio[aria-disabled=true]::before
+{
+  background-color: var(--disabled-bg-color);
+  border-color: var(--disabled-border-color);
+}
+.Radio[aria-checked=true][aria-disabled=true]::before
+{
+  background-color: var(--checked-disabled-bg-color);
+}
+.Radio:focus-visible::before
+{
+  border-color: var(--focus-border-color);
+  box-shadow: var(--focus-box-shadow);
+}

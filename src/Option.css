@@ -1,0 +1,59 @@
+.Option
+{
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding: var(--control-padding);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+.Option:hover
+{
+  background: rgba(0, 0, 0, 0.01);
+}
+.Option.active.Item
+{
+  background: var(--active-bg-color);
+}
+.Option[aria-selected=true]
+{
+  color: var(--checked-color);
+  background: var(--checked-bg-color);
+}
+.Option[aria-selected=true].active
+{
+  background: var(--checked-active-bg-color);
+}
+.Option[aria-checked]
+{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 8px;
+}
+.Option[aria-checked]::before
+{
+  font-family: 'fusionstudio';
+  content: '\e801';
+  align-self: center;
+  opacity: 0;
+}
+.Option[aria-checked=true]::before
+{
+  opacity: .5;
+}
+.Option[aria-checked=true][aria-selected=true]::before
+{
+  opacity: 1;
+}
+.Option[aria-disabled=true]
+{
+  color: var(--disabled-color);
+  cursor: var(--disabled-cursor);
+  background-color: var(--control-bg-color) !important;
+  opacity: .5;
+}
+.Option[aria-hidden=true]
+{
+  display: none;
+}

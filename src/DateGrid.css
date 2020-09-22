@@ -1,0 +1,54 @@
+.DateGrid
+{
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+.DateGrid .RowGroup
+{
+  display: table-row-group;
+}
+.DateGrid .Row
+{
+  display: table-row;
+}
+.DateGrid .Cell
+{
+  display: table-cell;
+  padding: 8px 5px;
+  border: 1px solid transparent;
+  outline: none;
+}
+.DateGrid .ColumnHeader
+{
+  color: var(--dim-color);
+  font-size: .6em;
+  text-transform: uppercase;
+}
+.DateGrid .DateCell
+{
+  cursor: pointer;
+}
+.DateGrid .DateCell:focus
+{
+  color: var(--focus-color);
+}
+.DateGrid .DateCell[aria-selected=true]
+{
+  color: var(--checked-color);
+  background: var(--checked-bg-color);
+}
+.DateGrid .DateCell[aria-current=date]
+{
+  border-color: var(--focus-border-color);
+}
+.DateGrid .DateCell:not(.current)
+{
+  opacity: .4;
+}
+.DateGrid .DateCell[aria-disabled=true]
+{
+  color: var(--disabled-color);
+  cursor: default;
+  opacity: .3;
+}

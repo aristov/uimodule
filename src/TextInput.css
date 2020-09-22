@@ -1,0 +1,21 @@
+.TextInput
+{
+  font: inherit;
+  color: var(--color);
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  appearance: none;
+  box-sizing: border-box;
+}
+.TextInput::placeholder
+{
+  color: var(--dim-color);
+}
+/*.TextInput::-webkit-inner-spin-button,
+.TextInput::-webkit-outer-spin-button
+{
+  appearance: none;
+  margin: 0;
+}*/

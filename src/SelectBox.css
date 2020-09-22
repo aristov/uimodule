@@ -1,0 +1,49 @@
+.SelectBox
+{
+  position: relative;
+  display: inline-block;
+  min-width: calc(var(--textbox-width) / 2);
+  max-width: var(--textbox-width);
+}
+.SelectBox > .Control
+{
+  white-space: nowrap;
+  display: inline-grid;
+  grid-template-columns: 1fr auto;
+}
+.SelectBox > .Control > .Inner
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-self: center;
+}
+.SelectBox > .Control::after /* fixme duplicates in RefBox, MenuButton */
+{
+  font: 80% fusionstudio;
+  color: var(--icon-color);
+  content: '\e805';
+  white-space: nowrap;
+  vertical-align: middle;
+  opacity: var(--icon-opacity);
+  display: inline-block;
+  transition: transform .2s;
+  margin-left: 10px;
+  align-self: center;
+}
+.SelectBox.active > .Control
+{
+  background-color: var(--active-bg-color);
+}
+.SelectBox:hover > .Control::after,
+.SelectBox:focus-visible > .Control::after
+{
+  opacity: .7;
+}
+.SelectBox[aria-expanded=true] > .Control::after
+{
+  transform: rotateX(-180deg);
+}
+.SelectBox[aria-disabled=true] > .Control::after
+{
+  opacity: .1;
+}

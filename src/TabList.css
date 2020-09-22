@@ -1,0 +1,16 @@
+.TabList
+{
+  display: block;
+  margin: 0;
+  border-bottom: var(--control-border);
+}
+/*.TabList::after
+{
+  content: '';
+  display: block;
+  border-bottom: var(--control-border);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}*/

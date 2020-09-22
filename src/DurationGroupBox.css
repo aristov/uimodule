@@ -1,0 +1,9 @@
+.DurationGroupBox .TextInput
+{
+  width: 30px;
+}
+.DurationGroupBox:focus-within > .Control
+{
+  border-color: var(--focus-border-color);
+  box-shadow: var(--focus-box-shadow);
+}

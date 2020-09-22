@@ -1,0 +1,30 @@
+.ClearButton
+{
+  color: rgba(0, 0, 0, .5);
+  width: 1.8em;
+  margin: 0;
+  opacity: var(--icon-opacity);
+}
+.ClearButton > .Control
+{
+  border: none;
+  box-shadow: none !important;
+}
+.ClearButton > .Control::before
+{
+  font-family: 'fusionstudio';
+  content: '\e800';
+}
+.ClearButton:hover
+{
+  opacity: var(--icon-hover-opacity);
+}
+.ClearButton.active > .Control,
+.ClearButton[aria-disabled=true] > .Control
+{
+  background-color: var(--control-bg-color);
+}
+.ClearButton[aria-disabled=true]
+{
+  opacity: .2;
+}

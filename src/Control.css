@@ -1,0 +1,19 @@
+@import 'root.css';
+
+.Control
+{
+  position: relative;
+  box-sizing: border-box;
+  background: var(--control-bg-color);
+  width: 100%;
+  padding: var(--control-padding);
+  display: inline-block;
+  border-radius: var(--control-border-radius);
+  border: var(--control-border);
+  vertical-align: middle;
+  cursor: pointer;
+}
+.Control:hover
+{
+  border-color: var(--hover-border-color);
+}

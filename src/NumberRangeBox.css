@@ -1,0 +1,31 @@
+.NumberRangeBox > .Control
+{
+  padding: 0;
+  cursor: default;
+}
+.NumberRangeBox .TextInputBox
+{
+  width: 68px;
+  margin: 0;
+}
+.NumberRangeBox .TextInputBox > .Control
+{
+  border: none;
+  box-shadow: none !important;
+}
+.NumberRangeBox .TextInput
+{
+  width: 100%;
+  text-align: center;
+}
+.NumberRangeBox .Dash
+{
+  display: inline-block;
+  color: var(--dim-color);
+  vertical-align: middle;
+}
+.NumberRangeBox:focus-within > .Control
+{
+  border-color: var(--focus-border-color);
+  box-shadow: var(--focus-box-shadow);
+}

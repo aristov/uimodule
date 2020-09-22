@@ -1,0 +1,9 @@
+.MonthBox
+{
+  min-width: auto;
+}
+.MonthBox > .Control,
+.MonthBox + .Popup .Option
+{
+  text-transform: capitalize;
+}

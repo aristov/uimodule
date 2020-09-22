@@ -1,0 +1,22 @@
+.DialogHead
+{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  box-sizing: border-box;
+  position: relative;
+  padding: var(--block-padding);
+}
+.DialogHead .Heading
+{
+  align-self: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.DialogHead .CloseButton
+{
+  align-self: center;
+  position: relative;
+  padding: 18px;
+  background-size: 15px;
+}

@@ -1,0 +1,22 @@
+.TodayButton
+{
+  margin: 0;
+  float: right;
+  opacity: .8;
+  padding: 4px 10px;
+  color: var(--dim-color);
+}
+.TodayButton > .Control
+{
+  font-size: .8em;
+  padding: 0;
+  border: none;
+  border-bottom: 1px dotted;
+  border-radius: 0;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.TodayButton[aria-disabled=true]
+{
+  opacity: 0;
+}

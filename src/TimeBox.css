@@ -1,0 +1,27 @@
+.TimeBox
+{
+  min-width: calc(var(--textbox-width) / 2);
+  width: auto;
+}
+.TimeBox > .Control
+{
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.TimeBox > .Control::after
+{
+  font-family: fusionstudio;
+  content: '\e81c';
+  align-self: center;
+  color: var(--icon-color);
+  opacity: var(--icon-opacity);
+}
+.TimeBox:hover > .Control::after,
+.TimeBox:focus-visible > .Control::after
+{
+  opacity: .7;
+}
+.TimeBox .Edit
+{
+  min-width: 40px;
+}
