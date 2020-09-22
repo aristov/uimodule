@@ -22,8 +22,22 @@
     "url": "https://github.com/aristov/uimodule/issues"
   },
   "homepage": "https://github.com/aristov/uimodule#readme",
-  "dependencies": {
-    "ariamodule": "github:aristov/ariamodule",
-    "htmlmodule": "github:aristov/htmlmodule"
+  "devDependencies": {
+    "moment": "^2.29.0",
+    "css-loader": "^3.6.0",
+    "csso-webpack-plugin": "^2.0.0-beta.1",
+    "file-loader": "^6.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-pxtorem": "^4.0.1",
+    "postcss-svg": "^2.4.0",
+    "postcss-svgo": "^4.0.2",
+    "raw-loader": "^4.0.1",
+    "regenerator-runtime": "^0.13.5",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^3.0.4",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.43.0"
   }
 }

@@ -1,9 +1,9 @@
 # uimodule
 
-_work in progress_
+[https://aristov.github.io/uimodule/docs](https://aristov.github.io/uimodule/docs)
 
-This JavaScript library provides a set of [DOM](https://www.w3.org/TR/dom) node assemblers for some user interface components.
+_work in progress_
 
 ## License
 
-[The MIT License (MIT)](https://raw.githubusercontent.com/aristov/wwwmodule/master/LICENSE)
+[The MIT License (MIT)](https://raw.githubusercontent.com/aristov/uimodule/master/LICENSE)
