@@ -1,6 +1,6 @@
 # uimodule
 
-[https://aristov.github.io/uimodule/docs](https://aristov.github.io/uimodule/docs)
+[https://aristov.github.io/uimodule](https://aristov.github.io/uimodule)
 
 _work in progress_
 
