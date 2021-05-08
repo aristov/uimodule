@@ -3,16 +3,16 @@ module.exports = {
     require('autoprefixer'),
     require('postcss-preset-env'),
     require('postcss-svg'),
-    require('postcss-svgo')({
+    /*require('postcss-svgo')({
       plugins : [
-        { removeViewBox : false }
-      ]
-    })
+        { removeViewBox : false },
+      ],
+    }),*/
     /*require('postcss-pxtorem')({
         rootValue: 16,
         unitPrecision: 10,
         propList : ['*'],
         selectorBlackList: ['html']
     })*/
-  ]
+  ],
 }
