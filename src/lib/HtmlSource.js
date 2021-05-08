@@ -75,8 +75,3 @@ export class HtmlSource extends HtmlElem
     return this.node.media
   }
 }
-
-/**
- * @alias HtmlSource
- */
-export { HtmlSource as Source }

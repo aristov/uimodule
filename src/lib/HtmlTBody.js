@@ -30,8 +30,3 @@ export class HtmlTBody extends HtmlElem
     return map.call(this.node.rows, node => HtmlTr.get(node))
   }
 }
-
-/**
- * @alias HtmlTBody
- */
-export { HtmlTBody as TBody }

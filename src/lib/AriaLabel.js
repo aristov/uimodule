@@ -7,8 +7,3 @@ import { AriaTypeString } from './AriaTypeString'
 export class AriaLabel extends AriaTypeString
 {
 }
-
-/**
- * @alias AriaLabel
- */
-export { AriaLabel as Label }

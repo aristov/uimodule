@@ -19,8 +19,3 @@ export class AriaSort extends AriaTypeToken
       super.removeOnValue(element, value)
   }
 }
-
-/**
- * @alias AriaSort
- */
-export { AriaSort as Sort }

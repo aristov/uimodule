@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlPre extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlPre
- */
-export { HtmlPre as Pre }

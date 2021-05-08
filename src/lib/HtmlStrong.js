@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlStrong extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlStrong
- */
-export { HtmlStrong as Strong }

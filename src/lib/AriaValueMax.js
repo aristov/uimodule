@@ -7,8 +7,3 @@ import { AriaTypeNumber } from './AriaTypeNumber'
 export class AriaValueMax extends AriaTypeNumber
 {
 }
-
-/**
- * @alias AriaValueMax
- */
-export { AriaValueMax as ValueMax }

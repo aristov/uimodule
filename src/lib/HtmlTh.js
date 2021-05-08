@@ -33,8 +33,3 @@ export class HtmlTh extends HtmlTableCell
     return this.node.abbr
   }
 }
-
-/**
- * @alias HtmlTh
- */
-export { HtmlTh as Th }

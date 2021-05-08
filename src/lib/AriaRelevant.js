@@ -8,8 +8,3 @@ import { AriaTypeTokenList } from './AriaTypeTokenList'
 export class AriaRelevant extends AriaTypeTokenList
 {
 }
-
-/**
- * @alias AriaRelevant
- */
-export { AriaRelevant as Relevant }

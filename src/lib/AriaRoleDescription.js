@@ -7,8 +7,3 @@ import { AriaTypeString } from './AriaTypeString'
 export class AriaRoleDescription extends AriaTypeString
 {
 }
-
-/**
- * @alias AriaRoleDescription
- */
-export { AriaRoleDescription as RoleDescription }

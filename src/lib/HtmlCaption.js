@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlCaption extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlCaption
- */
-export { HtmlCaption as Caption }

@@ -7,8 +7,3 @@ import { AriaTypeString } from './AriaTypeString'
 export class AriaValueText extends AriaTypeString
 {
 }
-
-/**
- * @alias AriaValueText
- */
-export { AriaValueText as ValueText }

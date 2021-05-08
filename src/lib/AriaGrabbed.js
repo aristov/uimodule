@@ -8,8 +8,3 @@ import { AriaTypeApplicable } from './AriaTypeApplicable'
 export class AriaGrabbed extends AriaTypeApplicable
 {
 }
-
-/**
- * @alias AriaGrabbed
- */
-export { AriaGrabbed as Grabbed }

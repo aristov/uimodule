@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlFooter extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlFooter
- */
-export { HtmlFooter as Footer }

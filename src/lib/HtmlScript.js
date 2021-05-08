@@ -117,8 +117,3 @@ export class HtmlScript extends HtmlElem
     return this.node.nonce
   }
 }
-
-/**
- * @alias HtmlScript
- */
-export { HtmlScript as Script }

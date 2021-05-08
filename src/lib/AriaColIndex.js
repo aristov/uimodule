@@ -7,8 +7,3 @@ import { AriaTypeInteger } from './AriaTypeInteger'
 export class AriaColIndex extends AriaTypeInteger
 {
 }
-
-/**
- * @alias AriaColIndex
- */
-export { AriaColIndex as ColIndex }

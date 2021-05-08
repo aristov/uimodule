@@ -180,8 +180,3 @@ export class HtmlImg extends HtmlElem
     return this.node.width
   }
 }
-
-/**
- * @alias HtmlImg
- */
-export { HtmlImg as Img }

@@ -9,8 +9,3 @@ import { AriaTypeTokenList } from './AriaTypeTokenList'
 export class AriaDropEffect extends AriaTypeTokenList
 {
 }
-
-/**
- * @alias AriaDropEffect
- */
-export { AriaDropEffect as DropEffect }

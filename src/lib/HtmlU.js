@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlU extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlU
- */
-export { HtmlU as U }

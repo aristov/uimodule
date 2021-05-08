@@ -47,8 +47,3 @@ export class HtmlMeta extends HtmlElem
     return this.node.content
   }
 }
-
-/**
- * @alias HtmlMeta
- */
-export { HtmlMeta as Meta }

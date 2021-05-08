@@ -49,8 +49,3 @@ export class HtmlTr extends HtmlElem
     })
   }
 }
-
-/**
- * @alias HtmlTr
- */
-export { HtmlTr as Tr }

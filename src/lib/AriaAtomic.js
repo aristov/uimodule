@@ -9,8 +9,3 @@ import { AriaTypeBoolean } from './AriaTypeBoolean'
 export class AriaAtomic extends AriaTypeBoolean
 {
 }
-
-/**
- * @alias AriaAtomic
- */
-export { AriaAtomic as Atomic }

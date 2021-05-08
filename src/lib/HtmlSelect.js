@@ -273,8 +273,3 @@ export class HtmlSelect extends HtmlElem
     return map.call(this.node.labels, node => HtmlLabel.get(node))
   }
 }
-
-/**
- * @alias HtmlSelect
- */
-export { HtmlSelect as Select }

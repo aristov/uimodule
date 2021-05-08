@@ -8,8 +8,3 @@ import { AriaTypeTristate } from './AriaTypeTristate'
 export class AriaChecked extends AriaTypeTristate
 {
 }
-
-/**
- * @alias AriaChecked
- */
-export { AriaChecked as Checked }

@@ -128,8 +128,3 @@ export class HtmlOutput extends HtmlElem
     return map.call(this.node.labels, node => HtmlLabel.get(node))
   }
 }
-
-/**
- * @alias HtmlOutput
- */
-export { HtmlOutput as Output }

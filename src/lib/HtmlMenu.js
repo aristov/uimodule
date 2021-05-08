@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlMenu extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlMenu
- */
-export { HtmlMenu as Menu }

@@ -1,8 +1,8 @@
 import { Item } from './Item'
 import { TabPanel } from './TabPanel'
-import { PosInSet } from './lib/AriaPosInSet'
-import { Selected } from './lib/AriaSelected'
-import { SetSize } from './lib/AriaSetSize'
+import { AriaPosInSet } from './lib/AriaPosInSet'
+import { AriaSelected } from './lib/AriaSelected'
+import { AriaSetSize } from './lib/AriaSetSize'
 import './Tab.css'
 
 /**
@@ -70,21 +70,21 @@ export class Tab extends Item
    * @returns {number|null}
    */
   get posInSet() {
-    return this.getAttr(PosInSet)
+    return this.getAttr(AriaPosInSet)
   }
 
   /**
    * @param {number|null} posInSet
    */
   set posInSet(posInSet) {
-    this.setAttr(PosInSet, posInSet)
+    this.setAttr(AriaPosInSet, posInSet)
   }
 
   /**
    * @returns {boolean}
    */
   get selected() {
-    return this.getAttr(Selected) || false
+    return this.getAttr(AriaSelected) || false
   }
 
   /**
@@ -92,21 +92,21 @@ export class Tab extends Item
    */
   set selected(selected) {
     this.panels.forEach(panel => panel.hidden = !selected)
-    this.setAttr(Selected, selected)
+    this.setAttr(AriaSelected, selected)
   }
 
   /**
    * @returns {number|null}
    */
   get setSize() {
-    return this.getAttr(SetSize)
+    return this.getAttr(AriaSetSize)
   }
 
   /**
    * @param {number|null} setSize
    */
   set setSize(setSize) {
-    this.setAttr(SetSize, setSize)
+    this.setAttr(AriaSetSize, setSize)
   }
 
   /**

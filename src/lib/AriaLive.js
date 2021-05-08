@@ -21,8 +21,3 @@ export class AriaLive extends AriaTypeToken
       super.removeOnValue(element, value)
   }
 }
-
-/**
- * @alias AriaLive
- */
-export { AriaLive as Live }

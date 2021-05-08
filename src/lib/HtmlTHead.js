@@ -30,8 +30,3 @@ export class HtmlTHead extends HtmlElem
     return map.call(this.node.rows, node => HtmlTr.get(node))
   }
 }
-
-/**
- * @alias HtmlTHead
- */
-export { HtmlTHead as THead }

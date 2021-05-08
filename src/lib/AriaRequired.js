@@ -7,8 +7,3 @@ import { AriaTypeBoolean } from './AriaTypeBoolean'
 export class AriaRequired extends AriaTypeBoolean
 {
 }
-
-/**
- * @alias AriaRequired
- */
-export { AriaRequired as Required }

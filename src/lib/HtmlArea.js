@@ -138,8 +138,3 @@ export class HtmlArea extends HtmlHyperlink
     return this.node.referrerPolicy
   }
 }
-
-/**
- * @alias HtmlArea
- */
-export { HtmlArea as Area }

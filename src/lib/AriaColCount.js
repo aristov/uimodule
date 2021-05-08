@@ -7,8 +7,3 @@ import { AriaTypeInteger } from './AriaTypeInteger'
 export class AriaColCount extends AriaTypeInteger
 {
 }
-
-/**
- * @alias AriaColCount
- */
-export { AriaColCount as ColCount }

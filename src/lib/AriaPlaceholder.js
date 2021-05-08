@@ -9,8 +9,3 @@ import { AriaTypeString } from './AriaTypeString'
 export class AriaPlaceholder extends AriaTypeString
 {
 }
-
-/**
- * @alias AriaPlaceholder
- */
-export { AriaPlaceholder as Placeholder }

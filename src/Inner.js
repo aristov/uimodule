@@ -1,5 +1,5 @@
-import { Div } from './lib/htmlmodule'
+import { HtmlDiv } from './lib/htmlmodule'
 
-export class Inner extends Div
+export class Inner extends HtmlDiv
 {
 }

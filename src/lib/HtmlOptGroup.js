@@ -33,8 +33,3 @@ export class HtmlOptGroup extends HtmlElem
     return this.node.label
   }
 }
-
-/**
- * @alias HtmlOptGroup
- */
-export { HtmlOptGroup as OptGroup }

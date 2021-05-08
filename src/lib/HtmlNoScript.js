@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlNoScript extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlNoScript
- */
-export { HtmlNoScript as NoScript }

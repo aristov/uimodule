@@ -7,8 +7,3 @@ import { AriaTypeIdRefList } from './AriaTypeIdRefList'
 export class AriaDescribedBy extends AriaTypeIdRefList
 {
 }
-
-/**
- * @alias AriaDescribedBy
- */
-export { AriaDescribedBy as DescribedBy }

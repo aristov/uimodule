@@ -7,8 +7,3 @@ import { AriaTypeBoolean } from './AriaTypeBoolean'
 export class AriaReadOnly extends AriaTypeBoolean
 {
 }
-
-/**
- * @alias AriaReadOnly
- */
-export { AriaReadOnly as ReadOnly }

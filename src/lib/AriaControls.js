@@ -8,8 +8,3 @@ import { AriaTypeIdRefList } from './AriaTypeIdRefList'
 export class AriaControls extends AriaTypeIdRefList
 {
 }
-
-/**
- * @alias AriaControls
- */
-export { AriaControls as Controls }

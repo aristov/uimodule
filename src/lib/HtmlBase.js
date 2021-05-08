@@ -33,8 +33,3 @@ export class HtmlBase extends HtmlElem
     return this.node.target
   }
 }
-
-/**
- * @alias HtmlBase
- */
-export { HtmlBase as Base }

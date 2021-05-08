@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlSummary extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlSummary
- */
-export { HtmlSummary as Summary }

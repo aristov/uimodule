@@ -7,8 +7,3 @@ import { AriaTypeInteger } from './AriaTypeInteger'
 export class AriaLevel extends AriaTypeInteger
 {
 }
-
-/**
- * @alias AriaLevel
- */
-export { AriaLevel as Level }

@@ -13,8 +13,3 @@ export class HtmlTemplate extends HtmlElem
     return DomFragment.get(this.node.content)
   }
 }
-
-/**
- * @alias HtmlTemplate
- */
-export { HtmlTemplate as Template }

@@ -6,8 +6,3 @@ import { HtmlTableCell } from './HtmlTableCell'
 export class HtmlTd extends HtmlTableCell
 {
 }
-
-/**
- * @alias HtmlTd
- */
-export { HtmlTd as Td }

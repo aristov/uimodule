@@ -33,8 +33,3 @@ export class HtmlParam extends HtmlElem
     return this.node.value
   }
 }
-
-/**
- * @alias HtmlParam
- */
-export { HtmlParam as Param }

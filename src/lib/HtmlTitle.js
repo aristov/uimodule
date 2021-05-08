@@ -19,8 +19,3 @@ export class HtmlTitle extends HtmlElem
     return this.node.text
   }
 }
-
-/**
- * @alias HtmlTitle
- */
-export { HtmlTitle as Title }

@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlAddress extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlAddress
- */
-export { HtmlAddress as Address }

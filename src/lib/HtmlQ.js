@@ -19,8 +19,3 @@ export class HtmlQ extends HtmlElem
     return this.node.cite
   }
 }
-
-/**
- * @alias HtmlQ
- */
-export { HtmlQ as Q }

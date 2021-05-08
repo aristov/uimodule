@@ -9,8 +9,3 @@ import { AriaTypeIdRefList } from './AriaTypeIdRefList'
 export class AriaOwns extends AriaTypeIdRefList
 {
 }
-
-/**
- * @alias AriaOwns
- */
-export { AriaOwns as Owns }

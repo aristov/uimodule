@@ -61,8 +61,3 @@ export class HtmlEmbed extends HtmlElem
     return this.node.height
   }
 }
-
-/**
- * @alias HtmlEmbed
- */
-export { HtmlEmbed as Embed }

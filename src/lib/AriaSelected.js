@@ -7,8 +7,3 @@ import { AriaTypeApplicable } from './AriaTypeApplicable'
 export class AriaSelected extends AriaTypeApplicable
 {
 }
-
-/**
- * @alias AriaSelected
- */
-export { AriaSelected as Selected }

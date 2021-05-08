@@ -19,8 +19,3 @@ export class HtmlCol extends HtmlElem
     return this.node.span
   }
 }
-
-/**
- * @alias HtmlCol
- */
-export { HtmlCol as Col }

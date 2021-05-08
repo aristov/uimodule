@@ -7,8 +7,3 @@ import { AriaTypeTristate } from './AriaTypeTristate'
 export class AriaPressed extends AriaTypeTristate
 {
 }
-
-/**
- * @alias AriaPressed
- */
-export { AriaPressed as Pressed }

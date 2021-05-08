@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlDfn extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlDfn
- */
-export { HtmlDfn as Dfn }

@@ -19,8 +19,3 @@ export class HtmlBlockQuote extends HtmlElem
     return this.node.cite
   }
 }
-
-/**
- * @alias HtmlBlockQuote
- */
-export { HtmlBlockQuote as BlockQuote }

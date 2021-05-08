@@ -69,8 +69,3 @@ export class HtmlCanvas extends HtmlElem
     return this.node.height
   }
 }
-
-/**
- * @alias HtmlCanvas
- */
-export { HtmlCanvas as Canvas }

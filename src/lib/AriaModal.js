@@ -7,8 +7,3 @@ import { AriaTypeBoolean } from './AriaTypeBoolean'
 export class AriaModal extends AriaTypeBoolean
 {
 }
-
-/**
- * @alias AriaModal
- */
-export { AriaModal as Modal }

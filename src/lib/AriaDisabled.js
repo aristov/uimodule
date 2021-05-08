@@ -8,8 +8,3 @@ import { AriaTypeBoolean } from './AriaTypeBoolean'
 export class AriaDisabled extends AriaTypeBoolean
 {
 }
-
-/**
- * @alias AriaDisabled
- */
-export { AriaDisabled as Disabled }

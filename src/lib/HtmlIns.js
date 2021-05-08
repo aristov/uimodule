@@ -6,8 +6,3 @@ import { HtmlMod } from './HtmlMod'
 export class HtmlIns extends HtmlMod
 {
 }
-
-/**
- * @alias HtmlIns
- */
-export { HtmlIns as Ins }

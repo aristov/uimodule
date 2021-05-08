@@ -8,8 +8,3 @@ import { AriaTypeString } from './AriaTypeString'
 export class AriaKeyShortcuts extends AriaTypeString
 {
 }
-
-/**
- * @alias AriaKeyShortcuts
- */
-export { AriaKeyShortcuts as KeyShortcuts }

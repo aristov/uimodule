@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlCite extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlCite
- */
-export { HtmlCite as Cite }

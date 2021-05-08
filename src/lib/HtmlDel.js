@@ -6,8 +6,3 @@ import { HtmlMod } from './HtmlMod'
 export class HtmlDel extends HtmlMod
 {
 }
-
-/**
- * @alias HtmlDel
- */
-export { HtmlDel as Del }

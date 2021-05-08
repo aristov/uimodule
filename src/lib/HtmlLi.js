@@ -19,8 +19,3 @@ export class HtmlLi extends HtmlElem
     return this.node.value
   }
 }
-
-/**
- * @alias HtmlLi
- */
-export { HtmlLi as Li }

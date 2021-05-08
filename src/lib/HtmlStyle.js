@@ -47,8 +47,3 @@ export class HtmlStyle extends HtmlElem
     return this.node.type
   }
 }
-
-/**
- * @alias HtmlStyle
- */
-export { HtmlStyle as Style }

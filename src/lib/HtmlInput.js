@@ -675,8 +675,3 @@ export class HtmlInput extends HtmlElem
     return this.node.selectionDirection
   }
 }
-
-/**
- * @alias HtmlInput
- */
-export { HtmlInput as Input }

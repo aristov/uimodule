@@ -7,8 +7,3 @@ import { AriaTypeIdRef } from './AriaTypeIdRef'
 export class AriaErrorMessage extends AriaTypeIdRef
 {
 }
-
-/**
- * @alias AriaErrorMessage
- */
-export { AriaErrorMessage as ErrorMessage }

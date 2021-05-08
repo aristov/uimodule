@@ -8,8 +8,3 @@ import { AriaTypeInteger } from './AriaTypeInteger'
 export class AriaColSpan extends AriaTypeInteger
 {
 }
-
-/**
- * @alias AriaColSpan
- */
-export { AriaColSpan as ColSpan }

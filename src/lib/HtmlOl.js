@@ -47,8 +47,3 @@ export class HtmlOl extends HtmlElem
     return this.node.type
   }
 }
-
-/**
- * @alias HtmlOl
- */
-export { HtmlOl as Ol }

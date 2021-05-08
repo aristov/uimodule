@@ -47,8 +47,3 @@ export class AriaHasPopup extends AriaTypeToken
     return false
   }
 }
-
-/**
- * @alias AriaHasPopup
- */
-export { AriaHasPopup as HasPopup }

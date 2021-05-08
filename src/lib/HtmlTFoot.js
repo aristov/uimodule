@@ -30,8 +30,3 @@ export class HtmlTFoot extends HtmlElem
     return map.call(this.node.rows, node => HtmlTr.get(node))
   }
 }
-
-/**
- * @alias HtmlTFoot
- */
-export { HtmlTFoot as TFoot }

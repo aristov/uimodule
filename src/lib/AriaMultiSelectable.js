@@ -8,8 +8,3 @@ import { AriaTypeBoolean } from './AriaTypeBoolean'
 export class AriaMultiSelectable extends AriaTypeBoolean
 {
 }
-
-/**
- * @alias AriaMultiSelectable
- */
-export { AriaMultiSelectable as MultiSelectable }

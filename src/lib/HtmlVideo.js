@@ -61,8 +61,3 @@ export class HtmlVideo extends HtmlMedia
     return this.node.poster
   }
 }
-
-/**
- * @alias HtmlVideo
- */
-export { HtmlVideo as Video }

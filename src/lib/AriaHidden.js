@@ -7,8 +7,3 @@ import { AriaTypeApplicable } from './AriaTypeApplicable'
 export class AriaHidden extends AriaTypeApplicable
 {
 }
-
-/**
- * @alias AriaHidden
- */
-export { AriaHidden as Hidden }

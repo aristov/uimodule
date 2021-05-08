@@ -7,8 +7,3 @@ import { AriaTypeBoolean } from './AriaTypeBoolean'
 export class AriaMultiLine extends AriaTypeBoolean
 {
 }
-
-/**
- * @alias AriaMultiLine
- */
-export { AriaMultiLine as MultiLine }

@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlSpan extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlSpan
- */
-export { HtmlSpan as Span }

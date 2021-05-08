@@ -7,8 +7,3 @@ import { AriaTypeNumber } from './AriaTypeNumber'
 export class AriaValueMin extends AriaTypeNumber
 {
 }
-
-/**
- * @alias AriaValueMin
- */
-export { AriaValueMin as ValueMin }

@@ -21,8 +21,3 @@ export class AriaAutoComplete extends AriaTypeToken
       super.removeOnValue(element, value)
   }
 }
-
-/**
- * @alias AriaAutoComplete
- */
-export { AriaAutoComplete as AutoComplete }

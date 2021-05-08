@@ -17,8 +17,3 @@ export class HtmlDataList extends HtmlElem
     })
   }
 }
-
-/**
- * @alias HtmlDataList
- */
-export { HtmlDataList as DataList }

@@ -19,8 +19,3 @@ export class HtmlTime extends HtmlElem
     return this.node.dateTime
   }
 }
-
-/**
- * @alias HtmlTime
- */
-export { HtmlTime as Time }

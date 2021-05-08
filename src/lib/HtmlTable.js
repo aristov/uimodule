@@ -132,8 +132,3 @@ export class HtmlTable extends HtmlElem
     return map.call(this.node.rows, node => HtmlTr.get(node))
   }
 }
-
-/**
- * @alias HtmlTable
- */
-export { HtmlTable as Table }

@@ -50,8 +50,3 @@ export class HtmlProgress extends HtmlElem
     return map.call(this.node.labels, node => HtmlLabel.get(node))
   }
 }
-
-/**
- * @alias HtmlProgress
- */
-export { HtmlProgress as Progress }

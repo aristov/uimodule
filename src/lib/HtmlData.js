@@ -19,8 +19,3 @@ export class HtmlData extends HtmlElem
     return this.node.value
   }
 }
-
-/**
- * @alias HtmlData
- */
-export { HtmlData as Data }

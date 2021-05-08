@@ -13,8 +13,3 @@ export class HtmlLegend extends HtmlElem
     return HtmlForm.get(this.node.form)
   }
 }
-
-/**
- * @alias HtmlLegend
- */
-export { HtmlLegend as Legend }

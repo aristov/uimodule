@@ -118,8 +118,3 @@ export class HtmlIFrame extends HtmlElem
     return DomDoc.get(this.node.contentDocument)
   }
 }
-
-/**
- * @alias HtmlIFrame
- */
-export { HtmlIFrame as IFrame }

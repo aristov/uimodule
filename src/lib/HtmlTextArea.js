@@ -379,8 +379,3 @@ export class HtmlTextArea extends HtmlElem
     return this.node.selectionDirection
   }
 }
-
-/**
- * @alias HtmlTextArea
- */
-export { HtmlTextArea as TextArea }

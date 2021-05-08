@@ -9,8 +9,3 @@ import { AriaTypeIdRefList } from './AriaTypeIdRefList'
 export class AriaFlowTo extends AriaTypeIdRefList
 {
 }
-
-/**
- * @alias AriaFlowTo
- */
-export { AriaFlowTo as FlowTo }

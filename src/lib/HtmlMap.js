@@ -42,8 +42,3 @@ export class HtmlMap extends HtmlElem
     return this.node.name
   }
 }
-
-/**
- * @alias HtmlMap
- */
-export { HtmlMap as Map }

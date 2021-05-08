@@ -89,8 +89,3 @@ export class HtmlTrack extends HtmlElem
     return this.node.track
   }
 }
-
-/**
- * @alias HtmlTrack
- */
-export { HtmlTrack as Track }

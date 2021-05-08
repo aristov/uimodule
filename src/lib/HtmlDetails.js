@@ -19,8 +19,3 @@ export class HtmlDetails extends HtmlElem
     return this.node.open
   }
 }
-
-/**
- * @alias HtmlDetails
- */
-export { HtmlDetails as Details }

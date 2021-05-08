@@ -41,8 +41,3 @@ export class HtmlLabel extends HtmlElem
     return this.node.htmlFor
   }
 }
-
-/**
- * @alias HtmlLabel
- */
-export { HtmlLabel as Label }

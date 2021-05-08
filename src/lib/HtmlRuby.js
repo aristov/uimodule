@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlRuby extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlRuby
- */
-export { HtmlRuby as Ruby }

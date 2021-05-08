@@ -54,8 +54,3 @@ export class HtmlDialog extends HtmlElem
     return this.node.returnValue
   }
 }
-
-/**
- * @alias HtmlDialog
- */
-export { HtmlDialog as Dialog }

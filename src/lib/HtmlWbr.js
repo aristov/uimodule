@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlWbr extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlWbr
- */
-export { HtmlWbr as Wbr }

@@ -146,8 +146,3 @@ export class HtmlLink extends HtmlElem
     return this.node.referrerPolicy
   }
 }
-
-/**
- * @alias HtmlLink
- */
-export { HtmlLink as Link }

@@ -47,8 +47,3 @@ export class AriaInvalid extends AriaTypeToken
     return false
   }
 }
-
-/**
- * @alias AriaInvalid
- */
-export { AriaInvalid as Invalid }

@@ -8,8 +8,3 @@ import { AriaTypeInteger } from './AriaTypeInteger'
 export class AriaSetSize extends AriaTypeInteger
 {
 }
-
-/**
- * @alias AriaSetSize
- */
-export { AriaSetSize as SetSize }

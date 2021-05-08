@@ -8,8 +8,3 @@ import { AriaTypeToken } from './AriaTypeToken'
 export class AriaOrientation extends AriaTypeToken
 {
 }
-
-/**
- * @alias AriaOrientation
- */
-export { AriaOrientation as Orientation }

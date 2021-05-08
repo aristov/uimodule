@@ -6,8 +6,3 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlHGroup extends HtmlElem
 {
 }
-
-/**
- * @alias HtmlHGroup
- */
-export { HtmlHGroup as HGroup }

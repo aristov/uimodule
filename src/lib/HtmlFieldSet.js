@@ -99,8 +99,3 @@ export class HtmlFieldSet extends HtmlElem
     return this.node.validationMessage
   }
 }
-
-/**
- * @alias HtmlFieldSet
- */
-export { HtmlFieldSet as FieldSet }

@@ -154,8 +154,3 @@ export class HtmlForm extends HtmlElem
     return this.node.target
   }
 }
-
-/**
- * @alias HtmlForm
- */
-export { HtmlForm as Form }

@@ -19,8 +19,3 @@ export class HtmlColGroup extends HtmlElem
     return this.node.span
   }
 }
-
-/**
- * @alias HtmlColGroup
- */
-export { HtmlColGroup as ColGroup }

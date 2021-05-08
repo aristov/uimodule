@@ -8,8 +8,3 @@ import { AriaTypeIdRef } from './AriaTypeIdRef'
 export class AriaActiveDescendant extends AriaTypeIdRef
 {
 }
-
-/**
- * @alias AriaActiveDescendant
- */
-export { AriaActiveDescendant as ActiveDescendant }

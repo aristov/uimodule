@@ -47,8 +47,3 @@ export class AriaCurrent extends AriaTypeToken
     return false
   }
 }
-
-/**
- * @alias AriaCurrent
- */
-export { AriaCurrent as Current }

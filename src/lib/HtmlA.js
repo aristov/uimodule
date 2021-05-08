@@ -103,8 +103,3 @@ export class HtmlA extends HtmlHyperlink
     return this.node.referrerPolicy
   }
 }
-
-/**
- * @alias HtmlA
- */
-export { HtmlA as A }

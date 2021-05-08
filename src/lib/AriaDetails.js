@@ -7,8 +7,3 @@ import { AriaTypeIdRef } from './AriaTypeIdRef'
 export class AriaDetails extends AriaTypeIdRef
 {
 }
-
-/**
- * @alias AriaDetails
- */
-export { AriaDetails as Details }
