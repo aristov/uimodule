@@ -135,7 +135,7 @@ export class DomNode extends DomTarget
   /**
    * @param {string|constructor|DomElem} type
    * @param {function} callback
-   * @param {{}|DomTarget|boolean} options
+   * @param {{}|DomTarget|boolean} [options]
    * @override
    */
   on(type, callback, options) {
@@ -151,7 +151,7 @@ export class DomNode extends DomTarget
   /**
    * @param {string|constructor|DomElem} type
    * @param {function} callback
-   * @param {{}|DomTarget|boolean} options
+   * @param {{}|DomTarget|boolean} [options]
    * @override
    */
   off(type, callback, options) {
