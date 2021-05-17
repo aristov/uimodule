@@ -1,7 +1,7 @@
 {
   "name": "@aristov/uimodule",
-  "version": "0.0.0",
-  "description": "User interface components DOM assembler library",
+  "version": "0.0.1",
+  "description": "Library of accessible UI components",
   "main": "lib/index.js",
   "scripts": {
     "build": "webpack",
@@ -13,11 +13,13 @@
   },
   "keywords": [
     "DOM",
+    "HTML",
+    "WAI-ARIA",
     "UI",
-    "component",
-    "library"
+    "Component",
+    "Library"
   ],
-  "author": "Vyacheslav Aristov <vv.aristov@gmail.ru>",
+  "author": "Vyacheslav Aristov <vv.aristov@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/aristov/uimodule/issues"
