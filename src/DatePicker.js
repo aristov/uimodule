@@ -18,7 +18,7 @@ export class DatePicker extends Widget
       }),
       this._todayButton = new TodayButton({
         onclick : this.onShortcutButtonClick.bind(this),
-        children : 'сегодня'
+        children : 'today'
       }),
       this._grid = new DateGrid({
         onchange : event => this.onGridChange(event)
