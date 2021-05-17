@@ -26248,7 +26248,7 @@ class DatePicker extends _Widget__WEBPACK_IMPORTED_MODULE_6__.Widget
       }),
       this._todayButton = new _TodayButton__WEBPACK_IMPORTED_MODULE_5__.TodayButton({
         onclick : this.onShortcutButtonClick.bind(this),
-        children : 'сегодня'
+        children : 'today'
       }),
       this._grid = new _DateGrid__WEBPACK_IMPORTED_MODULE_2__.DateGrid({
         onchange : event => this.onGridChange(event)
