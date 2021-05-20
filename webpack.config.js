@@ -3,7 +3,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssoPlugin = require('csso-webpack-plugin').default
 
-exports.context = path.join(__dirname, 'src')
+exports.context = path.join(__dirname, 'docs')
 exports.entry = {
   index : './index.js'
 }
