@@ -96,5 +96,3 @@ export class RoleListBox extends RoleSelect
 }
 
 RoleListBox.abstract = false
-
-export { RoleListBox as ListBox }

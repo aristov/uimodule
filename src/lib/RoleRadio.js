@@ -32,5 +32,3 @@ export class RoleRadio extends RoleInput
 }
 
 RoleRadio.abstract = false
-
-export { RoleRadio as Radio }

@@ -74,5 +74,3 @@ export class RoleScrollBar extends RoleRange
     return Math.min(Math.max(valueMin, valueNow), valueMax)
   }
 }
-
-export { RoleScrollBar as ScrollBar }

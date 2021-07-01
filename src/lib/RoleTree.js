@@ -61,5 +61,3 @@ export class RoleTree extends RoleSelect
 }
 
 RoleTree.abstract = false
-
-export { RoleTree as Tree }

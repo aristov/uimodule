@@ -9,5 +9,3 @@ export class RoleContentInfo extends RoleLandmark
 }
 
 RoleContentInfo.abstract = false
-
-export { RoleContentInfo as ContentInfo }

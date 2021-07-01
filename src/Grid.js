@@ -1,8 +1,8 @@
 import { RoleGrid } from './lib/ariamodule'
-import { Caption } from './lib/ariamodule'
-import { ColumnHeader } from './lib/ariamodule'
-import { RowGroup } from './lib/ariamodule'
-import { RowHeader } from './lib/ariamodule'
+import { RoleCaption } from './lib/ariamodule'
+import { RoleColumnHeader } from './lib/ariamodule'
+import { RoleRowGroup } from './lib/ariamodule'
+import { RoleRowHeader } from './lib/ariamodule'
 import { GridCell } from './GridCell'
 import { Row } from './Row'
 
@@ -80,4 +80,4 @@ class Grid extends RoleGrid
   }
 }
 
-export { Grid, GridCell, Row, RowGroup, RowHeader, ColumnHeader, Caption }
+export { Grid, GridCell, Row, RoleRowGroup, RoleRowHeader, RoleColumnHeader, RoleCaption }

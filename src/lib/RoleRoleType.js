@@ -366,5 +366,3 @@ export class RoleRoleType extends Role
     return this.getAttr(AriaRoleDescription)
   }
 }
-
-export { RoleRoleType as RoleType }

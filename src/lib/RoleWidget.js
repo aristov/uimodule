@@ -15,5 +15,3 @@ export class RoleWidget extends RoleRoleType
     return this.closest(RoleForm)
   }
 }
-
-export { RoleWidget as Widget }

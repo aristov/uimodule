@@ -9,5 +9,3 @@ export class RoleParagraph extends RoleSection
 }
 
 RoleParagraph.abstract = false
-
-export { RoleParagraph as Paragraph }

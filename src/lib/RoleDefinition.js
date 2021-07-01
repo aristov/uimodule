@@ -9,5 +9,3 @@ export class RoleDefinition extends RoleSection
 }
 
 RoleDefinition.abstract = false
-
-export { RoleDefinition as Definition }

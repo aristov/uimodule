@@ -89,8 +89,6 @@ export class RoleGrid extends RoleTable
   }
 }
 
-export { RoleGrid as Grid }
-
 RoleCell.Grid = RoleGrid
 RoleRow.Grid = RoleGrid
 RoleRowGroup.Grid = RoleGrid

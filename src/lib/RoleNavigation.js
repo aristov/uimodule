@@ -10,5 +10,3 @@ export class RoleNavigation extends RoleLandmark
 }
 
 RoleNavigation.abstract = false
-
-export { RoleNavigation as Navigation }

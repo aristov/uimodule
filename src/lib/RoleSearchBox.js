@@ -7,5 +7,3 @@ import { RoleTextBox } from './RoleTextBox'
 export class RoleSearchBox extends RoleTextBox
 {
 }
-
-export { RoleSearchBox as SearchBox }

@@ -8,5 +8,3 @@ import { RoleRoleType } from './RoleRoleType'
 export class RoleStructure extends RoleRoleType
 {
 }
-
-export { RoleStructure as Structure }

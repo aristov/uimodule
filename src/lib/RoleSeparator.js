@@ -10,5 +10,3 @@ export class RoleSeparator extends RoleStructure
 }
 
 RoleSeparator.abstract = false
-
-export { RoleSeparator as Separator }

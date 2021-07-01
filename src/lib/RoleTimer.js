@@ -22,5 +22,3 @@ export class RoleTimer extends RoleStatus
     return this.hasAttr(AriaLive)? super.live : 'off'
   }
 }
-
-export { RoleTimer as Timer }

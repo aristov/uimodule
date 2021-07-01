@@ -9,5 +9,3 @@ export class RoleBlockQuote extends RoleSection
 }
 
 RoleBlockQuote.abstract = false
-
-export { RoleBlockQuote as BlockQuote }

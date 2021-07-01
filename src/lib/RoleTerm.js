@@ -9,5 +9,3 @@ export class RoleTerm extends RoleSection
 }
 
 RoleTerm.abstract = false
-
-export { RoleTerm as Term }

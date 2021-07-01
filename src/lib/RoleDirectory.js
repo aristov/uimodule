@@ -7,5 +7,3 @@ import { RoleList } from './RoleList'
 export class RoleDirectory extends RoleList
 {
 }
-
-export { RoleDirectory as Directory }

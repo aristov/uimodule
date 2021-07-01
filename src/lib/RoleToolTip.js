@@ -9,5 +9,3 @@ export class RoleToolTip extends RoleSection
 }
 
 RoleToolTip.abstract = false
-
-export { RoleToolTip as ToolTip }

@@ -40,5 +40,3 @@ export class RoleStatus extends RoleSection
 }
 
 RoleStatus.abstract = false
-
-export { RoleStatus as Status }

@@ -98,5 +98,3 @@ export class RoleTextBox extends RoleInput
 }
 
 RoleTextBox.abstract = false
-
-export { RoleTextBox as TextBox }

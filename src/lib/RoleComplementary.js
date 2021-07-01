@@ -11,5 +11,3 @@ export class RoleComplementary extends RoleLandmark
 }
 
 RoleComplementary.abstract = false
-
-export { RoleComplementary as Complementary }

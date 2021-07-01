@@ -126,5 +126,3 @@ export class RoleCell extends RoleSection
 }
 
 RoleCell.abstract = false
-
-export { RoleCell as Cell }

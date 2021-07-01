@@ -70,5 +70,3 @@ export class RoleSpinButton extends RoleRange
 }
 
 RoleSpinButton.abstract = false
-
-export { RoleSpinButton as SpinButton }

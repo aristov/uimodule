@@ -22,5 +22,3 @@ export class RoleToolBar extends RoleGroup
     return this.getAttr(AriaOrientation) || 'horizontal'
   }
 }
-
-export { RoleToolBar as ToolBar }

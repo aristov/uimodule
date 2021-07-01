@@ -1,5 +1,5 @@
 import moment from 'moment'
-import { ColumnHeader, RowGroup } from './lib/ariamodule'
+import { RoleColumnHeader, RoleRowGroup } from './lib/ariamodule'
 import { DateCell } from './DateCell'
 import { Grid, Row } from './Grid'
 import './DateGrid.css'
@@ -71,8 +71,8 @@ export class DateGrid extends Grid
       rows.push(row)
     }
     this.children = [
-      new RowGroup(new Row(WEEK_DAY_NAMES.map(name => new ColumnHeader(name)))),
-      new RowGroup(rows),
+      new RoleRowGroup(new Row(WEEK_DAY_NAMES.map(name => new RoleColumnHeader(name)))),
+      new RoleRowGroup(rows),
     ]
     this._month = month
     this.resetTabIndex()

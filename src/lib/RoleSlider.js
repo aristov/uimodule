@@ -92,5 +92,3 @@ export class RoleSlider extends RoleRange
 }
 
 RoleSlider.abstract = false
-
-export { RoleSlider as Slider }

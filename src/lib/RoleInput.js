@@ -8,5 +8,3 @@ import { RoleWidget } from './RoleWidget'
 export class RoleInput extends RoleWidget
 {
 }
-
-export { RoleInput as Input }

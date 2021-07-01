@@ -10,5 +10,3 @@ export class RoleSearch extends RoleLandmark
 }
 
 RoleSearch.abstract = false
-
-export { RoleSearch as Search }

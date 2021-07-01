@@ -24,5 +24,3 @@ export class RoleLink extends RoleCommand
 }
 
 RoleLink.abstract = false
-
-export { RoleLink as Link }

@@ -71,5 +71,3 @@ export class RoleTreeItem extends RoleListItem
     return this.closest(RoleTree)
   }
 }
-
-export { RoleTreeItem as TreeItem }

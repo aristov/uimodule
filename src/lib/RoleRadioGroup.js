@@ -46,5 +46,3 @@ export class RoleRadioGroup extends RoleSelect
 }
 
 RoleRadioGroup.abstract = false
-
-export { RoleRadioGroup as RadioGroup }

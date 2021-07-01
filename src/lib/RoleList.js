@@ -17,6 +17,4 @@ export class RoleList extends RoleSection
 
 RoleList.abstract = false
 
-export { RoleList as List }
-
 RoleListItem.List = RoleList

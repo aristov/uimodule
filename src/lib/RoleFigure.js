@@ -10,5 +10,3 @@ export class RoleFigure extends RoleSection
 }
 
 RoleFigure.abstract = false
-
-export { RoleFigure as Figure }

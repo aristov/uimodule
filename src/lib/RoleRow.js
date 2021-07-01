@@ -149,6 +149,4 @@ export class RoleRow extends RoleGroup
   }
 }
 
-export { RoleRow as Row }
-
 RoleCell.Row = RoleRow

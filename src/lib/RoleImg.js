@@ -9,5 +9,3 @@ export class RoleImg extends RoleSection
 }
 
 RoleImg.abstract = false
-
-export { RoleImg as Img }

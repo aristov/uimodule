@@ -9,5 +9,3 @@ export class RoleDialog extends RoleWindow
 }
 
 RoleDialog.abstract = false
-
-export { RoleDialog as Dialog }

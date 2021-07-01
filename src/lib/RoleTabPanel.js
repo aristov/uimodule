@@ -10,5 +10,3 @@ export class RoleTabPanel extends RoleSection
 }
 
 RoleTabPanel.abstract = false
-
-export { RoleTabPanel as TabPanel }

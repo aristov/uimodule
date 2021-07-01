@@ -11,5 +11,3 @@ export class RoleRegion extends RoleLandmark
 }
 
 RoleRegion.abstract = false
-
-export { RoleRegion as Region }

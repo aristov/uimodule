@@ -9,5 +9,3 @@ export class RoleMain extends RoleLandmark
 }
 
 RoleMain.abstract = false
-
-export { RoleMain as Main }

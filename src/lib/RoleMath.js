@@ -9,5 +9,3 @@ export class RoleMath extends RoleSection
 }
 
 RoleMath.abstract = false
-
-export { RoleMath as Math }

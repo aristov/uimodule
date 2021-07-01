@@ -48,5 +48,3 @@ export class RoleMenu extends RoleSelect
 }
 
 RoleMenu.abstract = false
-
-export { RoleMenu as Menu }

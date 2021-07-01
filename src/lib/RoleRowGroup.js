@@ -47,7 +47,5 @@ export class RoleRowGroup extends RoleStructure
 
 RoleRowGroup.abstract = false
 
-export { RoleRowGroup as RowGroup }
-
 RoleCell.RowGroup = RoleRowGroup
 RoleRow.RowGroup = RoleRowGroup

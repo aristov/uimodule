@@ -9,5 +9,3 @@ export class RoleProgressBar extends RoleRange
 }
 
 RoleProgressBar.abstract = false
-
-export { RoleProgressBar as ProgressBar }

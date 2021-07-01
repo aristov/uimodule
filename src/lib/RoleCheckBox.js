@@ -38,5 +38,3 @@ export class RoleCheckBox extends RoleInput
 }
 
 RoleCheckBox.abstract = false
-
-export { RoleCheckBox as CheckBox }

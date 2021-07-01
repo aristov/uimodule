@@ -9,5 +9,3 @@ export class RoleNone extends Role
 }
 
 RoleNone.abstract = false
-
-export { RoleNone as None }

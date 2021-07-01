@@ -9,5 +9,3 @@ import { RoleMenuItemCheckBox } from './RoleMenuItemCheckBox'
 export class RoleMenuItemRadio extends RoleMenuItemCheckBox
 {
 }
-
-export { RoleMenuItemRadio as MenuItemRadio }

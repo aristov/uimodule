@@ -25,5 +25,3 @@ export class RoleHeading extends RoleSectionHead
 }
 
 RoleHeading.abstract = false
-
-export { RoleHeading as Heading }

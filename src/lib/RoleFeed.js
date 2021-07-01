@@ -16,6 +16,4 @@ export class RoleFeed extends RoleList
   }
 }
 
-export { RoleFeed as Feed }
-
 RoleArticle.Feed = RoleFeed

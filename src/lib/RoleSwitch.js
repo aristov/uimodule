@@ -8,5 +8,3 @@ import { RoleCheckBox } from './RoleCheckBox'
 export class RoleSwitch extends RoleCheckBox
 {
 }
-
-export { RoleSwitch as Switch }

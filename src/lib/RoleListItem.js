@@ -60,5 +60,3 @@ export class RoleListItem extends RoleSection
 }
 
 RoleListItem.abstract = false
-
-export { RoleListItem as ListItem }

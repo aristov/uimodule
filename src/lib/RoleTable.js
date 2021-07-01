@@ -71,8 +71,6 @@ export class RoleTable extends RoleSection
 
 RoleTable.abstract = false
 
-export { RoleTable as Table }
-
 RoleCaption.Table = RoleTable
 RoleCell.Table = RoleTable
 RoleRow.Table = RoleTable

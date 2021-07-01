@@ -38,5 +38,3 @@ export class RoleAlert extends RoleSection
 }
 
 RoleAlert.abstract = false
-
-export { RoleAlert as Alert }

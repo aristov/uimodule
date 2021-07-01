@@ -9,5 +9,3 @@ export class RolePresentation extends RoleStructure
 }
 
 RolePresentation.abstract = false
-
-export { RolePresentation as Presentation }

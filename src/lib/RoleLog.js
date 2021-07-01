@@ -24,5 +24,3 @@ export class RoleLog extends RoleSection
 }
 
 RoleLog.abstract = false
-
-export { RoleLog as Log }

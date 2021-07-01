@@ -38,5 +38,3 @@ export class RoleSelect extends RoleComposite
     return this.getAttr(AriaOrientation)
   }
 }
-
-export { RoleSelect as Select }

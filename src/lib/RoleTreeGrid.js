@@ -8,5 +8,3 @@ import { RoleGrid } from './RoleGrid'
 export class RoleTreeGrid extends RoleGrid
 {
 }
-
-export { RoleTreeGrid as TreeGrid }

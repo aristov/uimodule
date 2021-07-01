@@ -22,5 +22,3 @@ export class RoleMenuItemCheckBox extends RoleMenuItem
     return this.getAttr(AriaChecked) || false
   }
 }
-
-export { RoleMenuItemCheckBox as MenuItemCheckBox }

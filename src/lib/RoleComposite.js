@@ -22,5 +22,3 @@ export class RoleComposite extends RoleWidget
     return this.getAttr(AriaActiveDescendant)
   }
 }
-
-export { RoleComposite as Composite }

@@ -24,6 +24,4 @@ export class RoleMenuBar extends RoleMenu
   }
 }
 
-export { RoleMenuBar as MenuBar }
-
 RoleMenuItem.MenuBar = RoleMenuBar

@@ -24,5 +24,3 @@ export class RoleGroup extends RoleSection
 }
 
 RoleGroup.abstract = false
-
-export { RoleGroup as Group }

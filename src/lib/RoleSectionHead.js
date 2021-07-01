@@ -22,5 +22,3 @@ export class RoleSectionHead extends RoleStructure
     return this.getAttr(AriaExpanded)
   }
 }
-
-export { RoleSectionHead as SectionHead }

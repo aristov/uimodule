@@ -42,6 +42,4 @@ export class RoleApplication extends RoleStructure
 
 RoleApplication.abstract = false
 
-export { RoleApplication as Application }
-
 RoleBanner.Application = RoleApplication

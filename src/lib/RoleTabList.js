@@ -68,5 +68,3 @@ export class RoleTabList extends RoleComposite
 }
 
 RoleTabList.abstract = false
-
-export { RoleTabList as TabList }

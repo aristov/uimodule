@@ -92,5 +92,3 @@ export class RoleComboBox extends RoleInput
 }
 
 RoleComboBox.abstract = false
-
-export { RoleComboBox as ComboBox }

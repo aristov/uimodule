@@ -9,5 +9,3 @@ export class RoleNote extends RoleSection
 }
 
 RoleNote.abstract = false
-
-export { RoleNote as Note }

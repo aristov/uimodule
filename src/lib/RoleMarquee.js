@@ -23,5 +23,3 @@ export class RoleMarquee extends RoleSection
 }
 
 RoleMarquee.abstract = false
-
-export { RoleMarquee as Marquee }

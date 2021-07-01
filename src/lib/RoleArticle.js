@@ -44,5 +44,3 @@ export class RoleArticle extends RoleDocument
     return this.getAttr(AriaSetSize)
   }
 }
-
-export { RoleArticle as Article }

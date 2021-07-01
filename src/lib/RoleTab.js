@@ -55,5 +55,3 @@ export class RoleTab extends RoleWidget
 }
 
 RoleTab.abstract = false
-
-export { RoleTab as Tab }

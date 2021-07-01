@@ -52,5 +52,3 @@ export class RoleGridCell extends RoleCell
     return this.getAttr(AriaSelected)
   }
 }
-
-export { RoleGridCell as GridCell }

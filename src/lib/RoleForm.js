@@ -10,5 +10,3 @@ export class RoleForm extends RoleLandmark
 }
 
 RoleForm.abstract = false
-
-export { RoleForm as Form }

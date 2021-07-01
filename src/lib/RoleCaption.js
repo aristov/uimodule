@@ -15,5 +15,3 @@ export class RoleCaption extends RoleSection
 }
 
 RoleCaption.abstract = false
-
-export { RoleCaption as Caption }

@@ -1,5 +1,5 @@
 import moment from 'moment'
-import { Presentation } from './lib'
+import { RolePresentation } from './lib'
 import { Label } from './Label'
 import { ListBox } from './ListBox'
 import './TimeRangeListBox.css'
@@ -26,7 +26,7 @@ export class TimeRangeListBox extends ListBox
         children : new Label(start),
       }
     })
-    this._control.append(new Presentation({
+    this._control.append(new RolePresentation({
       class : 'Option',
       children : new Label(timeTo),
     }))

@@ -12,5 +12,3 @@ import { RoleSection } from './RoleSection'
 export class RoleLandmark extends RoleSection
 {
 }
-
-export { RoleLandmark as Landmark }

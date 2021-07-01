@@ -16,5 +16,3 @@ export class RoleAlertDialog extends RoleDialog
     this.modal = true
   }
 }
-
-export { RoleAlertDialog as AlertDialog }

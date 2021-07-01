@@ -22,5 +22,3 @@ export class RoleBanner extends RoleLandmark
 }
 
 RoleBanner.abstract = false
-
-export { RoleBanner as Banner }

@@ -38,5 +38,3 @@ export class RoleMenuItem extends RoleCommand
 }
 
 RoleMenuItem.abstract = false
-
-export { RoleMenuItem as MenuItem }

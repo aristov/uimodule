@@ -38,5 +38,3 @@ export class RoleButton extends RoleCommand
 }
 
 RoleButton.abstract = false
-
-export { RoleButton as Button }

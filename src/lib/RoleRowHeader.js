@@ -23,5 +23,3 @@ export class RoleRowHeader extends RoleCell
     return this.getAttr(AriaSort)
   }
 }
-
-export { RoleRowHeader as RowHeader }

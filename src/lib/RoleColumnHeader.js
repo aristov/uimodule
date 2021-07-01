@@ -24,6 +24,4 @@ export class RoleColumnHeader extends RoleCell
   }
 }
 
-export { RoleColumnHeader as ColumnHeader }
-
 RoleCell.ColumnHeader = RoleColumnHeader
