@@ -5,7 +5,7 @@ import {
   AriaMultiLine,
   AriaPlaceholder,
   AriaReadOnly,
-  AriaRequired
+  AriaRequired,
 } from './lib'
 import { Control } from './Control'
 import { Edit } from './Edit'
@@ -44,7 +44,7 @@ export class TextBox extends Widget
     this._observer.observe(this._edit.node, {
       childList : true,
       characterData : true,
-      subtree : true
+      subtree : true,
     })
   }
 
@@ -217,6 +217,20 @@ export class TextBox extends Widget
       }
     }
     this.setAttr(AriaExpanded, expanded)
+  }
+
+  /**
+   * @return {string}
+   */
+  get inputMode() {
+    return this._edit.inputMode
+  }
+
+  /**
+   * @param {string} inputMode
+   */
+  set inputMode(inputMode) {
+    this._edit.inputMode = inputMode
   }
 
   /**
