@@ -1,11 +1,12 @@
 .MenuItem
 {
   position: relative;
+  display: block;
   padding: var(--control-padding);
   cursor: pointer;
   outline: none;
   padding-left: 10px;
-  color: rgba(0, 0, 0, .8);
+  /*color: rgba(0, 0, 0, .8);*/
 }
 .MenuItem:focus-visible
 {
