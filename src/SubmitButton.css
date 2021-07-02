@@ -1,0 +1,40 @@
+.SubmitButton
+{
+  color: #fff;
+  min-width: var(--button-width);
+}
+.SubmitButton > .Control
+{
+  background-color: #0a8;
+  border-color: transparent;
+}
+.SubmitButton:focus-visible,
+.SubmitButton:hover:not([aria-disabled=true])
+{
+  color: #fff;
+}
+.SubmitButton:focus-visible > .Control,
+.SubmitButton:hover:not([aria-disabled=true]) > .Control
+{
+  background-color: #0a0;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+.SubmitButton.active > .Control
+{
+  background-color: #1b1;
+}
+.SubmitButton > .SvgIcon
+{
+  background-image: url(images/Progress.svg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+}
+.SubmitButton > .SvgIcon circle
+{
+  stroke: #fff;
+}
