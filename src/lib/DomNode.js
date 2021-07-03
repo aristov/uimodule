@@ -383,7 +383,7 @@ export class DomNode extends DomTarget
 DomNode.PendingChild = function({ promise }) {
   const node = new Text('Loading...')
   promise.then(res => {
-    node.replaceWith(...DomNode.prototype.flatChildren([res]))
+    node.parentNode && node.replaceWith(...DomNode.prototype.flatChildren([res]))
   })
   .catch(err => console.error(node.data = err))
   return node
