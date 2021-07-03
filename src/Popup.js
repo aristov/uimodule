@@ -45,6 +45,9 @@ export class Popup extends HtmlDiv
     else this.parent = this.doc.body
     this.updatePosition()
     setTimeout(() => {
+      if(!this.node) {
+        return
+      }
       this.hidden = null
       doc.on('click', this.onDocClick, this)
       doc.on('focusin', this.onDocFocusIn, this)

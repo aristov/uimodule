@@ -71,6 +71,9 @@ export class Dialog extends RoleDialog
    * Set focus on autofocus elem or the first tab sequence elem
    */
   setFocus() {
+    if(!this.node) {
+      return
+    }
     const elem = this.find('[autofocus]')
     this.removeAttr('tabindex')
     if(elem) {
