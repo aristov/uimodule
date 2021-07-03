@@ -121,8 +121,10 @@ export class Popup extends HtmlDiv
     if(this.anchor && this.anchor.contains(elem)) {
       return
     }
-    if(this.modal) {
-      elem === this && this.close()
+    /*if(this.modal) {
+      elem === this && this.close()*/
+    if(elem === this) {
+      this.close()
       return
     }
     this.contains(elem) || this.close()

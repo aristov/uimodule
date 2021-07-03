@@ -60,3 +60,29 @@
 {
   opacity: 0;
 }
+
+@media (max-width: 499px)
+{
+  .Popup
+  {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+  }
+  .Popup::before
+  {
+    content: '';
+    position: fixed;
+    top: -100%;
+    right: -100%;
+    bottom: -100%;
+    left: -100%;
+    background: rgba(0, 0, 0, .3);
+  }
+}
