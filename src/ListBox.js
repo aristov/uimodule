@@ -46,6 +46,7 @@ class ListBox extends Composite
     this.children = this._control = new Control({
       onfocus : () => this.focus(), // scrollable element can receive focus in Firefox
     })
+    this.on('touchstart', this.onMouseDown)
     if(!init.multiSelectable) {
       this.on(AriaSelected, this.onSelected, { subtree : true })
       this.on(AriaChecked, this.onChecked, { subtree : true })
@@ -336,7 +337,7 @@ class ListBox extends Composite
   }
 
   /**
-   * @param {MouseEvent} event
+   * @param {MouseEvent|TouchEvent} event
    * @param {DomElem} elem
    */
   onMouseDown(event, elem) {
@@ -350,6 +351,7 @@ class ListBox extends Composite
     }
     let activeDescendant = this.activeDescendant
     if(this.multiSelectable) {
+      event.type === 'touchstart' && event.preventDefault()
       activeDescendant || (activeDescendant = option)
       if(!this._checkable) {
         this._indexes = [this._anchor? this._anchor.index : -1, activeDescendant.index]
@@ -374,15 +376,29 @@ class ListBox extends Composite
       option.selected || (option.selected = true)
     }
     this.activeDescendant = option
-    this.on('mouseover', this.onMouseOver)
-    this.doc.on('mouseup', this.onDocMouseUp, this)
+    if(event.type === 'touchstart') {
+      this.on('touchmove', this.onMouseOver)
+      this.doc.on('touchend', this.onDocMouseUp, this)
+    }
+    else {
+      this.on('mouseover', this.onMouseOver)
+      this.doc.on('mouseup', this.onDocMouseUp, this)
+    }
   }
 
   /**
-   * @param {MouseEvent} event
+   * @param {MouseEvent|TouchEvent} event
    * @param {DomElem} elem
    */
   onMouseOver(event, elem) {
+    if(event.type === 'touchmove') {
+      const { clientX, clientY } = event.touches[0]
+      const node = document.elementFromPoint(clientX, clientY)?.closest('[role~=Option]')
+      if(!node) {
+        return
+      }
+      elem = Option.get(node)
+    }
     if(!(elem instanceof Option) || elem.disabled) {
       return
     }
@@ -390,12 +406,18 @@ class ListBox extends Composite
   }
 
   /**
-   * @param {MouseEvent} event
+   * @param {MouseEvent|TouchEvent} event
    * @param {DomElem} elem
    */
   onDocMouseUp(event, elem) {
-    this.off('mouseover', this.onMouseOver)
-    this.doc.off('mouseup', this.onDocMouseUp, this)
+    if(event.type === 'touchend') {
+      this.off('touchmove', this.onMouseOver)
+      this.doc.off('touchend', this.onDocMouseUp, this)
+    }
+    else {
+      this.off('mouseover', this.onMouseOver)
+      this.doc.off('mouseup', this.onDocMouseUp, this)
+    }
     const { activeDescendant, multiSelectable } = this
     const indexes = multiSelectable?
       [this._anchor.index, activeDescendant.index].sort(sort) :
