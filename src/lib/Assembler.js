@@ -66,10 +66,8 @@ export class Assembler
    * Destroy this instance
    */
   destroy() {
-    Assembler.__storage.delete(this.node)
-    if(window.env === 'development') {
-      this.node = null
-    }
+    storage.delete(this.node)
+    this.node = null
   }
 
   /**
