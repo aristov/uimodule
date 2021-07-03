@@ -1,6 +1,6 @@
 .MenuButton > .Control
 {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: auto 1fr;
 }
 .MenuButton > .Control::after /* fixme duplicates in SelectBox, RefBox */
