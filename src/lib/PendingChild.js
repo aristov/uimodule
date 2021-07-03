@@ -23,6 +23,9 @@ export class PendingChild extends HtmlDiv
    * @param {*} res
    */
   onResolve(res) {
+    if(!this.node) {
+      return
+    }
     this.classList.remove('pending')
     this.emit('load')
     this.replaceWith(res)
@@ -34,6 +37,9 @@ export class PendingChild extends HtmlDiv
    */
   onReject(err) {
     console.error(this.error = typeof err === 'string'? Error(err) : err)
+    if(!this.node) {
+      return
+    }
     this.classList.replace('pending', 'error')
     this.emit('error')
     this.children = err
