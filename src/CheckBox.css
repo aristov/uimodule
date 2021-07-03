@@ -83,6 +83,10 @@
 {
   background-color: var(--checked-disabled-bg-color);
 }
+.CheckBox[aria-invalid=true]::before
+{
+  border-color: var(--invalid-color);
+}
 .CheckBox:focus-visible::before
 {
   border-color: var(--focus-border-color);
