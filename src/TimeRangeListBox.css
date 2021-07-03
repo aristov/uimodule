@@ -14,7 +14,7 @@
 {
   display: block;
   width: 100%;
-  height: 10px;
+  height: 12px;
   margin: 0;
   padding: 0;
   border-top: 1px solid #000;
@@ -22,6 +22,7 @@
   position: relative;
   box-sizing: content-box;
   overflow: visible;
+  cursor: crosshair;
 }
 .TimeRangeListBox .Option .Label
 {
@@ -44,12 +45,31 @@
 {
   opacity: 0;
 }
-.TimeRangeListBox .Option:last-child
+/*.TimeRangeListBox .Option:last-child
 {
   height: 0;
   padding: 0;
+}*/
+.TimeRangeListBox .Option:last-child
+{
+  border-bottom: 1px solid #000;
 }
 .TimeRangeListBox .Option[aria-selected=true]
 {
   color: #000;
+}
+@media (max-width: 499px)
+{
+  .TimeRangeListBox
+  {
+    height: calc(100vh - 40px);
+  }
+  .TimeRangeListBox > .Control
+  {
+    display: grid;
+  }
+  .TimeRangeListBox .Option
+  {
+    height: auto;
+  }
 }
