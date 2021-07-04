@@ -1,3 +1,4 @@
+import window from 'window'
 import { Assembler } from './Assembler'
 
 const create = Assembler.prototype.create

@@ -1,3 +1,4 @@
+import window from 'window'
 import { DomNode } from './DomNode'
 
 const { DocumentFragment } = window

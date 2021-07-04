@@ -1,3 +1,4 @@
+import window from 'window'
 import { DomTarget } from './DomTarget'
 import { DomDoc } from './DomDoc'
 
@@ -40,7 +41,7 @@ export class Win extends DomTarget
    * @returns {Promise<any>}
    */
   static async fetchJson(url, init) {
-    const res = await fetch(url, init)
+    const res = await window.fetch(url, init)
     if(!res.ok) {
       throw Error(res.statusText)
     }

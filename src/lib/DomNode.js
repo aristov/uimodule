@@ -1,3 +1,4 @@
+import window from 'window'
 import { AttrType } from './AttrType'
 import { DomTarget } from './DomTarget'
 

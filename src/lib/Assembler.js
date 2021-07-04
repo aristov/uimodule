@@ -1,3 +1,5 @@
+import window from 'window'
+
 let undefined
 const storage = window.env === 'development'? new Map : new WeakMap
 
