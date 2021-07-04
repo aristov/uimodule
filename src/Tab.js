@@ -29,8 +29,14 @@ export class Tab extends Item
   /**
    * @param {KeyboardEvent} event
    */
-  onKeyUp_Space(event) {
+  onKeyDown_Space(event) {
     event.preventDefault()
+  }
+
+  /**
+   * @param {KeyboardEvent} event
+   */
+  onKeyUp_Space(event) {
     this.activate()
   }
 

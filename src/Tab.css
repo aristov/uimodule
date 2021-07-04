@@ -9,10 +9,14 @@
 }
 .Tab[aria-selected=true]
 {
-  border-color: var(--checked-bg-color);
+  border-color: #000;
   cursor: default;
   color: var(--color);
   z-index: 1;
+}
+.Tab[aria-selected=true]:focus
+{
+  border-color: var(--checked-bg-color);
 }
 .Tab:focus-visible
 {
