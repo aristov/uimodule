@@ -242,6 +242,13 @@ export class DomElem extends DomNode
   }
 
   /**
+   * @return {string}
+   */
+  toString() {
+    return this.node.outerHTML
+  }
+
+  /**
    * Set content attributes on the element
    * @param {{}} attrs
    */
