@@ -5,8 +5,10 @@
   padding: var(--control-padding);
   cursor: pointer;
   outline: none;
-  padding-left: 10px;
-  /*color: rgba(0, 0, 0, .8);*/
+}
+.MenuItem:hover
+{
+  background-color: rgba(0, 0, 0, .05);
 }
 .MenuItem:focus-visible
 {

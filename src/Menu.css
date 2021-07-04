@@ -5,3 +5,8 @@
   user-select: none;
   border-radius: var(--control-border-radius);
 }
+.Menu .Label
+{
+  padding: var(--control-padding);
+  margin: 2px 0 0 0;
+}
