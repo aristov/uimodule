@@ -10,3 +10,9 @@
   padding: var(--control-padding);
   margin: 2px 0 0 0;
 }
+.Menu .Separator
+{
+  height: 1px;
+  margin: 2px 0;
+  background-color: rgba(0, 0, 0, .1);
+}
