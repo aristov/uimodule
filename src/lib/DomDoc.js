@@ -1,3 +1,4 @@
+import window from 'window'
 import { DomElem } from './DomElem'
 import { DomNode } from './DomNode'
 import { DomTarget } from './DomTarget'
