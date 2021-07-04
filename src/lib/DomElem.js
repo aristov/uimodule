@@ -1,3 +1,4 @@
+import window from 'window'
 import { AttrType } from './AttrType'
 import { Class } from './Class'
 import { DomNode } from './DomNode'
@@ -418,7 +419,7 @@ export class DomElem extends DomNode
   get about() {
     return this.getAttr('about')
   }
-  
+
   set about(about) {
     this.setAttr('about', about)
   }
