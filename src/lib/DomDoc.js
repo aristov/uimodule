@@ -6,7 +6,8 @@ import { HtmlBody } from './HtmlBody'
 import { HtmlHead } from './HtmlHead'
 import { HtmlHtml } from './HtmlHtml'
 
-const { Document } = window
+const { document, XMLSerializer } = window
+let serializer
 
 /**
  * @see https://www.w3.org/TR/dom/#interface-document
@@ -19,7 +20,7 @@ export class DomDoc extends DomNode
    */
   create(init) {
     if(!init.node) {
-      init.node = new Document
+      init.node = document.implementation.createHTMLDocument()
     }
     super.create(init)
   }
@@ -99,10 +100,39 @@ export class DomDoc extends DomNode
   }
 
   /**
+   * @return {string}
+   */
+  toString() {
+    const { documentElement, doctype } = this.node
+    const html = documentElement? documentElement.outerHTML : ''
+    if(!doctype) {
+      return html
+    }
+    serializer || (serializer = new XMLSerializer)
+    return serializer.serializeToString(doctype) + html
+  }
+
+  /**
    * @returns {HtmlHead}
    */
   get head() {
     return HtmlHead.get(this.node.head)
+  }
+
+  /**
+   * @param {string} lang
+   */
+  set lang(lang) {
+    const node = this.node.documentElement
+    node && (node.lang = lang)
+  }
+
+  /**
+   * @return {string}
+   */
+  get lang() {
+    const node = this.node.documentElement
+    return node? node.lang : ''
   }
 
   /**
