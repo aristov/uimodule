@@ -1,23 +1,13 @@
+import window from 'window'
 import { Assembler } from './Assembler'
 
-const {
-  CustomEvent,
-  Event,
-  EventTarget,
-  FocusEvent,
-  InputEvent,
-  KeyboardEvent,
-  MouseEvent,
-  Node,
-  TouchEvent,
-  UIEvent,
-} = window
+const { CustomEvent, EventTarget, Node } = window
 const EVENT_KEY_PREFIX = 'event:'
 
 /**
  * @see https://www.w3.org/TR/dom/#interface-eventtarget
  */
-export class DomTarget extends Assembler
+export class DomTarget extends Assembler // DomEmitter
 {
   /**
    * @param {{}} init
@@ -183,7 +173,7 @@ export class DomTarget extends Assembler
    * @returns {Promise<any>}
    */
   async fetch(request, init) {
-    const res = await fetch(request, init)
+    const res = await window.fetch(request, init)
     if(!res.ok) {
       throw Error(res.statusText)
     }
@@ -196,7 +186,7 @@ export class DomTarget extends Assembler
    */
   async get(request) {
     return this.fetch(request, {
-      headers : { 'Accept' : JSON_MIME_TYPE }
+      headers : { 'Accept' : JSON_MIME_TYPE },
     })
   }
 
@@ -210,8 +200,8 @@ export class DomTarget extends Assembler
       method : 'POST',
       headers : {
         'Accept' : JSON_MIME_TYPE,
-        'Content-Type' : JSON_MIME_TYPE
-      }
+        'Content-Type' : JSON_MIME_TYPE,
+      },
     }
     if(typeof data !== 'undefined') {
       init.body = JSON.stringify(data)
@@ -238,37 +228,37 @@ function get(target) {
  * type : [constructor, bubbles, cancelable]
  */
 DomTarget.events = {
-  blur : [FocusEvent],
-  cancel : [Event, false, true],
-  change : [Event, true],
-  click : [MouseEvent, true, true],
-  close : [Event],
-  contextmenu : [MouseEvent, true, true],
-  dblclick : [MouseEvent, true, true],
-  error : [Event],
-  focus : [FocusEvent],
-  focusin : [FocusEvent, true],
-  focusout : [FocusEvent, true],
-  input : [InputEvent, true],
-  invalid : [Event, false, true],
-  keydown : [KeyboardEvent, true, true],
-  keyup : [KeyboardEvent, true, true],
-  load : [Event],
-  mousedown : [MouseEvent, true, true],
-  mouseenter : [MouseEvent],
-  mouseleave : [MouseEvent],
-  mousemove : [MouseEvent, true, true],
-  mouseout : [MouseEvent, true, true],
-  mouseover : [MouseEvent, true, true],
-  mouseup : [MouseEvent, true, true],
-  reset : [Event, true, true],
-  resize : [UIEvent],
-  scroll : [Event, true],
-  submit : [Event, true, true],
-  touchcancel : [TouchEvent, true],
-  touchend : [TouchEvent, true, true],
-  touchmove : [TouchEvent, true, true],
-  touchstart : [TouchEvent, true, true],
+  blur : [window.FocusEvent],
+  cancel : [window.Event, false, true],
+  change : [window.Event, true],
+  click : [window.MouseEvent, true, true],
+  close : [window.Event],
+  contextmenu : [window.MouseEvent, true, true],
+  dblclick : [window.MouseEvent, true, true],
+  error : [window.Event],
+  focus : [window.FocusEvent],
+  focusin : [window.FocusEvent, true],
+  focusout : [window.FocusEvent, true],
+  input : [window.InputEvent, true],
+  invalid : [window.Event, false, true],
+  keydown : [window.KeyboardEvent, true, true],
+  keyup : [window.KeyboardEvent, true, true],
+  load : [window.Event],
+  mousedown : [window.MouseEvent, true, true],
+  mouseenter : [window.MouseEvent],
+  mouseleave : [window.MouseEvent],
+  mousemove : [window.MouseEvent, true, true],
+  mouseout : [window.MouseEvent, true, true],
+  mouseover : [window.MouseEvent, true, true],
+  mouseup : [window.MouseEvent, true, true],
+  reset : [window.Event, true, true],
+  resize : [window.UIEvent],
+  scroll : [window.Event, true],
+  submit : [window.Event, true, true],
+  touchcancel : [window.TouchEvent, true],
+  touchend : [window.TouchEvent, true, true],
+  touchmove : [window.TouchEvent, true, true],
+  touchstart : [window.TouchEvent, true, true],
 }
 
 /**
