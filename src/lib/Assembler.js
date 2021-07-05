@@ -1,7 +1,4 @@
-import window from 'window'
-
 let undefined
-const storage = window.env === 'development'? new Map : new WeakMap
 
 /**
  * @summary Assembler is a simple class, which helps to assemble another JavaScript objects.
@@ -24,7 +21,7 @@ export class Assembler
    */
   create(init) {
     this.node = init.node || {}
-    storage.set(this.node, this)
+    Assembler.__storage.set(this.node, this)
     delete init.node
   }
 
@@ -68,7 +65,7 @@ export class Assembler
    * Destroy this instance
    */
   destroy() {
-    storage.delete(this.node)
+    Assembler.__storage.delete(this.node)
     this.node = null
   }
 
@@ -83,8 +80,8 @@ export class Assembler
     }
     return object instanceof Assembler?
       object :
-      storage.get(object) || new this({ node : object })
+      Assembler.__storage.get(object) || new this({ node : object })
   }
 }
 
-Assembler.__storage = storage
+Assembler.__storage = new WeakMap

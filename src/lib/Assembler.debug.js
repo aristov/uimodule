@@ -7,8 +7,10 @@ Assembler.prototype.create = function(init) {
   create.call(this, init)
   Object.defineProperty(this.node, '__instance', {
     configurable : true,
-    value : this
+    value : this,
   })
 }
+
+Assembler.__storage = new Map
 
 window.Assembler = Assembler
