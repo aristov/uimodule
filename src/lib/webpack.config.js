@@ -12,6 +12,6 @@ module.exports = {
     globalObject : 'this',
   },
   externals : {
-    window : 'window'
-  }
+    window : 'window',
+  },
 }

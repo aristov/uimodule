@@ -14905,6 +14905,20 @@ class HtmlScript extends _HtmlElem__WEBPACK_IMPORTED_MODULE_0__.HtmlElem
   }
 
   /**
+   * @param {string} noModule
+   */
+  set noModule(noModule) {
+    this.node.noModule = noModule
+  }
+
+  /**
+   * @returns {string}
+   */
+  get noModule() {
+    return this.node.noModule
+  }
+
+  /**
    * @param {string} charset
    */
   set charset(charset) {
@@ -14958,6 +14972,34 @@ class HtmlScript extends _HtmlElem__WEBPACK_IMPORTED_MODULE_0__.HtmlElem
    */
   get crossOrigin() {
     return this.node.crossOrigin
+  }
+
+  /**
+   * @param {string} integrity
+   */
+  set integrity(integrity) {
+    this.node.integrity = integrity
+  }
+
+  /**
+   * @returns {string}
+   */
+  get integrity() {
+    return this.node.integrity
+  }
+
+  /**
+   * @param {string} referrerPolicy
+   */
+  set referrerPolicy(referrerPolicy) {
+    this.node.referrerPolicy = referrerPolicy
+  }
+
+  /**
+   * @returns {string}
+   */
+  get referrerPolicy() {
+    return this.node.referrerPolicy
   }
 
   /**

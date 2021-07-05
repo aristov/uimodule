@@ -22,7 +22,6 @@
 
   --focus-color: rgba(0, 127, 127, 1);
   --focus-border-color: rgb(102, 255, 197);
-  --focus-box-shadow: 0 0 0 1px rgb(102, 255, 197);
   --focus-box-shadow: 0 0 0 1px var(--focus-border-color);
 
   --active-bg-color: #f3f1ed;
@@ -46,12 +45,10 @@
 
   --control-padding-v: 5px;
   --control-padding-h: 8px;
-  --control-padding: 5px 8px;
   --control-padding: var(--control-padding-v) var(--control-padding-h);
 
   --control-border-color: rgba(0, 0, 0, .2);
   --control-border-width: 1px;
-  --control-border: 1px solid rgba(0, 0, 0, .2);
   --control-border: var(--control-border-width) solid var(--control-border-color);
 
   --control-border-radius: 5px;
@@ -62,7 +59,6 @@
   --textbox-width: 220px;
 
   --checkbox-label-margin: 0 0 0 8px;
-  --checkbox-control-border: 2px solid rgba(0, 0, 0, .2);
   --checkbox-control-border: 2px solid var(--control-border-color);
 
   --popup-bg-color: #fff;
@@ -85,30 +81,6 @@ body
   display: none;
 }
 
-.Label
-{
-  display: block;
-  color: var(--dim-color);
-  color: var(--dim-color);
-  font-size: .8rem;
-  margin: 0 0 2px 0;
-  cursor: default;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-[aria-disabled=true] > .Label,
-.disabled > .Label
-{
-  opacity: .5;
-}
-/*[aria-required=true] > .Label::after,
-.required > .Label::after
-{
-  content: '*'
-}*/
-
 .Showcase .Test
 {
   padding: 30px 0;
@@ -130,7 +102,6 @@ body
 {
   font-size: 1.2rem;
   padding: var(--widget-margin);
-  padding: var(--widget-margin);
   color: rgba(0, 0, 0, 0.7);
 }
 .Heading[aria-level="3"]
@@ -144,21 +115,16 @@ body
   position: relative;
   box-sizing: border-box;
   background: var(--control-bg-color);
-  background: var(--control-bg-color);
   width: 100%;
-  padding: var(--control-padding);
   padding: var(--control-padding);
   display: inline-block;
   border-radius: var(--control-border-radius);
-  border-radius: var(--control-border-radius);
-  border: var(--control-border);
   border: var(--control-border);
   vertical-align: middle;
   cursor: pointer;
 }
 .Control:hover
 {
-  border-color: var(--hover-border-color);
   border-color: var(--hover-border-color);
 }
 
@@ -185,8 +151,6 @@ body
 {
   border: none !important;
   background: var(--popup-bg-color);
-  background: var(--popup-bg-color);
-  box-shadow: var(--popup-box-shadow);
   box-shadow: var(--popup-box-shadow);
 }
 
@@ -225,13 +189,38 @@ body
   opacity: 0;
 }
 
+@media (max-width: 499px)
+{
+  .Popup
+  {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+  }
+  .Popup::before
+  {
+    content: '';
+    position: fixed;
+    top: -100%;
+    right: -100%;
+    bottom: -100%;
+    left: -100%;
+    background: rgba(0, 0, 0, .3);
+  }
+}
+
 .Widget
 {
   font-size: .9rem;
   display: inline-block;
   position: relative;
   box-sizing: border-box;
-  margin: var(--widget-margin);
   margin: var(--widget-margin);
   outline: none;
   -webkit-user-select: none;
@@ -242,39 +231,29 @@ body
 .Widget.focus-visible > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .Widget:focus-visible > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .Widget[aria-disabled=true]
 {
   color: var(--disabled-color);
-  color: var(--disabled-color);
 }
 .Widget[aria-disabled=true] > .Control
 {
   cursor: var(--disabled-cursor);
-  cursor: var(--disabled-cursor);
   background-color: var(--disabled-bg-color);
-  background-color: var(--disabled-bg-color);
-  border-color: var(--disabled-border-color);
   border-color: var(--disabled-border-color);
 }
 .Widget[aria-invalid=true]
 {
   color: var(--invalid-color);
-  color: var(--invalid-color);
 }
 .Widget[aria-invalid=true] > .Control
 {
-  border-color: var(--invalid-color);
   border-color: var(--invalid-color);
 }
 
@@ -295,33 +274,26 @@ body
 .Button.active > .Control
 {
   background: var(--active-bg-color);
-  background: var(--active-bg-color);
 }
 .Button[aria-pressed=true]
 {
-  color: var(--checked-color);
   color: var(--checked-color);
 }
 .Button[aria-pressed=true] > .Control
 {
   background-color: var(--checked-bg-color);
-  background-color: var(--checked-bg-color);
 }
 .Button[aria-pressed=true].active > .Control
 {
-  background-color: var(--checked-active-bg-color);
   background-color: var(--checked-active-bg-color);
 }
 .Button[aria-pressed=true][aria-disabled=true] > .Control
 {
   background-color: var(--checked-disabled-bg-color);
-  background-color: var(--checked-disabled-bg-color);
 }
 .Button[aria-expanded=true].keyboard > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 
@@ -337,9 +309,7 @@ body
           user-select: none;
   outline: none;
   padding: var(--control-padding);
-  padding: var(--control-padding);
   padding-left: 0;
-  margin: var(--widget-margin);
   margin: var(--widget-margin);
 }
 .CheckBox::before
@@ -350,10 +320,7 @@ body
   padding: 9px;
   margin: 1px;
   border: var(--checkbox-control-border);
-  border: var(--checkbox-control-border);
   border-radius: var(--control-border-radius);
-  border-radius: var(--control-border-radius);
-  background: var(--control-bg-color) center center / contain no-repeat;
   background: var(--control-bg-color) center center / contain no-repeat;
 }
 .CheckBox[aria-checked=true]::before,
@@ -374,24 +341,20 @@ body
   display: inline-block;
   vertical-align: middle;
   margin: var(--checkbox-label-margin);
-  margin: var(--checkbox-label-margin);
   cursor: pointer;
 }
 .CheckBox:hover::before
 {
-  border-color: var(--hover-border-color);
   border-color: var(--hover-border-color);
 }
 .CheckBox:active::before,
 .CheckBox.active::before
 {
   background: var(--active-bg-color);
-  background: var(--active-bg-color);
 }
 .CheckBox[aria-checked=true]::before,
 .CheckBox[aria-checked=mixed]::before
 {
-  background-color: var(--checked-bg-color);
   background-color: var(--checked-bg-color);
 }
 .CheckBox[aria-checked=true]:active::before,
@@ -400,45 +363,38 @@ body
 .CheckBox[aria-checked=mixed].active::before
 {
   background-color: var(--checked-active-bg-color);
-  background-color: var(--checked-active-bg-color);
 }
 .CheckBox[aria-readonly=true]
 {
-  opacity: var(--readonly-opacity);
   opacity: var(--readonly-opacity);
 }
 .CheckBox[aria-disabled=true],
 .CheckBox[aria-disabled=true] .Label
 {
   cursor: var(--disabled-cursor);
-  cursor: var(--disabled-cursor);
-  color: var(--disabled-color);
   color: var(--disabled-color);
 }
 .CheckBox[aria-disabled=true]::before
 {
   background: var(--disabled-bg-color);
-  background: var(--disabled-bg-color);
-  border-color: var(--disabled-border-color);
   border-color: var(--disabled-border-color);
 }
 .CheckBox[aria-checked=true][aria-disabled=true]::before
 {
   background-color: var(--checked-disabled-bg-color);
-  background-color: var(--checked-disabled-bg-color);
+}
+.CheckBox[aria-invalid=true]::before
+{
+  border-color: var(--invalid-color);
 }
 .CheckBox.focus-visible::before
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .CheckBox:focus-visible::before
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 
@@ -465,7 +421,6 @@ body
   cursor: pointer;
   outline: none;
   padding: var(--control-padding-v) calc(var(--control-padding-h) * 2) var(--control-padding-v) 0;
-  padding: var(--control-padding-v) calc(var(--control-padding-h) * 2) var(--control-padding-v) 0;
 }
 .Radio::before
 {
@@ -474,8 +429,6 @@ body
   vertical-align: middle;
   padding: 10px;
   border: var(--checkbox-control-border);
-  border: var(--checkbox-control-border);
-  background: var(--control-bg-color) center center / contain no-repeat;
   background: var(--control-bg-color) center center / contain no-repeat;
   border-radius: 50%;
 }
@@ -492,63 +445,49 @@ body
   display: inline-block;
   vertical-align: middle;
   margin: var(--checkbox-label-margin);
-  margin: var(--checkbox-label-margin);
   cursor: pointer;
 }
 .Radio:hover::before
 {
-  border-color: var(--hover-border-color);
   border-color: var(--hover-border-color);
 }
 .Radio:active::before,
 .Radio.active::before
 {
   background-color: var(--active-bg-color);
-  background-color: var(--active-bg-color);
 }
 .Radio[aria-checked=true]::before
 {
-  background-color: var(--checked-bg-color);
   background-color: var(--checked-bg-color);
 }
 .Radio[aria-checked=true]:active::before,
 .Radio[aria-checked=true].active::before
 {
   background-color: var(--checked-active-bg-color);
-  background-color: var(--checked-active-bg-color);
 }
 .Radio[aria-disabled=true],
 .Radio[aria-disabled=true] .Label
 {
   cursor: var(--disabled-cursor);
-  cursor: var(--disabled-cursor);
-  color: var(--disabled-color);
   color: var(--disabled-color);
 }
 .Radio[aria-disabled=true]::before
 {
   background-color: var(--disabled-bg-color);
-  background-color: var(--disabled-bg-color);
-  border-color: var(--disabled-border-color);
   border-color: var(--disabled-border-color);
 }
 .Radio[aria-checked=true][aria-disabled=true]::before
 {
   background-color: var(--checked-disabled-bg-color);
-  background-color: var(--checked-disabled-bg-color);
 }
 .Radio.focus-visible::before
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .Radio:focus-visible::before
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 
@@ -556,26 +495,20 @@ body
 {
   display: inline-block;
   margin: var(--widget-margin);
-  margin: var(--widget-margin);
 }
 .RadioGroup[aria-disabled=true],
 .RadioGroup[aria-disabled=true] .Radio
 {
   cursor: var(--disabled-cursor);
-  cursor: var(--disabled-cursor);
-  color: var(--disabled-color);
   color: var(--disabled-color);
 }
 .RadioGroup[aria-disabled=true] .Radio::before
 {
   background: var(--disabled-bg-color);
-  background: var(--disabled-bg-color);
-  border-color: var(--disabled-border-color);
   border-color: var(--disabled-border-color);
 }
 .RadioGroup[aria-disabled=true] .Radio[aria-checked=true]::before
 {
-  background: var(--checked-disabled-bg-color);
   background: var(--checked-disabled-bg-color);
 }
 /*@media (max-width: 499px)
@@ -598,15 +531,11 @@ body
 .Composite[focus-within].keyboard > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .Composite:focus-within.keyboard > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 /*
@@ -630,7 +559,6 @@ body
   position: relative;
   cursor: pointer;
   padding: var(--control-padding);
-  padding: var(--control-padding);
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
@@ -642,18 +570,14 @@ body
 .Option.active.Item
 {
   background: var(--active-bg-color);
-  background: var(--active-bg-color);
 }
 .Option[aria-selected=true]
 {
   color: var(--checked-color);
-  color: var(--checked-color);
-  background: var(--checked-bg-color);
   background: var(--checked-bg-color);
 }
 .Option[aria-selected=true].active
 {
-  background: var(--checked-active-bg-color);
   background: var(--checked-active-bg-color);
 }
 .Option[aria-checked]
@@ -680,10 +604,7 @@ body
 .Option[aria-disabled=true]
 {
   color: var(--disabled-color);
-  color: var(--disabled-color);
   cursor: var(--disabled-cursor);
-  cursor: var(--disabled-cursor);
-  background-color: var(--control-bg-color) !important;
   background-color: var(--control-bg-color) !important;
   opacity: .5;
 }
@@ -702,7 +623,6 @@ body
           user-select: none;
   outline: none;
   margin: var(--widget-margin);
-  margin: var(--widget-margin);
   vertical-align: top;
 }
 .ListBox > .Control
@@ -713,26 +633,20 @@ body
   height: 100%;
   max-height: 400px;
   min-width: calc(var(--textbox-width) / 2);
-  min-width: calc(var(--textbox-width) / 2);
   /*max-width: 400px;*/
 }
 .ListBox[focus-within].keyboard > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .ListBox:focus-within.keyboard > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .ListBox[aria-disabled=true] .Option[aria-selected=true]:not([aria-checked])
 {
-  background: var(--checked-disabled-bg-color);
   background: var(--checked-disabled-bg-color);
 }
 .ListBox[aria-disabled=true] .Option[aria-checked=true]::before
@@ -742,13 +656,10 @@ body
 .ListBox.active .Option[aria-selected=true]
 {
   background-color: var(--checked-active-bg-color);
-  background-color: var(--checked-active-bg-color);
 }
 .ListBox .Status
 {
   padding: var(--control-padding);
-  padding: var(--control-padding);
-  color: var(--dim-color);
   color: var(--dim-color);
   cursor: default;
   text-align: center;
@@ -775,8 +686,6 @@ body
   position: relative;
   display: inline-block;
   min-width: calc(var(--textbox-width) / 2);
-  min-width: calc(var(--textbox-width) / 2);
-  max-width: var(--textbox-width);
   max-width: var(--textbox-width);
 }
 .SelectBox > .Control
@@ -795,11 +704,9 @@ body
 {
   font: 80% fusionstudio;
   color: var(--icon-color);
-  color: var(--icon-color);
   content: '\e805';
   white-space: nowrap;
   vertical-align: middle;
-  opacity: var(--icon-opacity);
   opacity: var(--icon-opacity);
   display: inline-block;
   transition: transform .2s;
@@ -808,7 +715,6 @@ body
 }
 .SelectBox.active > .Control
 {
-  background-color: var(--active-bg-color);
   background-color: var(--active-bg-color);
 }
 .SelectBox:hover > .Control::after,
@@ -833,7 +739,6 @@ body
 .TextBox
 {
   width: var(--textbox-width);
-  width: var(--textbox-width);
 }
 .TextBox > .Control
 {
@@ -851,7 +756,6 @@ body
 .TextBox .Placeholder
 {
   position: absolute;
-  color: var(--dim-color);
   color: var(--dim-color);
   display: none;
 }
@@ -884,15 +788,11 @@ body
 .TextBox[focus-within] > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .TextBox:focus-within > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .TextBox[aria-disabled=true] .ClearButton
@@ -903,15 +803,12 @@ body
 .TextBox[aria-disabled=true] .Placeholder
 {
   color: var(--disabled-color);
-  color: var(--disabled-color);
   opacity: .5;
 }
 .TextBox[aria-readonly=true] > .Control
 {
   opacity: var(--readonly-opacity);
-  opacity: var(--readonly-opacity);
   cursor: default;
-  padding-right: var(--control-padding-h);
   padding-right: var(--control-padding-h);
 }
 .TextBox[aria-readonly=true] .ClearButton
@@ -1032,11 +929,9 @@ body
 .Complex > .Control > .Widget.focus-visible
 {
   color: var(--focus-color);
-  color: var(--focus-color);
 }
 .Complex > .Control > .Widget:focus-visible
 {
-  color: var(--focus-color);
   color: var(--focus-color);
 }
 .Complex > .Control > .Widget > .Control
@@ -1071,15 +966,11 @@ body
 .Complex[focus-within].keyboard > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .Complex:focus-within.keyboard > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 
@@ -1095,14 +986,12 @@ body
   vertical-align: middle;
   box-sizing: border-box;
   padding: var(--control-padding);
-  padding: var(--control-padding);
   min-width: 50px;
   cursor: default;
 }
 .SpinButton .Button
 {
   color: rgba(0, 0, 0, .5);
-  opacity: var(--icon-opacity);
   opacity: var(--icon-opacity);
 }
 .SpinButton .Button > .Control::before
@@ -1135,32 +1024,30 @@ body
 .MenuItem
 {
   position: relative;
-  padding: var(--control-padding);
+  display: block;
   padding: var(--control-padding);
   cursor: pointer;
   outline: none;
-  padding-left: 10px;
-  color: rgba(0, 0, 0, .8);
+}
+.MenuItem:hover
+{
+  background-color: rgba(0, 0, 0, .05);
 }
 .MenuItem.focus-visible
 {
-  color: var(--focus-color);
   color: var(--focus-color);
 }
 .MenuItem:focus-visible
 {
   color: var(--focus-color);
-  color: var(--focus-color);
 }
 .MenuItem[aria-current=page]
 {
-  color: var(--checked-bg-color);
   color: var(--checked-bg-color);
   cursor: default;
 }
 .MenuItem[aria-disabled=true]
 {
-  color: var(--disabled-color);
   color: var(--disabled-color);
 }
 
@@ -1173,33 +1060,39 @@ body
       -ms-user-select: none;
           user-select: none;
   border-radius: var(--control-border-radius);
-  border-radius: var(--control-border-radius);
+}
+.Menu .Label
+{
+  padding: var(--control-padding);
+  margin: 2px 0 0 0;
+}
+.Menu .Separator
+{
+  height: 1px;
+  margin: 2px 0;
+  background-color: rgba(0, 0, 0, .1);
 }
 
 .PopupMenu
 {
   padding: 6px 0;
   background-color: var(--popup-bg-color);
-  background-color: var(--popup-bg-color);
-  box-shadow: var(--popup-box-shadow);
   box-shadow: var(--popup-box-shadow);
   z-index: 100;
 }
 
 .MenuButton > .Control
 {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: auto 1fr;
 }
 .MenuButton > .Control::after /* fixme duplicates in SelectBox, RefBox */
 {
   font: 80% fusionstudio;
   color: var(--icon-color);
-  color: var(--icon-color);
   content: '\e805';
   white-space: nowrap;
   vertical-align: middle;
-  opacity: var(--icon-opacity);
   opacity: var(--icon-opacity);
   display: inline-block;
   transition: transform .2s;
@@ -1234,7 +1127,6 @@ body
   background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M1%2C1 L11%2C11 M1%2C11 L11%2C1' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E") center center / 12px no-repeat;
   display: block;
   opacity: var(--icon-opacity);
-  opacity: var(--icon-opacity);
   cursor: pointer;
 }
 .CloseButton > .Control
@@ -1266,15 +1158,11 @@ body
 {
   overflow: auto;
   padding: var(--block-padding);
-  padding: var(--block-padding);
-  padding-top: 0;
   box-sizing: border-box;
-  border-top: var(--control-border-width) solid transparent;
   border-top: var(--control-border-width) solid transparent;
 }
 .DialogBody.scrolled
 {
-  border-color: var(--control-border-color);
   border-color: var(--control-border-color);
 }
 
@@ -1287,10 +1175,7 @@ body
   overflow: auto;
   outline: none;
   border-radius: var(--control-border-radius);
-  border-radius: var(--control-border-radius);
   background: var(--popup-bg-color);
-  background: var(--popup-bg-color);
-  box-shadow: var(--popup-box-shadow);
   box-shadow: var(--popup-box-shadow);
 }
 
@@ -1300,7 +1185,6 @@ body
   grid-template-columns: 1fr auto;
   box-sizing: border-box;
   position: relative;
-  padding: var(--block-padding);
   padding: var(--block-padding);
 }
 .DialogHead .Heading
@@ -1317,35 +1201,37 @@ body
   padding: 18px;
   background-size: 15px;
 }
+.DialogHead + .DialogBody
+{
+  padding-top: 0;
+}
 
 .Tab
 {
   display: inline-block;
   border-bottom: 3px solid transparent;
   margin: 0 var(--widget-margin);
-  margin: 0 var(--widget-margin);
   padding: 8px 0;
-  color: var(--dim-color);
   color: var(--dim-color);
   background-color: #fff;
 }
 .Tab[aria-selected=true]
 {
-  border-color: var(--checked-bg-color);
-  border-color: var(--checked-bg-color);
+  border-color: #000;
   cursor: default;
   color: var(--color);
-  color: var(--color);
   z-index: 1;
+}
+.Tab[aria-selected=true]:focus
+{
+  border-color: var(--checked-bg-color);
 }
 .Tab.focus-visible
 {
   color: var(--focus-color);
-  color: var(--focus-color);
 }
 .Tab:focus-visible
 {
-  color: var(--focus-color);
   color: var(--focus-color);
 }
 
@@ -1353,7 +1239,6 @@ body
 {
   display: block;
   margin: 0;
-  border-bottom: var(--control-border);
   border-bottom: var(--control-border);
 }
 /*.TabList::after
@@ -1371,7 +1256,6 @@ body
 {
   font: inherit;
   color: var(--color);
-  color: var(--color);
   padding: 0;
   border: none;
   background-color: transparent;
@@ -1384,16 +1268,13 @@ body
 .TextInput::-moz-placeholder
 {
   color: var(--dim-color);
-  color: var(--dim-color);
 }
 .TextInput:-ms-input-placeholder
 {
   color: var(--dim-color);
-  color: var(--dim-color);
 }
 .TextInput::placeholder
 {
-  color: var(--dim-color);
   color: var(--dim-color);
 }
 /*.TextInput::-webkit-inner-spin-button,
@@ -1405,7 +1286,6 @@ body
 
 .TextInputBox
 {
-  width: var(--textbox-width);
   width: var(--textbox-width);
 }
 .TextInputBox > .Control
@@ -1420,15 +1300,11 @@ body
 .TextInputBox[focus-within] > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .TextInputBox:focus-within > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 
@@ -1456,27 +1332,21 @@ body
 {
   display: inline-block;
   color: var(--dim-color);
-  color: var(--dim-color);
   vertical-align: middle;
 }
 .NumberRangeBox[focus-within] > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .NumberRangeBox:focus-within > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 
 .TimeBox
 {
-  min-width: calc(var(--textbox-width) / 2);
   min-width: calc(var(--textbox-width) / 2);
   width: auto;
 }
@@ -1491,8 +1361,6 @@ body
   content: '\e81c';
   align-self: center;
   color: var(--icon-color);
-  color: var(--icon-color);
-  opacity: var(--icon-opacity);
   opacity: var(--icon-opacity);
 }
 .TimeBox:hover > .Control::after,
@@ -1510,6 +1378,29 @@ body
   min-width: 40px;
 }
 
+.Label
+{
+  display: block;
+  color: var(--dim-color);
+  font-size: .8rem;
+  margin: 0 0 2px 0;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+[aria-disabled=true] > .Label,
+.disabled > .Label
+{
+  opacity: .5;
+}
+/*[aria-required=true] > .Label::after,
+.required > .Label::after
+{
+  content: '*'
+}*/
+
 .TimeRangeListBox
 {
   width: 150px;
@@ -1526,7 +1417,7 @@ body
 {
   display: block;
   width: 100%;
-  height: 10px;
+  height: 12px;
   margin: 0;
   padding: 0;
   border-top: 1px solid #000;
@@ -1534,6 +1425,7 @@ body
   position: relative;
   box-sizing: content-box;
   overflow: visible;
+  cursor: crosshair;
 }
 .TimeRangeListBox .Option .Label
 {
@@ -1556,14 +1448,33 @@ body
 {
   opacity: 0;
 }
-.TimeRangeListBox .Option:last-child
+/*.TimeRangeListBox .Option:last-child
 {
   height: 0;
   padding: 0;
+}*/
+.TimeRangeListBox .Option:last-child
+{
+  border-bottom: 1px solid #000;
 }
 .TimeRangeListBox .Option[aria-selected=true]
 {
   color: #000;
+}
+@media (max-width: 499px)
+{
+  .TimeRangeListBox
+  {
+    height: calc(100vh - 40px);
+  }
+  .TimeRangeListBox > .Control
+  {
+    display: grid;
+  }
+  .TimeRangeListBox .Option
+  {
+    height: auto;
+  }
 }
 
 .TimeRangeBox
@@ -1573,7 +1484,6 @@ body
 }
 .TimeRangeBox .Dash
 {
-  color: var(--dim-color);
   color: var(--dim-color);
 }
 .TimeRangeBox .Dash::before,
@@ -1612,15 +1522,11 @@ body
 .DurationBox[focus-within] > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .DurationBox:focus-within > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 
@@ -1629,7 +1535,6 @@ body
   color: rgba(0, 0, 0, .5);
   width: 1.8em;
   margin: 0;
-  opacity: var(--icon-opacity);
   opacity: var(--icon-opacity);
 }
 .ClearButton > .Control
@@ -1645,12 +1550,10 @@ body
 .ClearButton:hover
 {
   opacity: var(--icon-hover-opacity);
-  opacity: var(--icon-hover-opacity);
 }
 .ClearButton.active > .Control,
 .ClearButton[aria-disabled=true] > .Control
 {
-  background-color: var(--control-bg-color);
   background-color: var(--control-bg-color);
 }
 .ClearButton[aria-disabled=true]
@@ -1683,7 +1586,6 @@ body
 .DateGrid .ColumnHeader
 {
   color: var(--dim-color);
-  color: var(--dim-color);
   font-size: .6em;
   text-transform: uppercase;
 }
@@ -1694,18 +1596,14 @@ body
 .DateGrid .DateCell:focus
 {
   color: var(--focus-color);
-  color: var(--focus-color);
 }
 .DateGrid .DateCell[aria-selected=true]
 {
   color: var(--checked-color);
-  color: var(--checked-color);
-  background: var(--checked-bg-color);
   background: var(--checked-bg-color);
 }
 .DateGrid .DateCell[aria-current=date]
 {
-  border-color: var(--focus-border-color);
   border-color: var(--focus-border-color);
 }
 .DateGrid .DateCell:not(.current)
@@ -1714,7 +1612,6 @@ body
 }
 .DateGrid .DateCell[aria-disabled=true]
 {
-  color: var(--disabled-color);
   color: var(--disabled-color);
   cursor: default;
   opacity: .3;
@@ -1734,11 +1631,9 @@ body
 {
   color: rgba(0, 0, 0, .5);
   opacity: var(--icon-opacity);
-  opacity: var(--icon-opacity);
 }
 .MonthYearBox .Button:hover
 {
-  opacity: var(--icon-hover-opacity);
   opacity: var(--icon-hover-opacity);
 }
 .MonthYearBox .Button > .Control::before
@@ -1777,7 +1672,6 @@ body
   opacity: .8;
   padding: 4px 10px;
   color: var(--dim-color);
-  color: var(--dim-color);
 }
 .TodayButton > .Control
 {
@@ -1803,7 +1697,6 @@ body
 .DatePicker.active > .Control
 {
   background-color: var(--control-bg-color);
-  background-color: var(--control-bg-color);
 }
 .DatePicker .MonthYearBox
 {
@@ -1825,7 +1718,6 @@ body
 .DateBox
 {
   min-width: var(--textbox-width);
-  min-width: var(--textbox-width);
 }
 .DateBox > .Control
 {
@@ -1839,17 +1731,14 @@ body
   content: '\e818';
   align-self: center;
   opacity: var(--icon-opacity);
-  opacity: var(--icon-opacity);
   margin-left: 8px;
 }
 .DateBox:hover > .Control::after
 {
   opacity: var(--icon-hover-opacity);
-  opacity: var(--icon-hover-opacity);
 }
 .DateBox.active > .Control
 {
-  background-color: var(--active-bg-color);
   background-color: var(--active-bg-color);
 }
 .DateBox .ClearButton
@@ -1888,7 +1777,6 @@ body
 .DateTimeBox > .Control > .Widget > .Control
 {
   padding: var(--control-padding);
-  padding: var(--control-padding);
 }
 .DateTimeBox > .Control > .Widget > .Control::after
 {
@@ -1915,15 +1803,11 @@ body
 .IntervalBox[focus-within] > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .IntervalBox:focus-within > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 
@@ -1934,15 +1818,11 @@ body
 .DurationGroupBox[focus-within] > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 .DurationGroupBox:focus-within > .Control
 {
   border-color: var(--focus-border-color);
-  border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
   box-shadow: var(--focus-box-shadow);
 }
 
@@ -1959,7 +1839,6 @@ body
 .DateTimeRangeBox > .Control > .Widget > .Control
 {
   padding: var(--control-padding);
-  padding: var(--control-padding);
 }
 .DateTimeRangeBox > .Control > .Widget > .Control::after
 {
@@ -1975,7 +1854,6 @@ body
 }
 .DateTimeRangeBox .Dash
 {
-  color: var(--dim-color);
   color: var(--dim-color);
   vertical-align: middle;
 }
