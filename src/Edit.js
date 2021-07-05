@@ -11,7 +11,7 @@ export class Edit extends HtmlDiv
   init(init) {
     super.init(init)
     this.tabIndex = 0
-    this.contentEditable = 'plaintext-only'
+    this.contentEditable = 'true'
     this.on('paste', this.onPaste)
   }
 
@@ -41,7 +41,7 @@ export class Edit extends HtmlDiv
    */
   set disabled(disabled) {
     this._disabled = disabled
-    this.contentEditable = disabled? 'false' : 'plaintext-only'
+    this.contentEditable = String(!disabled)
     this.tabIndex = disabled? null : 0
   }
 
@@ -57,7 +57,7 @@ export class Edit extends HtmlDiv
    */
   set readOnly(readOnly) {
     this._readOnly = readOnly
-    this.contentEditable = readOnly? 'false' : 'plaintext-only'
+    this.contentEditable = String(!readOnly)
   }
 
   /**
