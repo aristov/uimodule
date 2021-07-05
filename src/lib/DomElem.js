@@ -456,6 +456,8 @@ export class DomElem extends DomNode
       selectorOrContext = this.selector
     }
     return map.call(context.querySelectorAll(selectorOrContext), node => {
+      const instance = DomElem.__storage.get(node)
+      instance && instance.destroy(true)
       return new this({ node })
     })
   }
