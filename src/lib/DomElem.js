@@ -422,64 +422,6 @@ export class DomElem extends DomNode
     return this.doc.win
   }
 
-
-  get about() {
-    return this.getAttr('about')
-  }
-
-  set about(about) {
-    this.setAttr('about', about)
-  }
-
-  get content() {
-    return this.getAttr('content')
-  }
-
-  set content(content) {
-    this.setAttr('content', content)
-  }
-
-  get dataType() {
-    return this.getAttr('datatype')
-  }
-
-  set dataType(dataType) {
-    this.setAttr('datatype', dataType)
-  }
-
-  get property() {
-    return this.getAttr('property')
-  }
-
-  set property(property) {
-    this.setAttr('property', property)
-  }
-
-  get rel() {
-    return this.getAttr('rel')
-  }
-
-  set rel(rel) {
-    this.setAttr('rel', rel)
-  }
-
-  get resource() {
-    return this.getAttr('resource')
-  }
-
-  set resource(resource) {
-    this.setAttr('resource', resource)
-  }
-
-  get typeOf() {
-    return this.getAttr('typeof')
-  }
-
-  set typeOf(typeOf) {
-    this.setAttr('typeof', typeOf)
-  }
-
-
   /**
    * @param {array.(string|constructor)} attrs
    */
