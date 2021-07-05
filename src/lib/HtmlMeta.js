@@ -6,6 +6,20 @@ import { HtmlElem } from './HtmlElem'
 export class HtmlMeta extends HtmlElem
 {
   /**
+   * @param {string} charset
+   */
+  set charset(charset) {
+    this.setAttr('charset', charset)
+  }
+
+  /**
+   * @returns {string}
+   */
+  get charset() {
+    return this.getAttr('charset')
+  }
+
+  /**
    * @param {string} httpEquiv
    */
   set httpEquiv(httpEquiv) {
