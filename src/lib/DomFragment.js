@@ -17,5 +17,6 @@ export class DomFragment extends DomNode
       init.node = new DocumentFragment
     }
     super.create(init)
+    DomFragment.__storage.delete(this.node)
   }
 }
