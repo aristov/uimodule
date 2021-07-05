@@ -1,8 +1,7 @@
 const path = require('path')
-const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssoPlugin = require('csso-webpack-plugin').default
 
+exports.mode = 'none'
 exports.context = path.join(__dirname, 'docs')
 exports.entry = {
   index : './index.js'
@@ -12,7 +11,6 @@ exports.output = {
   publicPath : '/',
   filename : '[name].bundle.js',
 }
-exports.mode = 'none'
 exports.module = {
   rules : [
     {
@@ -44,35 +42,6 @@ exports.module = {
 exports.externals = {
   'moment' : 'moment',
 }
-/*exports.module.rules.push({
-  test : /\.js$/,
-  use : {
-    loader : 'babel-loader',
-    options : {
-      presets : [
-        [
-          '@babel/preset-env',
-          {
-            modules : false,
-          },
-        ],
-      ],
-    },
-  },
-})*/
-/*exports.optimization = {
-  minimize : true,
-  minimizer : [
-    new TerserPlugin({
-      terserOptions : {
-        keep_fnames : true,
-      },
-    }),
-  ],
-}*/
 exports.plugins = [
-  new MiniCssExtractPlugin({
-    filename : '[name].bundle.css',
-  }),
-  // new CssoPlugin,
+  new MiniCssExtractPlugin({ filename : '[name].bundle.css' }),
 ]
