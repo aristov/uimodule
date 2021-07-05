@@ -150,6 +150,20 @@ export class HtmlElem extends DomElem
   }
 
   /**
+   * @param {string} role
+   */
+  set role(role) {
+    this.setAttr('role', role)
+  }
+
+  /**
+   * @returns {string}
+   */
+  get role() {
+    return this.getAttr('role')
+  }
+
+  /**
    * @param {*} style {string|{}}
    */
   set style(style) {
