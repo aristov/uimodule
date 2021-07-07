@@ -89,10 +89,8 @@ export class Dialog extends RoleDialog
     this.node.tabIndex = -1
     this.focus()
     if(pending.length) {
-      this.busy = true
       Promise.all(pending.map(({ promise }) => promise))
       .then(() => this.setFocus())
-      .finally(() => this.busy = false)
     }
   }
 
