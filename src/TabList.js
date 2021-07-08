@@ -116,6 +116,13 @@ export class TabList extends Composite
   }
 
   /**
+   * @return {TabPanel[]}
+   */
+  get panels() {
+    return this.tabs.map(tab => tab.panel)
+  }
+
+  /**
    * @returns {boolean}
    */
   static get abstract() {
