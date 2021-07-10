@@ -57,38 +57,3 @@ export default () => {
     }),
   ]
 }
-
-/*import { CancelButton } from './CancelButton'
-import { FootGroup } from './FootGroup'
-import { Form } from './Form'
-import { ModalDialog } from './ModalDialog'
-import { UserBadge } from './UserBadge'
-import data from '../data/userdata'
-
-new AppMain({
-  parent : document.body,
-  children : [
-    new DialogButton({
-      dialog : new ModalDialog({
-        children : new Form({
-          label : new Heading('Выход'),
-          children : [
-            new UserBadge({
-              data : data[0]
-            }),
-            new FootGroup([
-              new Button({
-                onclick : event => location.reload(),
-                children : 'Выйти'
-              }),
-              new CancelButton('Отмена')
-            ]),
-            new CloseButton
-          ]
-        })
-      }),
-      children : 'Выход'
-    })
-  ]
-})*/
-
