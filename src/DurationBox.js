@@ -28,6 +28,7 @@ export class DurationBox extends Complex
         value : this._unit = init.unit || units[0],
         // onchange : this.onUnitBoxChange.bind(this),
         options : units.map(value => ({ value })),
+        required : true,
       }),
     ])
   }
@@ -72,6 +73,22 @@ export class DurationBox extends Complex
       this._numberBox.step = moment.duration(+step, this._unit).as(unit)
     }
     this._unit = unit
+  }
+
+  get min() {
+    return moment.duration(this._numberBox.min, this._unit).toISOString()
+  }
+
+  set min(min) {
+    this._numberBox.min = moment.duration(min).as(this._unit)
+  }
+
+  get max() {
+    return moment.duration(this._numberBox.max, this._unit).toISOString()
+  }
+
+  set max(max) {
+    this._numberBox.max = moment.duration(max).as(this._unit)
   }
 
   /**
