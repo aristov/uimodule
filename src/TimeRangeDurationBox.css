@@ -1,0 +1,12 @@
+.TimeRangeDurationBox .TimeRangeBox
+{
+  min-width: 120px;
+}
+.TimeRangeDurationBox .DurationBox .SelectBox
+{
+  min-width: 50px;
+}
+.TimeRangeDurationBox .SelectBox > .Control::after
+{
+  display: none;
+}
