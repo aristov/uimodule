@@ -1,7 +1,7 @@
 .RadioGroup
 {
   display: inline-block;
-  margin: var(--widget-margin);
+  /*margin: var(--widget-margin);*/
 }
 .RadioGroup[aria-disabled=true],
 .RadioGroup[aria-disabled=true] .Radio
