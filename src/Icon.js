@@ -10,6 +10,6 @@ export class Icon extends HtmlSpan
   }
 
   build({ name }) {
-    this.classList.add(PREFIX + name)
+    name && this.classList.add(PREFIX + name)
   }
 }
