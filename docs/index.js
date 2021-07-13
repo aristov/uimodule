@@ -35,6 +35,7 @@ new Showcase({
 
     require('../src/DateTimeBox.test').default(),
     require('../src/DateTimeRangeBox.test').default(),
+    require('../src/Icon.test').default(),
   ]
   .map(test => test instanceof Test? test : new Test(test))
 })
