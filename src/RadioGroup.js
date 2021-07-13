@@ -1,3 +1,4 @@
+import './labels'
 import { AriaChecked, AriaDisabled, RoleRadio, RoleRadioGroup } from './lib'
 import { Radio } from './Radio'
 import './RadioGroup.css'

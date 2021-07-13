@@ -1,3 +1,4 @@
+import './labels'
 import { RoleWidget } from './lib'
 import './Widget.css'
 

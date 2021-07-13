@@ -1,5 +1,3 @@
-import './labels'
-
 export * from './lib'
 export * from './Button'
 export * from './CheckBox'
