@@ -12,7 +12,7 @@
 }
 .ClearButton > .Control::before
 {
-  font-family: 'fusionstudio';
+  font-family: fontawesome;
   content: '\e800';
 }
 .ClearButton:hover

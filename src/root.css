@@ -1,14 +1,4 @@
-@font-face
-{
-  font-family: 'fusionstudio';
-  src: url('./fontello/font/fusionstudio.eot?64655622');
-
-  src: url('./fontello/font/fusionstudio.woff2?64655622') format('woff2'),
-  url('./fontello/font/fusionstudio.woff?64655622') format('woff');
-
-  font-weight: normal;
-  font-style: normal;
-}
+@import 'icons/css/fontawesome.css';
 
 :root
 {

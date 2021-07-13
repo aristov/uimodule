@@ -33,7 +33,7 @@
 }
 .Option[aria-checked]::before
 {
-  font-family: 'fusionstudio';
+  font-family: fontawesome;
   content: '\e801';
   align-self: center;
   opacity: 0;

@@ -9,7 +9,7 @@
 }
 .MonthYearBox .Button > .Control::before
 {
-  font-family: fusionstudio;
+  font-family: fontawesome;
 }
 .MonthYearBox .DecrButton > .Control::before
 {

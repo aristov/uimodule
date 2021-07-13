@@ -19,7 +19,7 @@
 }
 .SelectBox > .Control::after /* fixme duplicates in RefBox, MenuButton */
 {
-  font: 80% fusionstudio;
+  font: 80% fontawesome;
   color: var(--icon-color);
   content: '\e805';
   white-space: nowrap;

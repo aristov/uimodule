@@ -10,7 +10,7 @@
 }
 .DateBox > .Control::after
 {
-  font: .9em fusionstudio;
+  font: .9em fontawesome;
   content: '\e818';
   align-self: center;
   opacity: var(--icon-opacity);

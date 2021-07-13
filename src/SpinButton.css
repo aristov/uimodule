@@ -20,7 +20,7 @@
 }
 .SpinButton .Button > .Control::before
 {
-  font-family: fusionstudio;
+  font-family: fontawesome;
   vertical-align: middle;
 }
 .SpinButton .Button:first-child > .Control::before
