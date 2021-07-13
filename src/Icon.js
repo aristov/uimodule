@@ -1,5 +1,5 @@
 import { HtmlSpan } from './lib'
-import './icons/css/fontawesome.css'
+import './Icon.css'
 
 const PREFIX = 'Icon_'
 
