@@ -58,13 +58,6 @@
   --doc-padding: 10px;
 }
 
-body
-{
-  color: var(--color);
-  font-family: Arial, sans-serif;
-  min-width: 320px;
-  margin: 10px;
-}
 [aria-hidden=true]
 {
   display: none;

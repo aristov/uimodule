@@ -1,5 +1,5 @@
-import 'focus-visible'
 import '../src/root.css'
+import './index.css'
 import { Showcase } from '../src/Showcase'
 import { Test } from '../src/Test'
 
