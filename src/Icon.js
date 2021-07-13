@@ -1,4 +1,4 @@
-import { HtmlSpan } from 'uimodule'
+import { HtmlSpan } from './lib'
 import './icons/css/fontawesome.css'
 
 const PREFIX = 'Icon_'
