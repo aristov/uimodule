@@ -4,23 +4,28 @@
   top: 0;
   right: 0;
   margin: 0;
-  width: 0;
-  height: 0;
-  min-width: auto;
-  padding: 16px;
-  background: url(images/CrossIcon_black.svg) center center / 12px no-repeat;
-  display: block;
   opacity: var(--icon-opacity);
-  cursor: pointer;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, .5);
 }
 .CloseButton > .Control
 {
-  display: none;
+  border: none;
+  padding: var(--control-padding-v) 9px;
+}
+.CloseButton > .Control::before
+{
+  font-family: fontawesome;
+  content: '\e800';
+}
+.CloseButton.active > .Control
+{
+  background: transparent;
 }
 .CloseButton:hover,
 .CloseButton:focus-visible
 {
-  opacity: .7;
+  opacity: var(--icon-hover-opacity);
   box-shadow: none;
   border: none;
   background-color: transparent;

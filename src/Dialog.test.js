@@ -13,6 +13,26 @@ export default () => {
     new DialogButton({
       dialog : new Dialog({
         children : [
+          new DialogBody([
+            new Heading('Hello!'),
+            new TextBox({
+              labels : 'Say something',
+            }),
+            new Button({
+              onclick : (event, elem) => {
+                elem.closest(Dialog).open = false
+              },
+              text : 'Close',
+            }),
+          ]),
+          new CloseButton,
+        ],
+      }),
+      children : 'Simple dialog',
+    }),
+    new DialogButton({
+      dialog : new Dialog({
+        children : [
           new DialogHead([
             new Heading('Hello!'),
             new CloseButton,

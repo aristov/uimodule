@@ -17,8 +17,7 @@
 {
   align-self: center;
   position: relative;
-  padding: 18px;
-  background-size: 15px;
+  font-size: 1.3rem;
 }
 .DialogHead + .DialogBody
 {
