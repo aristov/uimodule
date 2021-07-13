@@ -13,12 +13,13 @@
 .CloseButton > .Control
 {
   border: none;
-  padding: var(--control-padding-v) 9px;
+  padding: 5px;
 }
 .CloseButton > .Control::before
 {
   font-family: 'fontawesome';
   content: '\e800';
+  margin: 0 .2em;
 }
 .CloseButton.active > .Control
 {
