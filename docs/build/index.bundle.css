@@ -607,7 +607,7 @@ body
 }
 .Option[aria-checked]::before
 {
-  font-family: fontawesome;
+  font-family: 'fontawesome';
   content: '\e801';
   align-self: center;
   opacity: 0;
@@ -1019,7 +1019,7 @@ body
 }
 .SpinButton .Button > .Control::before
 {
-  font-family: fontawesome;
+  font-family: 'fontawesome';
   vertical-align: middle;
 }
 .SpinButton .Button:first-child > .Control::before
@@ -1154,7 +1154,7 @@ body
 }
 .CloseButton > .Control::before
 {
-  font-family: fontawesome;
+  font-family: 'fontawesome';
   content: '\e800';
 }
 .CloseButton.active > .Control
@@ -1388,7 +1388,7 @@ body
 }
 .TimeBox > .Control::after
 {
-  font-family: fontawesome;
+  font-family: 'fontawesome';
   content: '\e81c';
   align-self: center;
   color: var(--icon-color);
@@ -1552,7 +1552,7 @@ body
 }
 .ClearButton > .Control::before
 {
-  font-family: fontawesome;
+  font-family: 'fontawesome';
   content: '\e800';
 }
 .ClearButton:hover
@@ -1646,7 +1646,7 @@ body
 }
 .MonthYearBox .Button > .Control::before
 {
-  font-family: fontawesome;
+  font-family: 'fontawesome';
 }
 .MonthYearBox .DecrButton > .Control::before
 {
@@ -1866,163 +1866,6 @@ body
   vertical-align: middle;
 }
 
-
-.MenuItemAnchor
-{
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (max-width: 499px)
-{
-  .ModalDialog
-  {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 0;
-  }
-}
-
-.SvgIcon
-{
-  background: center center / contain no-repeat;
-  display: inline-block;
-  line-height: 0;
-}
-.SvgIcon svg
-{
-  width: 100%;
-  height: 100%;
-}
-
-.SubmitButton
-{
-  color: #fff;
-  min-width: var(--button-width);
-}
-.SubmitButton > .Control
-{
-  background-color: #0a8;
-  border-color: transparent;
-}
-.SubmitButton.focus-visible,
-.SubmitButton:hover:not([aria-disabled=true])
-{
-  color: #fff;
-}
-.SubmitButton:focus-visible,
-.SubmitButton:hover:not([aria-disabled=true])
-{
-  color: #fff;
-}
-.SubmitButton.focus-visible > .Control,
-.SubmitButton:hover:not([aria-disabled=true]) > .Control
-{
-  background-color: #0a0;
-  border-color: transparent !important;
-  box-shadow: none !important;
-}
-.SubmitButton:focus-visible > .Control,
-.SubmitButton:hover:not([aria-disabled=true]) > .Control
-{
-  background-color: #0a0;
-  border-color: transparent !important;
-  box-shadow: none !important;
-}
-.SubmitButton.active > .Control
-{
-  background-color: #1b1;
-}
-.SubmitButton > .SvgIcon
-{
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' stroke-width='10' stroke='%2367C0FF' stroke-linecap='round' stroke-dasharray='252' stroke-dashoffset='0' transform='rotate%280%2C 50%2C 50%29' fill-opacity='0'%3E%3Canimate attributeName='stroke-dashoffset' values='252%3B0%3B-252' dur='2s' repeatCount='indefinite'/%3E%3CanimateTransform attributeName='transform' type='rotate' from='0%2C 50%2C 50' to='360%2C 50%2C 50' dur='1.5s' repeatCount='indefinite'/%3E%3C/circle%3E%3C/svg%3E");
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: none;
-}
-.SubmitButton > .SvgIcon circle
-{
-  stroke: #fff;
-}
-
-.TimeRangeDurationBox .TimeRangeBox
-{
-  min-width: 120px;
-}
-.TimeRangeDurationBox .DurationBox .SelectBox
-{
-  min-width: 50px;
-}
-.TimeRangeDurationBox .SelectBox > .Control::after
-{
-  display: none;
-}
-
-@font-face {
-  font-family: 'fontawesome';
-  src: url(fonts/fontawesome.eot);
-  src: url(fonts/fontawesome.eot#iefix) format('embedded-opentype'),
-       url(fonts/fontawesome.woff2) format('woff2'),
-       url(fonts/fontawesome.woff) format('woff'),
-       url(fonts/fontawesome.ttf) format('truetype'),
-       url(fonts/fontawesome.svg#fontawesome) format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'fontawesome';
-    src: url('../font/fontawesome.svg?19528365#fontawesome') format('svg');
-  }
-}
-*/
-[class^="Icon_"]:before, [class*=" Icon_"]:before {
-  font-family: "fontawesome";
-  font-style: normal;
-  font-weight: normal;
-  speak: never;
-
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center;
-  /* opacity: .8; */
-
-  /* For safety - reset parent styles, that can break glyph codes*/
-  font-feature-settings: normal;
-  font-variant: normal;
-  text-transform: none;
-
-  /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
-
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
-  margin-left: .2em;
-
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-
-  /* Font smoothing. That was taken from TWBS */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-}
 
 .Icon_star:before { content: '\2665'; } /* '♥' */
 .Icon_cancel:before { content: '\e800'; } /* '' */
@@ -2699,4 +2542,26 @@ body
 .Icon_twitter-squared:before { content: '\f304'; } /* '' */
 .Icon_facebook-squared:before { content: '\f308'; } /* '' */
 .Icon_linkedin-squared:before { content: '\f30c'; } /* '' */
+
+.Icon
+{
+  display: inline-block;
+}
+.Icon::before
+{
+  font-family: 'fontawesome';
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+  font-feature-settings: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
