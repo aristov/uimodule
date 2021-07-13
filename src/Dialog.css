@@ -10,3 +10,7 @@
   background: var(--popup-bg-color);
   box-shadow: var(--popup-box-shadow);
 }
+.Dialog .Heading
+{
+  margin: var(--widget-margin);
+}
