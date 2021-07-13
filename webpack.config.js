@@ -4,12 +4,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 exports.mode = 'none'
 exports.context = path.join(__dirname, 'docs')
 exports.entry = {
-  index : './index.js'
+  index : './index.js',
 }
 exports.output = {
   path : path.join(__dirname, 'docs/build'),
-  publicPath : '/',
+  publicPath : '',
   filename : '[name].bundle.js',
+  assetModuleFilename : 'fonts/[base]',
 }
 exports.module = {
   rules : [
@@ -27,20 +28,14 @@ exports.module = {
       ],
     },
     {
-      test : /\.(png|jpg|gif|ttf|woff|woff2|eot)$/,
-      loader : 'url-loader',
-      options : {
-        limit : 20480,
-      },
-    },
-    {
-      test : /\.svg$/,
-      loader : 'raw-loader',
+      test : /\.(eot|svg|ttf|woff|woff2)$/,
+      type : 'asset/resource',
     },
   ],
 }
 exports.externals = {
   'moment' : 'moment',
+  'window' : 'window',
 }
 exports.plugins = [
   new MiniCssExtractPlugin({ filename : '[name].bundle.css' }),
