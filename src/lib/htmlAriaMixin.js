@@ -75,7 +75,7 @@ export function htmlAriaMixin(constructor) {
       },
       set(value) {
         this.setAttr(type, value)
-      }
+      },
     })
   }
 }

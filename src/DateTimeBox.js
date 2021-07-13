@@ -30,7 +30,7 @@ export class DateTimeBox extends Complex
         title : 'Очистить',
         disabled : true,
         widget : this,
-      })
+      }),
     ])
   }
 

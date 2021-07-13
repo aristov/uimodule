@@ -169,5 +169,5 @@ Role.defineGetters([
   'offsetLeft',
   'offsetTop',
   'offsetWidth',
-  'offsetHeight'
+  'offsetHeight',
 ])

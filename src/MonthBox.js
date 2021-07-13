@@ -10,7 +10,7 @@ export class MonthBox extends SelectBox
       const month = moment(i + 1, 'M')
       return new Option({
         value : month.format('MM'),
-        children : month.format('MMMM')
+        children : month.format('MMMM'),
       })
     })
   }

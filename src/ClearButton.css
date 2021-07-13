@@ -14,7 +14,7 @@
 }
 .ClearButton > .Control::before
 {
-  font-family: fontawesome;
+  font-family: 'fontawesome';
   content: '\e800';
 }
 .ClearButton:hover

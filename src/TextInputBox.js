@@ -47,7 +47,7 @@ const names = [
   'min',
   'max',
   'step',
-  'placeholder'
+  'placeholder',
 ]
 for(const name of names) {
   const descriptor = Object.getOwnPropertyDescriptor(HtmlInput.prototype, name)

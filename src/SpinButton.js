@@ -25,14 +25,14 @@ export class SpinButton extends Complex
         tabIndex : null,
         onmousedown : () => {
           this._decrButton.disabled || this._startTimeout(() => this.decrement())
-        }
+        },
       }),
       this._inner = new Inner,
       this._incrButton = new Button({
         tabIndex : null,
         onmousedown : () => {
           this._incrButton.disabled || this._startTimeout(() => this.increment())
-        }
+        },
       }),
     ])
   }
@@ -120,7 +120,7 @@ export class SpinButton extends Complex
     this.valueNow = NaN
     this.emit('change')
   }
-  
+
   updateState() {
     const { disabled, valueNow } = this
     this._decrButton.disabled = disabled || !isNaN(valueNow) && valueNow <= this.valueMin

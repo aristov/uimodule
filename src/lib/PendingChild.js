@@ -49,7 +49,8 @@ export class PendingChild extends HtmlDiv
    * @param {boolean} [keepNode = false]
    */
   destroy(keepNode = false) {
-    this.onResolve = this.onReject = () => {}
+    this.onResolve = this.onReject = () => {
+    }
     super.destroy(keepNode)
   }
 }

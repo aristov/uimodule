@@ -10,17 +10,17 @@ export default () => {
         new Radio({
           checked : true,
           value : '-1',
-          labels : 'This event only'
+          labels : 'This event only',
         }),
         new Radio({
           value : '1',
-          labels : 'This and all the following'
+          labels : 'This and all the following',
         }),
         new Radio({
           value : '0',
-          labels : 'No more repeats'
-        })
-      ]
-    })
+          labels : 'No more repeats',
+        }),
+      ],
+    }),
   ]
 }

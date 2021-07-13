@@ -19,7 +19,7 @@ export class AttrType
       },
       set(value) {
         this.setAttr(attr, value)
-      }
+      },
     })
   }
 

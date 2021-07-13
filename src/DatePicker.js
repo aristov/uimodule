@@ -14,15 +14,15 @@ export class DatePicker extends Widget
     return new Control([
       this._monthYearBox = new MonthYearBox({
         required : true,
-        onchange : event => this.onMonthYearBoxChange(event)
+        onchange : event => this.onMonthYearBoxChange(event),
       }),
       this._todayButton = new TodayButton({
         onclick : this.onShortcutButtonClick.bind(this),
-        children : 'today'
+        children : 'today',
       }),
       this._grid = new DateGrid({
-        onchange : event => this.onGridChange(event)
-      })
+        onchange : event => this.onGridChange(event),
+      }),
     ])
   }
 

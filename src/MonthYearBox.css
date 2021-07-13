@@ -11,7 +11,7 @@
 }
 .MonthYearBox .Button > .Control::before
 {
-  font-family: fontawesome;
+  font-family: 'fontawesome';
 }
 .MonthYearBox .DecrButton > .Control::before
 {

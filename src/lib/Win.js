@@ -54,7 +54,7 @@ export class Win extends DomTarget
    */
   static async getJson(url) {
     return this.fetchJson(url, {
-      headers : { 'Accept' : JSON_MIME_TYPE }
+      headers : { 'Accept' : JSON_MIME_TYPE },
     })
   }
 
@@ -68,8 +68,8 @@ export class Win extends DomTarget
       method : 'POST',
       headers : {
         'Accept' : JSON_MIME_TYPE,
-        'Content-Type' : JSON_MIME_TYPE
-      }
+        'Content-Type' : JSON_MIME_TYPE,
+      },
     }
     if(typeof data !== 'undefined') {
       init.body = JSON.stringify(data)

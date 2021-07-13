@@ -12,7 +12,7 @@
 }
 .TimeBox > .Control::after
 {
-  font-family: fontawesome;
+  font-family: 'fontawesome';
   content: '\e81c';
   align-self: center;
   color: var(--icon-color);

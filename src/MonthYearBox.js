@@ -19,14 +19,14 @@ export class MonthYearBox extends Complex
         onclick : event => this.shiftMonth('add'),
       }),
       this._monthBox = new MonthBox({
-        text : '____'
+        text : '____',
       }),
       this._yearBox = new TextInputBox({
         type : 'number',
         value : moment().format('YYYY'),
         min : 1970,
-        max : 2100
-      })
+        max : 2100,
+      }),
     ])
   }
 

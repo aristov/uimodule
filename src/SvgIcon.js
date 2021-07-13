@@ -8,7 +8,7 @@ export class SvgIcon extends HtmlSpan
     this.doc.on(this, this.onDocThis, {
       context : this,
       subtree : true,
-      removedNodes : false
+      removedNodes : false,
     })
   }
 

@@ -85,7 +85,7 @@ const handler = {
   getOwnPropertyDescriptor() {
     return {
       configurable : true,
-      enumerable : true
+      enumerable : true,
     }
-  }
+  },
 }

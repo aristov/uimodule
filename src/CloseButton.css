@@ -17,7 +17,7 @@
 }
 .CloseButton > .Control::before
 {
-  font-family: fontawesome;
+  font-family: 'fontawesome';
   content: '\e800';
 }
 .CloseButton.active > .Control

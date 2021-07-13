@@ -8,6 +8,6 @@ if(window.DragEvent && !DragEvent.prototype.clipboardData && window.clipboardDat
      */
     get() {
       return window.clipboardData
-    }
+    },
   })
 }

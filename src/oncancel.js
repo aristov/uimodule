@@ -23,6 +23,6 @@ if(!HTMLElement.prototype.hasOwnProperty('oncancel')) {
      */
     get() {
       return this[key] || null
-    }
+    },
   })
 }

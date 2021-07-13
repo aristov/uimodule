@@ -314,12 +314,12 @@ HtmlElem.defineAttrs([
   AriaLive,
   AriaOwns,
   AriaRelevant,
-  AriaRoleDescription
+  AriaRoleDescription,
 ])
 
 HtmlElem.defineGetters([
   'offsetLeft',
   'offsetTop',
   'offsetWidth',
-  'offsetHeight'
+  'offsetHeight',
 ])

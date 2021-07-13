@@ -28,5 +28,5 @@ Object.defineProperty(RoleRoleType.prototype, 'labels', {
    */
   get() {
     return this.getAttr(AriaLabelledBy)
-  }
+  },
 })

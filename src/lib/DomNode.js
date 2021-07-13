@@ -192,7 +192,7 @@ export class DomNode extends DomTarget
       observer.observe(this.node, {
         attributeFilter : name? [name] : undefined,
         attributeOldValue : options.attributeOldValue || false,
-        subtree : options.subtree || false
+        subtree : options.subtree || false,
       })
     }
   }
@@ -253,7 +253,7 @@ export class DomNode extends DomTarget
       observers.set(callback, observer)
       observer.observe(this.node, {
         childList : true,
-        subtree : options.subtree || false
+        subtree : options.subtree || false,
       })
     }
   }
