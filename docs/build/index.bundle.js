@@ -26849,7 +26849,7 @@ class Icon extends _lib__WEBPACK_IMPORTED_MODULE_0__.HtmlSpan
   }
 
   build({ name }) {
-    this.classList.add(PREFIX + name)
+    name && this.classList.add(PREFIX + name)
   }
 }
 
