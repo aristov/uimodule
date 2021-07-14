@@ -1,6 +1,7 @@
 .PopupMenu
 {
   padding: 6px 0;
+  box-sizing: border-box;
   background-color: var(--popup-bg-color);
   box-shadow: var(--popup-box-shadow);
   z-index: 100;
