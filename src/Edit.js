@@ -1,8 +1,6 @@
 import './clipboardData'
 import { HtmlDiv } from './lib'
 
-const NBSP = ' '
-
 export class Edit extends HtmlDiv
 {
   /**
@@ -71,13 +69,13 @@ export class Edit extends HtmlDiv
    * @param {string|*} value
    */
   set value(value) {
-    this.text = value === null? '' : String(value).replace(/\s\s/g, ' ' + NBSP)
+    this.text = value === null? '' : String(value).replace(/ {2}/g, '  ')
   }
 
   /**
    * @returns {string}
    */
   get value() {
-    return this.text.replace(/\s/g, ' ')
+    return this.text.replace(/ /g, ' ')
   }
 }

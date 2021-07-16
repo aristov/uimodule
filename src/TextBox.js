@@ -312,23 +312,21 @@ export class TextBox extends Widget
    * @param {string} text
    */
   set text(text) {
-    this._edit.text = this.multiLine?
-      text :
-      text && String(text).replace(/\s/g, ' ')
+    this._edit.text = text
   }
 
   /**
    * @returns {string}
    */
   get value() {
-    return this.text
+    return this._edit.value
   }
 
   /**
    * @param {string} value
    */
   set value(value) {
-    this.text = this._value = value
+    this._edit.value = this._value = value
   }
 }
 
