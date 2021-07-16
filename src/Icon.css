@@ -4,6 +4,7 @@
 .Icon
 {
   display: inline-block;
+  line-height: 1;
 }
 .Icon::before
 {
@@ -13,12 +14,10 @@
   speak: never;
   display: inline-block;
   text-decoration: inherit;
-  width: 1em;
   margin: 0 .2em;
   text-align: center;
   font-variant: normal;
   text-transform: none;
-  line-height: 1em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
