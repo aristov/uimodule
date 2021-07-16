@@ -482,14 +482,14 @@ class ListBox extends Composite
   }
 
   /**
-   * @returns {Option[]}
+   * @returns {object[]}
    */
   get options() {
     return this._options
   }
 
   /**
-   * @param {Option[]} options
+   * @param {object[]} options
    */
   set options(options) {
     this._anchor = null
