@@ -142,11 +142,11 @@ class ListBox extends Composite
   /**
    * @param {number} offset
    * @param {KeyboardEvent|MouseEvent|TouchEvent} event
-   * @return {Option|null}
+   * @return {Item|null}
    */
   shiftFocus(offset, event) {
     if(!this._checkable && this.readOnly) {
-      return
+      return null
     }
     const option = super.shiftFocus(offset, event)
     if(!option) {
@@ -166,11 +166,11 @@ class ListBox extends Composite
       }
     }
     if(this._control.scrollHeight === this._control.clientHeight) {
-      return
+      return null
     }
     if(event instanceof KeyboardEvent) {
       this.scrollToOption(option, event.repeat? 'auto' : 'smooth')
-      return
+      return null
     }
     const { top, bottom, height } = option.rect
     const rect = this._control.rect
