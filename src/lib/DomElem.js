@@ -383,22 +383,6 @@ export class DomElem extends DomNode
   }
 
   /**
-   * @return {{}}
-   */
-  get storage() {
-    const json = localStorage.getItem(this.constructor.name)
-    return json? JSON.parse(json) : {}
-  }
-
-  /**
-   * @param {{}} storage
-   */
-  set storage(storage) {
-    storage = Object.assign(this.storage, storage)
-    localStorage.setItem(this.constructor.name, JSON.stringify(storage))
-  }
-
-  /**
    * Set a text content of the node
    * @param {string} text
    */
@@ -482,6 +466,22 @@ export class DomElem extends DomNode
    */
   static get selector() {
     return this.localName || '*'
+  }
+
+  /**
+   * @return {{}}
+   */
+  static get storage() {
+    const json = localStorage.getItem(this.name)
+    return json? JSON.parse(json) : {}
+  }
+
+  /**
+   * @param {{}} storage
+   */
+  static set storage(storage) {
+    storage = Object.assign(this.storage, storage)
+    localStorage.setItem(this.name, JSON.stringify(storage))
   }
 
   /**
