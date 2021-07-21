@@ -266,7 +266,7 @@ export class HtmlElem extends DomElem
    * @override
    */
   static get localName() {
-    const { superAssembler } = this
+    const superAssembler = this.superAssembler
     let object = this
     let proto
     if(this === superAssembler) {
@@ -276,7 +276,7 @@ export class HtmlElem extends DomElem
       if(proto === superAssembler) {
         break
       }
-      else object = proto
+      object = proto
     }
     return object.name.slice(4).toLowerCase()
   }
