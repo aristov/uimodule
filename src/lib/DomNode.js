@@ -129,8 +129,15 @@ export class DomNode extends DomTarget
     const constructor = typeof subject === 'function'?
       subject :
       DomNode.DomElem
-    const elems = map.call(nodeList, node => constructor.get(node))
-    return filter? elems.filter(filter) : elems
+    const elems = []
+    let node, elem
+    for(node of nodeList) {
+      elem = constructor.get(node)
+      if(!filter || filter(elem)) {
+        elems.push(elem)
+      }
+    }
+    return elems
   }
 
   /**
