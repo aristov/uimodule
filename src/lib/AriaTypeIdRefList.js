@@ -51,7 +51,7 @@ export class AriaTypeIdRefList extends AriaType
           return ids.map(id => storage[id] || null)
         }
       }
-      return ids.map(id => doc.getElementById(id))
+      return ids.map(id => doc.getElemById(id))
     }
     return this.defaultValue
   }
