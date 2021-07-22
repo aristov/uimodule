@@ -5,6 +5,7 @@
 {
   white-space: nowrap;
   cursor: pointer;
+  padding: var(--control-padding);
   padding-right: calc(var(--control-padding-h) * 2);
   padding-left: 0;
   margin-left: 0;
