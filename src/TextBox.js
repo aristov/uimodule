@@ -263,7 +263,7 @@ export class TextBox extends Widget
       this._placeholder.text = placeholder
       return
     }
-    this._edit.before(this._placeholder = new this.constructor.Placeholder(placeholder))
+    this._control.prepend(this._placeholder = new this.constructor.Placeholder(placeholder))
   }
 
   /**
