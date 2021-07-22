@@ -12,6 +12,10 @@ export default () => {
       value : 'Hello world!',
     }),
     new TextBox({
+      labels : 'Value',
+      placeholder : 'Placeholder',
+    }),
+    new TextBox({
       labels : 'Disabled',
       value : 'Hello world!',
       disabled : true,
