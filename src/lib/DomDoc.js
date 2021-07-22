@@ -20,9 +20,12 @@ export class DomDoc extends DomNode
    */
   create(init) {
     this.__refs = new Map
-    if(!init.node) {
-      init.node = document.implementation.createHTMLDocument()
-    }
+    init.node ??= document.implementation.createHTMLDocument()
+    const { head, body, documentElement } = init.node
+    const storage = DomNode.__storage
+    head && !storage.get(head) && new HtmlHead({ node : head })
+    body && !storage.get(body) && new HtmlBody({ node : body })
+    documentElement && !storage.get(documentElement) && new HtmlHtml({ node : documentElement })
     super.create(init)
   }
 
@@ -31,7 +34,7 @@ export class DomDoc extends DomNode
    */
   init(init) {
     super.init(init)
-    new HtmlHtml({ node : this.node.documentElement })
+    // new HtmlHtml({ node : this.node.documentElement })
     this.on('keydown', this.onKeyDown, { once : true })
   }
 
@@ -79,27 +82,6 @@ export class DomDoc extends DomNode
   }
 
   /**
-   * @returns {DomElem}
-   */
-  get activeElem() {
-    return DomElem.get(this.node.activeElement)
-  }
-
-  /**
-   * @param {*} body {HtmlBody|HTMLBodyElement}
-   */
-  set body(body) {
-    this.node.body = body.node || body
-  }
-
-  /**
-   * @returns {HtmlBody}
-   */
-  get body() {
-    return HtmlBody.get(this.node.body)
-  }
-
-  /**
    * @return {string}
    */
   toString() {
@@ -110,6 +92,31 @@ export class DomDoc extends DomNode
     }
     serializer || (serializer = new XMLSerializer)
     return serializer.serializeToString(doctype) + html
+  }
+
+  /**
+   * @returns {DomElem}
+   */
+  get activeElem() {
+    return DomElem.get(this.node.activeElement)
+  }
+
+  /**
+   * @param {*} body {HtmlBody|HTMLBodyElement}
+   */
+  set body(body) {
+    const elem = this.body
+    if(elem) {
+      elem.replaceWith(body)
+    }
+    else this.append(body)
+  }
+
+  /**
+   * @returns {HtmlBody}
+   */
+  get body() {
+    return HtmlBody.get(this.node.body)
   }
 
   /**

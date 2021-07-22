@@ -15,9 +15,7 @@ export class DomTarget extends Assembler // DomEmitter
    */
   create(init) {
     this.__handlers = null
-    if(!init.node) {
-      init.node = new EventTarget
-    }
+    init.node ??= new EventTarget
     super.create(init)
   }
 

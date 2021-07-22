@@ -24,8 +24,16 @@ export class DomNode extends DomTarget
     super(init)
   }
 
+  /**
+   * @param {{}} init
+   * @param {Node|*} [init.node]
+   * @override
+   */
   create(init) {
-    this.__children = []
+    if(init.node) {
+      this.__children = Array.from(init.node.childNodes).map(node => DomNode.get(node))
+    }
+    else this.__children = []
     super.create(init)
   }
 
@@ -75,7 +83,7 @@ export class DomNode extends DomTarget
     const result = []
     let item, parent
     for(item of items.flat(Infinity)) {
-      if(item === null || item === false || item === undefined) {
+      if(item === null || item === false || item === undefined || item === '') {
         continue
       }
       if(item.then) {
@@ -375,6 +383,27 @@ export class DomNode extends DomTarget
     this.__children = []
   }
 
+  UNSTABLE_destroyChildren(keepNodes = false) {
+    const childNodes = Array.from(this.node.childNodes)
+    const children = this.__children
+    let i, child
+    for(i = 0; i < children.length; i++) {
+      child = children[i]
+      if(child.node) {
+        child.destroy(keepNodes)
+      }
+      else keepNodes || childNodes[i]?.remove()
+    }
+    if(children.length !== childNodes.length) {
+      console.warn('!==', children, childNodes)
+      if(this.node.childNodes.length) {
+        console.warn('> 0', childNodes)
+        keepNodes || Array.from(this.node.childNodes).forEach(node => node.remove())
+      }
+    }
+    this.__children = []
+  }
+
   /**
    * Append children to the element
    * @param {*} children
@@ -386,9 +415,10 @@ export class DomNode extends DomTarget
 
   /**
    * Get all children of the element as an array
-   * @returns {DomElem[]}
+   * @returns {[]}
    */
   get children() {
+    // return this.__children.filter(child => child.node)
     return map.call(this.node.children, node => {
       return DomNode.DomElem.get(node)
     })
@@ -404,7 +434,7 @@ DomNode.PendingChild = function({ promise, host }) {
   const node = new Text('Loading...')
   this.node = node
   promise.then(res => {
-    if(!node.parentNode) {
+    if(!this.node || !node.parentNode) {
       return
     }
     const children = host.__children
@@ -414,4 +444,9 @@ DomNode.PendingChild = function({ promise, host }) {
     host.__children = [...children.slice(0, index), ...items, ...children.slice(index + 1)]
   })
   .catch(err => console.error(node.data = err))
+}
+
+DomNode.PendingChild.prototype.destroy = function(keepNode = false) {
+  keepNode || this.node.remove()
+  this.node = null
 }

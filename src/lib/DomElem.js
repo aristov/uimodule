@@ -19,36 +19,13 @@ export class DomElem extends DomNode
    * @param {Element} [init.node]
    */
   create(init) {
-    if(!init.node) {
-      init.node = document.createElement(this.constructor.localName)
-    }
+    init.node ??= document.createElement(this.constructor.localName)
     super.create(init)
     const classList = this.constructor.classList
     if(classList.length) {
       this.classList = classList.join(' ')
     }
   }
-
-  /**
-   * @param {{}} init
-   * @param {string} [init.text]
-   * @param {string} [init.html]
-   * @override
-   */
-
-  /*init(init) {
-    if(init.text) {
-      this.text = init.text
-      delete init.text
-      return
-    }
-    if(init.html) {
-      this.html = init.html
-      delete init.html
-      return
-    }
-    super.init(init)
-  }*/
 
   /**
    * @param {DomNode|string|*} siblings
@@ -329,7 +306,7 @@ export class DomElem extends DomNode
    * @returns {DomDoc}
    */
   get doc() {
-    return DomNode.DomDoc.get(this.node.ownerDocument)
+    return this.constructor.DomDoc.get(this.node.ownerDocument)
   }
 
   /**
@@ -371,7 +348,7 @@ export class DomElem extends DomNode
     if(parent) {
       parent.append(this.node)
     }
-    else this.remove()
+    else this.destroy()
   }
 
   /**
@@ -396,6 +373,7 @@ export class DomElem extends DomNode
   set text(text) {
     this.destroyChildren()
     this.node.textContent = text
+    this.__children = this.flatChildren([text])
   }
 
   /**
@@ -404,6 +382,17 @@ export class DomElem extends DomNode
    */
   get text() {
     return this.node.textContent
+  }
+
+
+  set innerText(innerText) {
+    this.destroyChildren()
+    this.node.innerText = innerText
+    this.__children = this.flatChildren(innerText.split('\n').map((s, i) => [!!i && '<br>', s]))
+  }
+
+  get innerText() {
+    return this.node.innerText
   }
 
   /**
