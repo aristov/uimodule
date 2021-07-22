@@ -1,100 +1,72 @@
-import { RoleCheckBox } from './lib/ariamodule'
+import { AriaChecked, AriaReadOnly } from './lib'
+import { Widget } from './Widget'
+import { Control } from './Control'
 import './CheckBox.css'
 
 /**
  * @summary A checkable input that has three possible values: true, false, or mixed.
  * @see https://www.w3.org/TR/wai-aria-1.1/#checkbox
  */
-export class CheckBox extends RoleCheckBox
+export class CheckBox extends Widget
 {
-  /**
-   * @param {{}} init
-   */
-  init(init) {
-    super.init(init)
-    this.value = null
-    this.tabIndex = 0
-    this.on('blur', this.onBlur)
-    this.on('click', this.onClick)
-    this.on('focus', this.onFocus)
-    this.on('mousedown', this.onMouseDown)
-  }
-
-  /**
-   * @param {FocusEvent} event
-   */
-  onBlur(event) {
-    this.classList.remove('active')
-    this.off('keydown', this.onKeyDown)
-    this.off('keyup', this.onKeyUp)
-  }
-
-  /**
-   * @param {MouseEvent} event
-   */
-  onClick(event) {
-    if(this.disabled) {
-      event.stopImmediatePropagation()
+  build(init) {
+    if(!Array.isArray(init.labels)) {
+      init.labels = [, init.labels]
     }
-    else if(!event.defaultPrevented && !this.readOnly) {
-      this.checked = !this.checked
-      this.emit('change')
-    }
+    return new Control
   }
 
-  /**
-   * @param {FocusEvent} event
-   */
-  onFocus(event) {
-    this.on('keydown', this.onKeyDown)
-  }
-
-  /**
-   * @param {KeyboardEvent} event
-   */
-  onKeyDown(event) {
-    if(event.key === ' ') {
-      event.preventDefault()
-      this.classList.add('active')
-    }
-    this.on('keyup', this.onKeyUp, { once : true })
-  }
-
-  /**
-   * @param {KeyboardEvent} event
-   */
-  onKeyUp(event) {
-    if(event.key === ' ') {
-      this.classList.remove('active')
-      this.click()
-    }
-  }
-
-  /**
-   * @param {MouseEvent} event
-   */
-  onMouseDown(event) {
-    if(this.disabled) {
+  activate() {
+    if(this.readOnly) {
       return
     }
-    this.classList.add('active')
-    this.on('mouseleave', this.onMouseLeave, { once : true })
-    this.on('mouseup', this.onMouseUp, { once : true })
+    this.checked = !this.checked
+    this.emit('change')
   }
 
   /**
-   * @param {MouseEvent} event
+   * @param {KeyboardEvent} event
    */
-  onMouseLeave(event) {
-    this.classList.remove('active')
-    this.off('mouseup', this.onMouseUp)
+  onKeyDown_Space(event) {
+    event.preventDefault()
+    this.class.active = true
   }
 
   /**
-   * @param {MouseEvent} event
+   * @param {KeyboardEvent} event
    */
-  onMouseUp(event) {
-    this.classList.remove('active')
-    this.off('mouseleave', this.onMouseLeave)
+  onKeyUp_Space(event) {
+    this.class.active = false
+    this.click()
+  }
+
+  /**
+   * @param {boolean|string} checked
+   */
+  set checked(checked) {
+    this.setAttr(AriaChecked, checked)
+  }
+
+  /**
+   * @returns {boolean|string}
+   */
+  get checked() {
+    return this.getAttr(AriaChecked) || false
+  }
+
+  /**
+   * @param {boolean} readOnly
+   */
+  set readOnly(readOnly) {
+    this.setAttr(AriaReadOnly, readOnly)
+  }
+
+  /**
+   * @returns {boolean}
+   */
+  get readOnly() {
+    return this.getAttr(AriaReadOnly)
   }
 }
+
+CheckBox.prototype.value = null
