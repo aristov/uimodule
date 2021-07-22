@@ -26,26 +26,6 @@ export class RoleDocument extends RoleStructure
   }
 
   /**
-   * @param {RoleMain|*|null} main
-   */
-  set main(main) {
-    if(main) {
-      const { main : _main, banner, contentInfo } = this
-      if(_main) {
-        _main.replaceWith(main)
-      }
-      else if(banner) {
-        banner.after(main)
-      }
-      else if(contentInfo) {
-        contentInfo.before(main)
-      }
-      else this.append(main)
-    }
-    else this.main.remove()
-  }
-
-  /**
    * @returns {RoleMain|*|null}
    */
   get main() {
