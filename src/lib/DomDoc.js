@@ -62,7 +62,7 @@ export class DomDoc extends DomNode
    * @param {string} id
    * @returns {DomElem}
    */
-  getElementById(id) {
+  getElemById(id) {
     return DomElem.get(this.node.getElementById(id))
   }
 

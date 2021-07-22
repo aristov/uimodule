@@ -106,7 +106,7 @@ export class DomElem extends DomNode
       str = (counter++).toString(36)
       id = 'ID_' + '0'.repeat(Math.max(0, 7 - str.length)) + str
     }
-    while(doc.getElementById(id))
+    while(doc.getElemById(id))
     return id
   }
 

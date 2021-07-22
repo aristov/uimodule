@@ -35,7 +35,7 @@ export class AriaTypeIdRef extends AriaType
       const refs = doc.__refs.get(elem)
       return refs?
         refs.get(this) || null :
-        doc.getElementById(value)
+        doc.getElemById(value)
     }
     return value
   }
