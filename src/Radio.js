@@ -19,11 +19,7 @@ export class Radio extends Item
   }
 
   activate() {
-    if(this.readOnly) {
-      return
-    }
-    this.checked = true
-    this.emit('change')
+    this.checked ||= true
   }
 
   /**
