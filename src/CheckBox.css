@@ -1,40 +1,12 @@
+@import 'icons/css/fontawesome-fonts.css';
 @import 'root.css';
 
 .CheckBox
 {
-  position: relative;
-  display: inline-block;
   white-space: nowrap;
   cursor: pointer;
-  user-select: none;
-  outline: none;
   padding: var(--control-padding);
   padding-left: 0;
-  margin: var(--widget-margin);
-}
-.CheckBox::before
-{
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  padding: 9px;
-  margin: 1px;
-  border: var(--checkbox-control-border);
-  border-radius: var(--control-border-radius);
-  background: var(--control-bg-color) center center / contain no-repeat;
-}
-.CheckBox[aria-checked=true]::before,
-.CheckBox[aria-checked=mixed]::before
-{
-  border-color: transparent;
-}
-.CheckBox[aria-checked=true]::before
-{
-  background-image: url(images/CheckBox_checked.svg);
-}
-.CheckBox[aria-checked=mixed]::before
-{
-  background-image: url(images/CheckBox_mixed.svg);
 }
 .CheckBox .Label
 {
@@ -43,24 +15,51 @@
   margin: var(--checkbox-label-margin);
   cursor: pointer;
 }
-.CheckBox:hover::before
+.CheckBox > .Control
+{
+  color: #fff;
+  width: auto;
+  padding: 9px;
+  margin: 1px;
+  border-width: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.CheckBox > .Control::before
+{
+  font-family: 'fontawesome';
+  position: absolute;
+}
+.CheckBox:hover > .Control
 {
   border-color: var(--hover-border-color);
 }
-.CheckBox:active::before,
-.CheckBox.active::before
+.CheckBox[aria-checked=true] > .Control,
+.CheckBox[aria-checked=mixed] > .Control
+{
+  border-color: transparent;
+}
+.CheckBox[aria-checked=true] > .Control::before
+{
+  content: '\e801';
+}
+.CheckBox[aria-checked=mixed] > .Control::before
+{
+  font-size: 1.1em;
+  content: '\e803';
+}
+.CheckBox.active > .Control
 {
   background: var(--active-bg-color);
 }
-.CheckBox[aria-checked=true]::before,
-.CheckBox[aria-checked=mixed]::before
+.CheckBox[aria-checked=true] > .Control,
+.CheckBox[aria-checked=mixed] > .Control
 {
   background-color: var(--checked-bg-color);
 }
-.CheckBox[aria-checked=true]:active::before,
-.CheckBox[aria-checked=true].active::before,
-.CheckBox[aria-checked=mixed]:active::before,
-.CheckBox[aria-checked=mixed].active::before
+.CheckBox[aria-checked=true].active > .Control,
+.CheckBox[aria-checked=mixed].active > .Control
 {
   background-color: var(--checked-active-bg-color);
 }
@@ -68,29 +67,22 @@
 {
   opacity: var(--readonly-opacity);
 }
-.CheckBox[aria-disabled=true],
+.CheckBox[aria-disabled=true]
+{
+  cursor: var(--disabled-cursor);
+}
 .CheckBox[aria-disabled=true] .Label
 {
   cursor: var(--disabled-cursor);
   color: var(--disabled-color);
 }
-.CheckBox[aria-disabled=true]::before
-{
-  background: var(--disabled-bg-color);
-  border-color: var(--disabled-border-color);
-}
-.CheckBox[aria-checked=true][aria-disabled=true]::before
+.CheckBox[aria-checked=true][aria-disabled=true] > .Control
 {
   background-color: var(--checked-disabled-bg-color);
 }
-.CheckBox[aria-invalid=true]::before
-{
-  border-color: var(--invalid-color);
-}
-.CheckBox:focus-visible::before
+.CheckBox:focus-visible > .Control
 {
   border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
 }
 
 /*@media (max-width: 499px)

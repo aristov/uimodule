@@ -1,4 +1,7 @@
-import { RoleRadio } from './lib/ariamodule'
+import { AriaChecked } from './lib'
+import { Item } from './Item'
+import { Control } from './Control'
+import { RadioGroup } from './RadioGroup'
 import './Radio.css'
 
 /**
@@ -6,66 +9,32 @@ import './Radio.css'
  *  only one of which can be checked at a time.
  * @see https://www.w3.org/TR/wai-aria-1.1/#radio
  */
-export class Radio extends RoleRadio
+export class Radio extends Item
 {
-  /**
-   * @param {{}} init
-   */
-  init(init) {
-    super.init(init)
-    this.value = init.hasOwnProperty('value')? init.value : null
-    this.tabIndex = -1
-    this.on('blur', this.onBlur)
-    this.on('click', this.onClick)
-    this.on('focus', this.onFocus)
-    this.on('mousedown', this.onMouseDown)
-  }
-
-  /**
-   * @param {FocusEvent} event
-   */
-  onBlur(event) {
-    this.classList.remove('active')
-    this.off('keydown', this.onKeyDown)
-    this.off('keyup', this.onKeyUp)
-  }
-
-  /**
-   * @param {MouseEvent} event
-   */
-  onClick(event) {
-    if(this.disabled) {
-      event.stopImmediatePropagation()
+  build(init) {
+    if(!Array.isArray(init.labels)) {
+      init.labels = [, init.labels]
     }
-    else if(!this.checked) {
-      this.checked = true
-    }
+    return new Control
   }
 
-  /**
-   * @param {FocusEvent} event
-   */
-  onFocus(event) {
-    this.on('keydown', this.onKeyDown)
+  activate() {
+    if(this.readOnly) {
+      return
+    }
+    this.checked = true
+    this.emit('change')
   }
 
   /**
    * @param {KeyboardEvent} event
+   * @param {DomElem} elem
    */
-  onKeyDown(event) {
-    if(event.key.startsWith('Arrow')) {
-      this.onArrowKeyDown(event)
+  onKeyDown(event, elem) {
+    super.onKeyDown(event, elem)
+    if(!event.code.startsWith('Arrow')) {
+      return
     }
-    else if(event.key === ' ') {
-      this.onKeyDown_Space(event)
-    }
-    this.on('keyup', this.onKeyUp, { once : true })
-  }
-
-  /**
-   * @param {KeyboardEvent} event
-   */
-  onArrowKeyDown(event) {
     event.preventDefault()
     const radios = this.group.radios
     let radio = this
@@ -87,44 +56,37 @@ export class Radio extends RoleRadio
    */
   onKeyDown_Space(event) {
     event.preventDefault()
-    this.classList.add('active')
+    this.class.active = true
   }
 
   /**
    * @param {KeyboardEvent} event
    */
-  onKeyUp(event) {
-    if(event.key === ' ') {
-      this.classList.remove('active')
-      this.click()
-    }
+  onKeyUp_Space(event) {
+    this.class.active = false
+    this.click()
   }
 
   /**
-   * @param {MouseEvent} event
+   * @param {boolean} checked
    */
-  onMouseDown(event) {
-    if(this.disabled) {
-      return
-    }
-    this.classList.add('active')
-    this.on('mouseleave', this.onMouseLeave, { once : true })
-    this.on('mouseup', this.onMouseUp, { once : true })
+  set checked(checked) {
+    this.setAttr(AriaChecked, checked)
   }
 
   /**
-   * @param {MouseEvent} event
+   * @returns {boolean}
    */
-  onMouseLeave(event) {
-    this.classList.remove('active')
-    this.off('mouseup', this.onMouseUp)
+  get checked() {
+    return this.getAttr(AriaChecked) || false
   }
 
   /**
-   * @param {MouseEvent} event
+   * @returns {RadioGroup|*|null}
    */
-  onMouseUp(event) {
-    this.classList.remove('active')
-    this.off('mouseleave', this.onMouseLeave)
+  get group() {
+    return this.closest(RadioGroup)
   }
 }
+
+Radio.prototype.value = null

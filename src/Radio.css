@@ -1,32 +1,13 @@
-@import 'CheckBox.css';
+@import 'icons/css/fontawesome-fonts.css';
+@import 'root.css';
 
 .Radio
 {
-  position: relative;
-  display: inline-block;
   white-space: nowrap;
-  user-select: none;
   cursor: pointer;
-  outline: none;
-  padding: var(--control-padding-v) calc(var(--control-padding-h) * 2) var(--control-padding-v) 0;
-}
-.Radio::before
-{
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  padding: 10px;
-  border: var(--checkbox-control-border);
-  background: var(--control-bg-color) center center / contain no-repeat;
-  border-radius: 50%;
-}
-.Radio[aria-checked=true]::before
-{
-  border-color: transparent;
-}
-.Radio[aria-checked=true]::before
-{
-  background-image: url(images/Radio_checked.svg);
+  padding-right: calc(var(--control-padding-h) * 2);
+  padding-left: 0;
+  margin-left: 0;
 }
 .Radio .Label
 {
@@ -35,21 +16,44 @@
   margin: var(--checkbox-label-margin);
   cursor: pointer;
 }
-.Radio:hover::before
+.Radio > .Control
+{
+  color: #fff;
+  width: auto;
+  padding: 10px;
+  border-width: 2px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.Radio > .Control::before
+{
+  font-family: 'fontawesome';
+  font-size: .6em;
+  position: absolute;
+}
+.Radio[aria-checked=true] > .Control
+{
+  border-color: transparent;
+}
+.Radio[aria-checked=true] > .Control::before
+{
+  content: '\f111';
+}
+.Radio:hover > .Control
 {
   border-color: var(--hover-border-color);
 }
-.Radio:active::before,
-.Radio.active::before
+.Radio.active > .Control
 {
   background-color: var(--active-bg-color);
 }
-.Radio[aria-checked=true]::before
+.Radio[aria-checked=true] > .Control
 {
   background-color: var(--checked-bg-color);
 }
-.Radio[aria-checked=true]:active::before,
-.Radio[aria-checked=true].active::before
+.Radio[aria-checked=true].active > .Control
 {
   background-color: var(--checked-active-bg-color);
 }
@@ -59,17 +63,16 @@
   cursor: var(--disabled-cursor);
   color: var(--disabled-color);
 }
-.Radio[aria-disabled=true]::before
+.Radio[aria-disabled=true] > .Control
 {
   background-color: var(--disabled-bg-color);
   border-color: var(--disabled-border-color);
 }
-.Radio[aria-checked=true][aria-disabled=true]::before
+.Radio[aria-checked=true][aria-disabled=true] > .Control
 {
   background-color: var(--checked-disabled-bg-color);
 }
-.Radio:focus-visible::before
+.Radio:focus-visible > .Control
 {
   border-color: var(--focus-border-color);
-  box-shadow: var(--focus-box-shadow);
 }
