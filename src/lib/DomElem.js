@@ -3,6 +3,7 @@ import { AttrType } from './AttrType'
 import { Class } from './Class'
 import { DomNode } from './DomNode'
 import { DomTarget } from './DomTarget'
+import { DomFragment } from './DomFragment'
 
 const map = Array.prototype.map
 const { document, DocumentFragment } = window
@@ -53,20 +54,20 @@ export class DomElem extends DomNode
    * @param {DomNode|string|*} siblings
    */
   before(...siblings) {
-    if(!this.node.parentNode) {
-      this.parent = new DocumentFragment
-    }
-    this.node.before(...this.flatChildren(siblings))
+    const parent = this.parent ??= new DomFragment
+    const elems = this.flatChildren(siblings)
+    this.node.before(...elems.map(child => child.node || child))
+    parent.__children = elems.concat(parent.__children)
   }
 
   /**
    * @param {DomNode|string|*} siblings
    */
   after(...siblings) {
-    if(!this.node.parentNode) {
-      this.parent = new DocumentFragment
-    }
-    this.node.after(...this.flatChildren(siblings))
+    const parent = this.parent ??= new DomFragment
+    const elems = this.flatChildren(siblings)
+    this.node.after(...elems.map(child => child.node || child))
+    parent.__children.push(...elems)
   }
 
   /**
@@ -80,7 +81,13 @@ export class DomElem extends DomNode
    * @param {DomNode|string|*} objects
    */
   replaceWith(...objects) {
-    this.node.replaceWith(...this.flatChildren(objects))
+    const parent = this.parent
+    const children = parent.__children
+    const index = children.indexOf(this)
+    const items = this.flatChildren(objects)
+    this.node.replaceWith(...items.map(child => child.node || child))
+    parent.__children = [...children.slice(0, index), ...items, ...children.slice(index + 1)]
+    this.destroy(true)
   }
 
   /**

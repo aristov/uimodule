@@ -225,7 +225,7 @@ export class Dialog extends RoleDialog
    * @returns {DomElem}
    */
   get parent() {
-    return this.popup.parent
+    return this.popup?.parent
   }
 
   /**

@@ -19,6 +19,7 @@ export class DomDoc extends DomNode
    * @param {Document} [init.node]
    */
   create(init) {
+    this.__refs = new Map
     if(!init.node) {
       init.node = document.implementation.createHTMLDocument()
     }
@@ -30,7 +31,6 @@ export class DomDoc extends DomNode
    */
   init(init) {
     super.init(init)
-    this.__refs = new Map
     new HtmlHtml({ node : this.node.documentElement })
     this.on('keydown', this.onKeyDown, { once : true })
   }

@@ -23,13 +23,12 @@ export class PendingChild extends HtmlDiv
    * @param {*} res
    */
   onResolve(res) {
-    if(!this.node) {
+    if(!this.node || !this.node.parentNode) {
       return
     }
     this.classList.remove('pending')
     this.emit('load')
     this.replaceWith(res)
-    this.destroy()
   }
 
   /**

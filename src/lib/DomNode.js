@@ -24,6 +24,11 @@ export class DomNode extends DomTarget
     super(init)
   }
 
+  create(init) {
+    this.__children = []
+    super.create(init)
+  }
+
   /**
    * @param {{}} init
    * @param {any} [init.children]
@@ -47,7 +52,9 @@ export class DomNode extends DomTarget
    * @param {string|DomNode|array|*} children
    */
   append(...children) {
-    this.node.append(...this.flatChildren(children))
+    const elems = this.flatChildren(children)
+    this.node.append(...elems.map(child => child.node || child))
+    this.__children.push(...elems)
   }
 
   /**
@@ -55,7 +62,9 @@ export class DomNode extends DomTarget
    * @param {string|DomNode|array|*} children
    */
   prepend(...children) {
-    this.node.prepend(...this.flatChildren(children))
+    const elems = this.flatChildren(children)
+    this.node.prepend(...elems.map(child => child.node || child))
+    this.__children = elems.concat(this.__children)
   }
 
   /**
@@ -64,21 +73,20 @@ export class DomNode extends DomTarget
    */
   flatChildren(items) {
     const result = []
-    for(const item of items.flat(Infinity)) {
+    let item, parent
+    for(item of items.flat(Infinity)) {
       if(item === null || item === false || item === undefined) {
         continue
       }
       if(item.then) {
-        const pending = new this.constructor.PendingChild({ promise : item })
-        result.push(pending.node || pending)
+        result.push(new this.constructor.PendingChild({ promise : item, host : this }))
         continue
       }
-      const node = item.node || item
-      const parentNode = node.parentNode
-      if(parentNode/* && parentNode.nodeType === Node.DOCUMENT_FRAGMENT_NODE*/) {
-        result.includes(parentNode) || result.push(parentNode)
+      parent = item.parent
+      if(parent) {
+        result.includes(parent) || result.push(parent)
       }
-      else result.push(node)
+      else result.push(item)
     }
     return result
   }
@@ -353,15 +361,18 @@ export class DomNode extends DomTarget
    * @param {boolean} [keepNodes=false]
    */
   destroyChildren(keepNodes = false) {
-    if(this.node.hasChildNodes()) {
-      for(const child of Array.from(this.node.childNodes)) {
-        const elem = DomNode.__storage.get(child)
-        if(elem) {
-          elem.destroy(keepNodes)
-        }
-        else keepNodes || child.remove()
-      }
+    if(!this.node.hasChildNodes()) {
+      return
     }
+    let child, elem
+    for(child of Array.from(this.node.childNodes)) {
+      elem = DomNode.__storage.get(child)
+      if(elem) {
+        elem.destroy(keepNodes)
+      }
+      else keepNodes || child.remove()
+    }
+    this.__children = []
   }
 
   /**
@@ -386,13 +397,21 @@ export class DomNode extends DomTarget
 
 /**
  * @param {Promise|{then,catch}} promise
+ * @param {DomNode} host
  * @constructor
  */
-DomNode.PendingChild = function({ promise }) {
+DomNode.PendingChild = function({ promise, host }) {
   const node = new Text('Loading...')
+  this.node = node
   promise.then(res => {
-    node.parentNode && node.replaceWith(...DomNode.prototype.flatChildren([res]))
+    if(!node.parentNode) {
+      return
+    }
+    const children = host.__children
+    const index = children.indexOf(this)
+    const items = DomNode.prototype.flatChildren([res])
+    node.replaceWith(...items.map(child => child.node || child))
+    host.__children = [...children.slice(0, index), ...items, ...children.slice(index + 1)]
   })
   .catch(err => console.error(node.data = err))
-  return node
 }
