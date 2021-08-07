@@ -105,7 +105,7 @@ export class Dialog extends RoleDialog
         continue
       }
       const node = child.node
-      if(node.isContentEditable) {
+      if(node.isContentEditable && !node.hasAttribute('tabindex')) {
         result.push(child)
       }
       else if(node.tabIndex > -1) {
