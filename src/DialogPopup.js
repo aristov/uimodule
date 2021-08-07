@@ -26,7 +26,7 @@ export class DialogPopup extends Popup
     }
     const popup = elem.closest(Popup)
     // if(popup && popup !== this && popup.modal && !popup.contains(this)) {
-    if(popup && popup !== this && !popup.contains(this)) {
+    if(popup && !popup.contains(this)) {
       return
     }
     dialog.emit('cancel') && dialog.close()
