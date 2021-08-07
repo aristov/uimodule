@@ -115,6 +115,21 @@ export class HtmlElem extends DomElem
   }
 
   /**
+   * @param {string} innerText
+   */
+  set innerText(innerText) {
+    this.destroyChildren(true)
+    this.node.innerText = innerText
+  }
+
+  /**
+   * @returns {string}
+   */
+  get innerText() {
+    return this.node.innerText
+  }
+
+  /**
    * @return {string}
    */
   get inputMode() {
