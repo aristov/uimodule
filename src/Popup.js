@@ -202,6 +202,9 @@ export class Popup extends HtmlDiv
    * Update the popup position
    */
   updatePosition() {
+    if(!this.node) {
+      return
+    }
     const direction = this.direction
     if(direction === 'none' || !this.anchor || this.modal || !this.parent) {
       return this.setPosition(this._position = [null, null])
