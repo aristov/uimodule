@@ -1,5 +1,5 @@
 import debounce from 'lodash/debounce'
-import { HtmlDiv, Role } from './lib'
+import { HtmlDiv } from './lib'
 import './Popup.css'
 
 const DEBOUNCE_WAIT = 200
@@ -138,24 +138,24 @@ export class Popup extends HtmlDiv
    * @param {DomElem} elem
    */
   onDocFocusIn(event, elem) {
-    if(this.anchor && this.anchor.contains(elem)) {
+    if(this.contains(elem) || this.anchor?.contains(elem)) {
       return
     }
     const popup = elem.closest(Popup)
     if(popup && popup.modal && !popup.contains(this)) {
       return
     }
-    this.contains(elem) || this.close()
+    this.close()
   }
 
   /**
    * @param {KeyboardEvent} event
    */
-  onDocKeyDown(event) {
+  /*onDocKeyDown(event) {
     if(event.key === 'Escape') {
       this.close()
     }
-  }
+  }*/
 
   /**
    * @param {Event} event
