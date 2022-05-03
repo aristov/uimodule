@@ -1,5 +1,5 @@
 const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 exports.mode = 'none'
 exports.context = path.join(__dirname, 'docs')
@@ -8,7 +8,7 @@ exports.entry = {
 }
 exports.output = {
   path : path.join(__dirname, 'docs/build'),
-  publicPath : '',
+  publicPath : '/build/',
   filename : '[name].bundle.js',
   assetModuleFilename : 'fonts/[base]',
 }
@@ -17,7 +17,8 @@ exports.module = {
     {
       test : /\.css$/,
       use : [
-        MiniCssExtractPlugin.loader,
+        // MiniCssExtractPlugin.loader,
+        'style-loader',
         {
           loader : 'css-loader',
           options : {
@@ -38,5 +39,11 @@ exports.externals = {
   'window' : 'window',
 }
 exports.plugins = [
-  new MiniCssExtractPlugin({ filename : '[name].bundle.css' }),
+  // new MiniCssExtractPlugin({ filename : '[name].bundle.css' }),
 ]
+exports.devServer = {
+  static : {
+    directory : path.join(__dirname, 'docs/public'),
+  },
+  hot : true,
+}
