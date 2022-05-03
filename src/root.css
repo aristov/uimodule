@@ -60,3 +60,11 @@
 {
   display: none;
 }
+
+@media (max-width: 499px)
+{
+  :root
+  {
+    --doc-padding: 4px;
+  }
+}

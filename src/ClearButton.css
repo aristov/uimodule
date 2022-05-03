@@ -2,7 +2,6 @@
 
 .ClearButton
 {
-  color: rgba(0, 0, 0, .5);
   width: 1.8em;
   margin: 0;
   opacity: var(--icon-opacity);
