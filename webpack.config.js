@@ -7,7 +7,7 @@ exports.entry = {
   index : './index.js',
 }
 exports.output = {
-  path : path.join(__dirname, 'docs/build'),
+  path : path.join(__dirname, 'docs/public/build'),
   publicPath : '/build/',
   filename : '[name].bundle.js',
   assetModuleFilename : 'fonts/[base]',
@@ -29,8 +29,12 @@ exports.module = {
       ],
     },
     {
-      test : /\.(eot|svg|ttf|woff|woff2)$/,
+      test : /\.(eot|ttf|woff|woff2)$/,
       type : 'asset/resource',
+    },
+    {
+      test : /\.(png|jpg|gif|svg)$/,
+      type : 'asset',
     },
   ],
 }
