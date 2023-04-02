@@ -1,0 +1,31 @@
+.DateRangeBox > .Control
+{
+  padding: 0;
+  cursor: default;
+  white-space: nowrap;
+}
+.DateRangeBox > .Control > .Widget
+{
+  min-width: auto;
+}
+.DateRangeBox > .Control > .Widget > .Control
+{
+  padding: var(--control-padding);
+}
+.DateRangeBox > .Control > .Widget > .Control::after
+{
+  display: none;
+}
+.DateRangeBox > .Control > .DateBox .ClearButton
+{
+  display: none;
+}
+.DateRangeBox > .Control > .TimeBox
+{
+  text-align: center;
+}
+.DateRangeBox .Dash
+{
+  color: var(--dim-color);
+  vertical-align: middle;
+}

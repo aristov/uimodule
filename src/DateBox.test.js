@@ -8,6 +8,10 @@ export default () => {
       labels : 'Simple',
     }),
     new DateBox({
+      labels : 'Simple',
+      value : '2023-04-02',
+    }),
+    new DateBox({
       labels : 'Required',
       required : true,
     }),
