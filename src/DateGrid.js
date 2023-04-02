@@ -50,7 +50,7 @@ export class DateGrid extends Grid
   }
 
   set month(month) {
-    const time = moment(month, 'YYYY-MM').utcOffset(180)
+    const time = moment(month, 'YYYY-MM')
     const start = time.clone().startOf('month').startOf('week')
     const end = start.clone().add(6, 'week')
     const weekday = this._weekday
@@ -61,7 +61,7 @@ export class DateGrid extends Grid
         row.append(new DateCell({
           value : start.format('YYYY-MM-DD'),
           selected : false,
-          current : start.isSame(moment().utcOffset(180), 'date')? 'date' : false,
+          current : start.isSame(moment(), 'date')? 'date' : false,
           disabled : !isNaN(weekday) && start.weekday() !== weekday,
           class : { current : start.isSame(time, 'month') },
           text : start.format('D'),
@@ -85,7 +85,7 @@ export class DateGrid extends Grid
 
   set value(value) {
     if(value) {
-      if(!moment(value, 'YYYY-MM-DD').utcOffset(180).isSame(this.value, 'month')) {
+      if(!moment(value, 'YYYY-MM-DD').isSame(this.value, 'month')) {
         this.month = value
       }
     }
