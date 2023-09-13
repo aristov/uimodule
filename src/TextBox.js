@@ -111,6 +111,7 @@ export class TextBox extends Widget
    * @param {DomElem} elem
    */
   onInput(event, elem) {
+    this._value = this.value
     this.invalid = false
   }
 
